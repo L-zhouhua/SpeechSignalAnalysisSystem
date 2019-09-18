@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Filter</class>
+ <widget class="QMainWindow" name="Filter">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1348</width>
+    <height>885</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="reset_but">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>790</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>重置</string>
+    </property>
+   </widget>
+   <widget class="QScrollBar" name="horizontalScrollBar">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>790</y>
+      <width>481</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="zoomOut_but">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>790</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>缩小</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="zoomIn_but">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>790</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>放大</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="waveform_wid_1" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>1311</width>
+      <height>241</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="waveform_wid_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>270</y>
+      <width>1311</width>
+      <height>241</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="waveform_wid_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>520</y>
+      <width>1311</width>
+      <height>241</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1348</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuchakan">
+    <property name="title">
+     <string>查看</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>频谱</string>
+    </property>
+    <addaction name="action"/>
+    <addaction name="separator"/>
+    <addaction name="action_3"/>
+    <addaction name="action_4"/>
+    <addaction name="action_5"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>基频</string>
+    </property>
+    <addaction name="action_6"/>
+    <addaction name="separator"/>
+    <addaction name="action_8"/>
+    <addaction name="action_9"/>
+    <addaction name="action_10"/>
+    <addaction name="separator"/>
+    <addaction name="action_12"/>
+    <addaction name="action_13"/>
+    <addaction name="action_14"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>共振峰</string>
+    </property>
+    <addaction name="action_15"/>
+    <addaction name="separator"/>
+    <addaction name="action_24"/>
+    <addaction name="action_25"/>
+    <addaction name="action_26"/>
+    <addaction name="action_27"/>
+    <addaction name="action_28"/>
+    <addaction name="action_29"/>
+    <addaction name="action_30"/>
+    <addaction name="action_31"/>
+    <addaction name="action_32"/>
+    <addaction name="action_33"/>
+    <addaction name="action_34"/>
+    <addaction name="action_35"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>脉冲</string>
+    </property>
+    <addaction name="action_36"/>
+    <addaction name="separator"/>
+    <addaction name="action_38"/>
+    <addaction name="action_39"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>音强</string>
+    </property>
+    <addaction name="action_17"/>
+    <addaction name="separator"/>
+    <addaction name="action_19"/>
+    <addaction name="action_20"/>
+    <addaction name="action_21"/>
+    <addaction name="action_22"/>
+    <addaction name="action_23"/>
+   </widget>
+   <addaction name="menuchakan"/>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_5"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>显示频谱</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>查询:</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>获取指针处频谱</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>获取指针处频谱能量</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>显示基频</string>
+   </property>
+  </action>
+  <action name="action_8">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>查询：</string>
+   </property>
+  </action>
+  <action name="action_9">
+   <property name="text">
+    <string>基频列表</string>
+   </property>
+  </action>
+  <action name="action_10">
+   <property name="text">
+    <string>获取基频</string>
+   </property>
+  </action>
+  <action name="action_12">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>选择:</string>
+   </property>
+  </action>
+  <action name="action_13">
+   <property name="text">
+    <string>定位指针到最小基频处</string>
+   </property>
+  </action>
+  <action name="action_14">
+   <property name="text">
+    <string>定位指针到最大基频处</string>
+   </property>
+  </action>
+  <action name="action_15">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>显示共振峰</string>
+   </property>
+  </action>
+  <action name="action_17">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>显示音强</string>
+   </property>
+  </action>
+  <action name="action_19">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>查询：</string>
+   </property>
+  </action>
+  <action name="action_20">
+   <property name="text">
+    <string>音强列表</string>
+   </property>
+  </action>
+  <action name="action_21">
+   <property name="text">
+    <string>获取音强</string>
+   </property>
+  </action>
+  <action name="action_22">
+   <property name="text">
+    <string>获取最小音强值</string>
+   </property>
+  </action>
+  <action name="action_23">
+   <property name="text">
+    <string>获取最大音强值</string>
+   </property>
+  </action>
+  <action name="action_24">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>查询：</string>
+   </property>
+  </action>
+  <action name="action_25">
+   <property name="text">
+    <string>共振峰列表</string>
+   </property>
+  </action>
+  <action name="action_26">
+   <property name="text">
+    <string>获取第一共振峰</string>
+   </property>
+  </action>
+  <action name="action_27">
+   <property name="text">
+    <string>获取第一频宽</string>
+   </property>
+  </action>
+  <action name="action_28">
+   <property name="text">
+    <string>获取第二共振峰</string>
+   </property>
+  </action>
+  <action name="action_29">
+   <property name="text">
+    <string>获取第二频宽</string>
+   </property>
+  </action>
+  <action name="action_30">
+   <property name="text">
+    <string>获取第三共振峰</string>
+   </property>
+  </action>
+  <action name="action_31">
+   <property name="text">
+    <string>获取第三频宽</string>
+   </property>
+  </action>
+  <action name="action_32">
+   <property name="text">
+    <string>获取第四共振峰</string>
+   </property>
+  </action>
+  <action name="action_33">
+   <property name="text">
+    <string>获取第四频宽</string>
+   </property>
+  </action>
+  <action name="action_34">
+   <property name="text">
+    <string>获取共振峰</string>
+   </property>
+  </action>
+  <action name="action_35">
+   <property name="text">
+    <string>获取频宽</string>
+   </property>
+  </action>
+  <action name="action_36">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>显示脉冲</string>
+   </property>
+  </action>
+  <action name="action_38">
+   <property name="text">
+    <string>声音报告</string>
+   </property>
+  </action>
+  <action name="action_39">
+   <property name="text">
+    <string>脉冲列表</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
