@@ -66,7 +66,7 @@
      <string>放大</string>
     </property>
    </widget>
-   <widget class="QWidget" name="waveform_wid_1" native="true">
+   <widget class="QCustomPlot" name="waveform_wid_1" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -76,7 +76,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="waveform_wid_2" native="true">
+   <widget class="QCustomPlot" name="waveform_wid_2" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -86,7 +86,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="waveform_wid_3" native="true">
+   <widget class="QCustomPlot" name="waveform_wid_3" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -388,6 +388,14 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

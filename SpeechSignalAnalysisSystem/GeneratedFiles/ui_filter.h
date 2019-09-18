@@ -19,6 +19,7 @@
 #include <QtWidgets/QScrollBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
+#include "qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -63,9 +64,9 @@ public:
     QScrollBar *horizontalScrollBar;
     QPushButton *zoomOut_but;
     QPushButton *zoomIn_but;
-    QWidget *waveform_wid_1;
-    QWidget *waveform_wid_2;
-    QWidget *waveform_wid_3;
+    QCustomPlot *waveform_wid_1;
+    QCustomPlot *waveform_wid_2;
+    QCustomPlot *waveform_wid_3;
     QMenuBar *menubar;
     QMenu *menuchakan;
     QMenu *menu;
@@ -174,13 +175,13 @@ public:
         zoomIn_but = new QPushButton(centralwidget);
         zoomIn_but->setObjectName(QString::fromUtf8("zoomIn_but"));
         zoomIn_but->setGeometry(QRect(20, 790, 93, 28));
-        waveform_wid_1 = new QWidget(centralwidget);
+        waveform_wid_1 = new QCustomPlot(centralwidget);
         waveform_wid_1->setObjectName(QString::fromUtf8("waveform_wid_1"));
         waveform_wid_1->setGeometry(QRect(10, 20, 1311, 241));
-        waveform_wid_2 = new QWidget(centralwidget);
+        waveform_wid_2 = new QCustomPlot(centralwidget);
         waveform_wid_2->setObjectName(QString::fromUtf8("waveform_wid_2"));
         waveform_wid_2->setGeometry(QRect(10, 270, 1311, 241));
-        waveform_wid_3 = new QWidget(centralwidget);
+        waveform_wid_3 = new QCustomPlot(centralwidget);
         waveform_wid_3->setObjectName(QString::fromUtf8("waveform_wid_3"));
         waveform_wid_3->setGeometry(QRect(10, 520, 1311, 241));
         Filter->setCentralWidget(centralwidget);
