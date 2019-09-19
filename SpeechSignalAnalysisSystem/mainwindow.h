@@ -15,9 +15,11 @@ private:
 	Ui::MainWindowClass ui;
 	QString filename;
 	QCPGraph *pGraph;
+	QCPGraph *pGraph2;
 	double samplerate; //采样率
 	double length;     //采样点长度
 	double channels;   //音道数
+	double duration;   //周期
 
 private slots:
 	void onClickChooseWavFile();
