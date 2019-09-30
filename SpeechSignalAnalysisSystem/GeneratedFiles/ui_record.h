@@ -12,12 +12,17 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -30,23 +35,28 @@ public:
     QAction *action_AIFC;
     QAction *action;
     QWidget *centralwidget;
-    QLabel *label_2;
-    QRadioButton *radioButton_7;
-    QPushButton *pushButton;
-    QRadioButton *radioButton_4;
-    QRadioButton *radioButton_2;
-    QPushButton *pushButton_4;
+    QGroupBox *groupBox;
+    QSlider *qualitySlider;
     QRadioButton *radioButton;
-    QRadioButton *radioButton_6;
-    QPushButton *pushButton_3;
+    QRadioButton *radioButton_2;
+    QComboBox *bitrateBox;
+    QWidget *layoutWidget;
+    QGridLayout *gridLayout;
+    QComboBox *containerBox;
+    QComboBox *audioDeviceBox;
+    QComboBox *channelsBox;
+    QLabel *label_2;
+    QComboBox *audioCodecBox;
+    QLabel *label_4;
+    QLabel *label_3;
     QLabel *label;
-    QRadioButton *radioButton_8;
-    QPushButton *pushButton_2;
-    QRadioButton *radioButton_3;
-    QRadioButton *radioButton_5;
-    QRadioButton *radioButton_9;
-    QWidget *widget;
-    QPushButton *pushButton_5;
+    QLabel *label_5;
+    QComboBox *sampleRateBox;
+    QWidget *layoutWidget1;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *save_but;
+    QPushButton *startRecord_but;
+    QPushButton *pause_but;
     QMenuBar *menubar;
     QMenu *menu;
     QStatusBar *statusbar;
@@ -55,7 +65,7 @@ public:
     {
         if (Record->objectName().isEmpty())
             Record->setObjectName(QString::fromUtf8("Record"));
-        Record->resize(888, 631);
+        Record->resize(620, 530);
         action_WAV = new QAction(Record);
         action_WAV->setObjectName(QString::fromUtf8("action_WAV"));
         action_AIFC = new QAction(Record);
@@ -64,68 +74,123 @@ public:
         action->setObjectName(QString::fromUtf8("action"));
         centralwidget = new QWidget(Record);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        label_2 = new QLabel(centralwidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(50, 190, 72, 15));
-        radioButton_7 = new QRadioButton(centralwidget);
-        radioButton_7->setObjectName(QString::fromUtf8("radioButton_7"));
-        radioButton_7->setGeometry(QRect(120, 440, 115, 19));
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(380, 440, 89, 28));
-        radioButton_4 = new QRadioButton(centralwidget);
-        radioButton_4->setObjectName(QString::fromUtf8("radioButton_4"));
-        radioButton_4->setGeometry(QRect(120, 290, 115, 19));
-        radioButton_2 = new QRadioButton(centralwidget);
-        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
-        radioButton_2->setGeometry(QRect(120, 120, 115, 19));
-        pushButton_4 = new QPushButton(centralwidget);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setEnabled(false);
-        pushButton_4->setGeometry(QRect(380, 510, 89, 28));
-        radioButton = new QRadioButton(centralwidget);
+        groupBox = new QGroupBox(centralwidget);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        groupBox->setGeometry(QRect(60, 260, 491, 171));
+        QFont font;
+        font.setPointSize(11);
+        groupBox->setFont(font);
+        qualitySlider = new QSlider(groupBox);
+        qualitySlider->setObjectName(QString::fromUtf8("qualitySlider"));
+        qualitySlider->setGeometry(QRect(70, 60, 391, 22));
+        qualitySlider->setOrientation(Qt::Horizontal);
+        radioButton = new QRadioButton(groupBox);
         radioButton->setObjectName(QString::fromUtf8("radioButton"));
-        radioButton->setGeometry(QRect(120, 80, 115, 19));
-        radioButton_6 = new QRadioButton(centralwidget);
-        radioButton_6->setObjectName(QString::fromUtf8("radioButton_6"));
-        radioButton_6->setGeometry(QRect(120, 390, 115, 19));
-        pushButton_3 = new QPushButton(centralwidget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setEnabled(false);
-        pushButton_3->setGeometry(QRect(670, 440, 89, 28));
-        label = new QLabel(centralwidget);
+        radioButton->setGeometry(QRect(30, 30, 115, 19));
+        radioButton_2 = new QRadioButton(groupBox);
+        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+        radioButton_2->setGeometry(QRect(30, 100, 115, 19));
+        bitrateBox = new QComboBox(groupBox);
+        bitrateBox->setObjectName(QString::fromUtf8("bitrateBox"));
+        bitrateBox->setGeometry(QRect(70, 130, 391, 22));
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(60, 10, 491, 241));
+        gridLayout = new QGridLayout(layoutWidget);
+        gridLayout->setSpacing(7);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        containerBox = new QComboBox(layoutWidget);
+        containerBox->setObjectName(QString::fromUtf8("containerBox"));
+        containerBox->setFont(font);
+
+        gridLayout->addWidget(containerBox, 2, 1, 1, 1);
+
+        audioDeviceBox = new QComboBox(layoutWidget);
+        audioDeviceBox->setObjectName(QString::fromUtf8("audioDeviceBox"));
+        audioDeviceBox->setFont(font);
+
+        gridLayout->addWidget(audioDeviceBox, 0, 1, 1, 1);
+
+        channelsBox = new QComboBox(layoutWidget);
+        channelsBox->setObjectName(QString::fromUtf8("channelsBox"));
+        channelsBox->setFont(font);
+
+        gridLayout->addWidget(channelsBox, 4, 1, 1, 1);
+
+        label_2 = new QLabel(layoutWidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setFont(font);
+
+        gridLayout->addWidget(label_2, 1, 0, 1, 1);
+
+        audioCodecBox = new QComboBox(layoutWidget);
+        audioCodecBox->setObjectName(QString::fromUtf8("audioCodecBox"));
+        audioCodecBox->setFont(font);
+
+        gridLayout->addWidget(audioCodecBox, 1, 1, 1, 1);
+
+        label_4 = new QLabel(layoutWidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setFont(font);
+
+        gridLayout->addWidget(label_4, 3, 0, 1, 1);
+
+        label_3 = new QLabel(layoutWidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setFont(font);
+
+        gridLayout->addWidget(label_3, 2, 0, 1, 1);
+
+        label = new QLabel(layoutWidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(60, 40, 72, 15));
-        radioButton_8 = new QRadioButton(centralwidget);
-        radioButton_8->setObjectName(QString::fromUtf8("radioButton_8"));
-        radioButton_8->setGeometry(QRect(120, 490, 115, 19));
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setEnabled(false);
-        pushButton_2->setGeometry(QRect(530, 440, 89, 28));
-        pushButton_2->setCheckable(false);
-        pushButton_2->setChecked(false);
-        pushButton_2->setAutoRepeat(false);
-        pushButton_2->setAutoExclusive(false);
-        radioButton_3 = new QRadioButton(centralwidget);
-        radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
-        radioButton_3->setGeometry(QRect(120, 240, 115, 19));
-        radioButton_5 = new QRadioButton(centralwidget);
-        radioButton_5->setObjectName(QString::fromUtf8("radioButton_5"));
-        radioButton_5->setGeometry(QRect(120, 340, 115, 19));
-        radioButton_9 = new QRadioButton(centralwidget);
-        radioButton_9->setObjectName(QString::fromUtf8("radioButton_9"));
-        radioButton_9->setGeometry(QRect(120, 530, 115, 19));
-        widget = new QWidget(centralwidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(340, 80, 451, 301));
-        pushButton_5 = new QPushButton(centralwidget);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-        pushButton_5->setGeometry(QRect(670, 510, 89, 28));
+        label->setFont(font);
+
+        gridLayout->addWidget(label, 0, 0, 1, 1);
+
+        label_5 = new QLabel(layoutWidget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setFont(font);
+
+        gridLayout->addWidget(label_5, 4, 0, 1, 1);
+
+        sampleRateBox = new QComboBox(layoutWidget);
+        sampleRateBox->setObjectName(QString::fromUtf8("sampleRateBox"));
+        sampleRateBox->setFont(font);
+
+        gridLayout->addWidget(sampleRateBox, 3, 1, 1, 1);
+
+        gridLayout->setColumnStretch(0, 1);
+        gridLayout->setColumnStretch(1, 5);
+        layoutWidget1 = new QWidget(centralwidget);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(50, 440, 511, 30));
+        horizontalLayout = new QHBoxLayout(layoutWidget1);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        save_but = new QPushButton(layoutWidget1);
+        save_but->setObjectName(QString::fromUtf8("save_but"));
+        save_but->setFont(font);
+
+        horizontalLayout->addWidget(save_but);
+
+        startRecord_but = new QPushButton(layoutWidget1);
+        startRecord_but->setObjectName(QString::fromUtf8("startRecord_but"));
+        startRecord_but->setFont(font);
+
+        horizontalLayout->addWidget(startRecord_but);
+
+        pause_but = new QPushButton(layoutWidget1);
+        pause_but->setObjectName(QString::fromUtf8("pause_but"));
+        pause_but->setEnabled(false);
+        pause_but->setFont(font);
+
+        horizontalLayout->addWidget(pause_but);
+
         Record->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Record);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 888, 26));
+        menubar->setGeometry(QRect(0, 0, 620, 26));
         menu = new QMenu(menubar);
         menu->setObjectName(QString::fromUtf8("menu"));
         Record->setMenuBar(menubar);
@@ -149,22 +214,17 @@ public:
         action_WAV->setText(QApplication::translate("Record", "\344\277\235\345\255\230\344\270\272WAV\346\226\207\344\273\266", nullptr));
         action_AIFC->setText(QApplication::translate("Record", "\344\277\235\345\255\230\344\270\272AIFC\346\226\207\344\273\266", nullptr));
         action->setText(QApplication::translate("Record", "\345\205\263\351\227\255", nullptr));
-        label_2->setText(QApplication::translate("Record", "\351\207\207\346\240\267\351\242\221\347\216\207\357\274\232", nullptr));
-        radioButton_7->setText(QApplication::translate("Record", "44100Hz", nullptr));
-        pushButton->setText(QApplication::translate("Record", "\345\275\225\345\210\266", nullptr));
-        radioButton_4->setText(QApplication::translate("Record", "11025Hz", nullptr));
-        radioButton_2->setText(QApplication::translate("Record", "\345\217\214\345\243\260\351\201\223", nullptr));
-        pushButton_4->setText(QApplication::translate("Record", "\344\277\235\345\255\230", nullptr));
-        radioButton->setText(QApplication::translate("Record", "\345\215\225\345\243\260\351\201\223", nullptr));
-        radioButton_6->setText(QApplication::translate("Record", "32000Hz", nullptr));
-        pushButton_3->setText(QApplication::translate("Record", "\346\222\255\346\224\276", nullptr));
-        label->setText(QApplication::translate("Record", "\345\243\260\351\201\223\357\274\232", nullptr));
-        radioButton_8->setText(QApplication::translate("Record", "48000Hz", nullptr));
-        pushButton_2->setText(QApplication::translate("Record", "\345\201\234\346\255\242", nullptr));
-        radioButton_3->setText(QApplication::translate("Record", "8000Hz", nullptr));
-        radioButton_5->setText(QApplication::translate("Record", "22050Hz", nullptr));
-        radioButton_9->setText(QApplication::translate("Record", "96000Hz", nullptr));
-        pushButton_5->setText(QApplication::translate("Record", "\351\200\200\345\207\272", nullptr));
+        groupBox->setTitle(QApplication::translate("Record", "\347\274\226\347\240\201\346\250\241\345\274\217", nullptr));
+        radioButton->setText(QApplication::translate("Record", "\351\237\263\350\264\250\357\274\232", nullptr));
+        radioButton_2->setText(QApplication::translate("Record", "\344\275\215\347\216\207\357\274\232", nullptr));
+        label_2->setText(QApplication::translate("Record", "\351\237\263\351\242\221\347\274\226\350\247\243\347\240\201\345\231\250\357\274\232", nullptr));
+        label_4->setText(QApplication::translate("Record", "\351\207\207\346\240\267\347\216\207\357\274\232", nullptr));
+        label_3->setText(QApplication::translate("Record", "\346\226\207\344\273\266\345\256\271\345\231\250\357\274\232", nullptr));
+        label->setText(QApplication::translate("Record", "\350\276\223\345\205\245\350\256\276\345\244\207\357\274\232", nullptr));
+        label_5->setText(QApplication::translate("Record", "\345\243\260\351\201\223\346\225\260\357\274\232", nullptr));
+        save_but->setText(QApplication::translate("Record", "\344\277\235\345\255\230", nullptr));
+        startRecord_but->setText(QApplication::translate("Record", "\345\275\225\351\237\263", nullptr));
+        pause_but->setText(QApplication::translate("Record", "\346\232\202\345\201\234", nullptr));
         menu->setTitle(QApplication::translate("Record", "\346\226\207\344\273\266", nullptr));
     } // retranslateUi
 

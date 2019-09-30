@@ -6,252 +6,269 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>888</width>
-    <height>631</height>
+    <width>620</width>
+    <height>530</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>190</y>
-      <width>72</width>
-      <height>15</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>采样频率：</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_7">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>440</y>
-      <width>115</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>44100Hz</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>440</y>
-      <width>89</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>录制</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_4">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>290</y>
-      <width>115</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>11025Hz</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_2">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>120</y>
-      <width>115</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>双声道</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>510</y>
-      <width>89</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>保存</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>80</y>
-      <width>115</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>单声道</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_6">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>390</y>
-      <width>115</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>32000Hz</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>440</y>
-      <width>89</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>播放</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>40</y>
-      <width>72</width>
-      <height>15</height>
+      <y>260</y>
+      <width>491</width>
+      <height>171</height>
      </rect>
     </property>
-    <property name="text">
-     <string>声道：</string>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
     </property>
+    <property name="title">
+     <string>编码模式</string>
+    </property>
+    <widget class="QSlider" name="qualitySlider">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>60</y>
+       <width>391</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>115</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>音质：</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>100</y>
+       <width>115</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>位率：</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="bitrateBox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>130</y>
+       <width>391</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
-   <widget class="QRadioButton" name="radioButton_8">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>490</y>
-      <width>115</width>
-      <height>19</height>
+      <x>60</x>
+      <y>10</y>
+      <width>491</width>
+      <height>241</height>
      </rect>
     </property>
-    <property name="text">
-     <string>48000Hz</string>
-    </property>
+    <layout class="QGridLayout" name="gridLayout" columnstretch="1,5">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <property name="spacing">
+      <number>7</number>
+     </property>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="containerBox">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="audioDeviceBox">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QComboBox" name="channelsBox">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>音频编解码器：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="audioCodecBox">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>采样率：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>文件容器：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>输入设备：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>声道数：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="sampleRateBox">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>50</x>
       <y>440</y>
-      <width>89</width>
-      <height>28</height>
+      <width>511</width>
+      <height>30</height>
      </rect>
     </property>
-    <property name="text">
-     <string>停止</string>
-    </property>
-    <property name="checkable">
-     <bool>false</bool>
-    </property>
-    <property name="checked">
-     <bool>false</bool>
-    </property>
-    <property name="autoRepeat">
-     <bool>false</bool>
-    </property>
-    <property name="autoExclusive">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_3">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>240</y>
-      <width>115</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>8000Hz</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_5">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>340</y>
-      <width>115</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>22050Hz</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_9">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>530</y>
-      <width>115</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>96000Hz</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>80</y>
-      <width>451</width>
-      <height>301</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_5">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>510</y>
-      <width>89</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>退出</string>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="save_but">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>保存</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="startRecord_but">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>录音</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pause_but">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>暂停</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -259,7 +276,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>888</width>
+     <width>620</width>
      <height>26</height>
     </rect>
    </property>
