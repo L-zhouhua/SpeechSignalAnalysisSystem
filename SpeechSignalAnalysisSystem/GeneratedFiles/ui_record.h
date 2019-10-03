@@ -37,8 +37,8 @@ public:
     QWidget *centralwidget;
     QGroupBox *groupBox;
     QSlider *qualitySlider;
-    QRadioButton *radioButton;
-    QRadioButton *radioButton_2;
+    QRadioButton *constantQualityRadioButton;
+    QRadioButton *constantBitrateRadioButton;
     QComboBox *bitrateBox;
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
@@ -54,7 +54,7 @@ public:
     QComboBox *sampleRateBox;
     QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout;
-    QPushButton *save_but;
+    QPushButton *output_but;
     QPushButton *startRecord_but;
     QPushButton *pause_but;
     QMenuBar *menubar;
@@ -84,14 +84,16 @@ public:
         qualitySlider->setObjectName(QString::fromUtf8("qualitySlider"));
         qualitySlider->setGeometry(QRect(70, 60, 391, 22));
         qualitySlider->setOrientation(Qt::Horizontal);
-        radioButton = new QRadioButton(groupBox);
-        radioButton->setObjectName(QString::fromUtf8("radioButton"));
-        radioButton->setGeometry(QRect(30, 30, 115, 19));
-        radioButton_2 = new QRadioButton(groupBox);
-        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
-        radioButton_2->setGeometry(QRect(30, 100, 115, 19));
+        constantQualityRadioButton = new QRadioButton(groupBox);
+        constantQualityRadioButton->setObjectName(QString::fromUtf8("constantQualityRadioButton"));
+        constantQualityRadioButton->setGeometry(QRect(30, 30, 115, 19));
+        constantQualityRadioButton->setChecked(true);
+        constantBitrateRadioButton = new QRadioButton(groupBox);
+        constantBitrateRadioButton->setObjectName(QString::fromUtf8("constantBitrateRadioButton"));
+        constantBitrateRadioButton->setGeometry(QRect(30, 100, 115, 19));
         bitrateBox = new QComboBox(groupBox);
         bitrateBox->setObjectName(QString::fromUtf8("bitrateBox"));
+        bitrateBox->setEnabled(false);
         bitrateBox->setGeometry(QRect(70, 130, 391, 22));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
@@ -168,11 +170,11 @@ public:
         horizontalLayout = new QHBoxLayout(layoutWidget1);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        save_but = new QPushButton(layoutWidget1);
-        save_but->setObjectName(QString::fromUtf8("save_but"));
-        save_but->setFont(font);
+        output_but = new QPushButton(layoutWidget1);
+        output_but->setObjectName(QString::fromUtf8("output_but"));
+        output_but->setFont(font);
 
-        horizontalLayout->addWidget(save_but);
+        horizontalLayout->addWidget(output_but);
 
         startRecord_but = new QPushButton(layoutWidget1);
         startRecord_but->setObjectName(QString::fromUtf8("startRecord_but"));
@@ -204,6 +206,8 @@ public:
         menu->addAction(action);
 
         retranslateUi(Record);
+        QObject::connect(constantQualityRadioButton, SIGNAL(toggled(bool)), qualitySlider, SLOT(setEnabled(bool)));
+        QObject::connect(constantBitrateRadioButton, SIGNAL(toggled(bool)), bitrateBox, SLOT(setEnabled(bool)));
 
         QMetaObject::connectSlotsByName(Record);
     } // setupUi
@@ -215,14 +219,14 @@ public:
         action_AIFC->setText(QApplication::translate("Record", "\344\277\235\345\255\230\344\270\272AIFC\346\226\207\344\273\266", nullptr));
         action->setText(QApplication::translate("Record", "\345\205\263\351\227\255", nullptr));
         groupBox->setTitle(QApplication::translate("Record", "\347\274\226\347\240\201\346\250\241\345\274\217", nullptr));
-        radioButton->setText(QApplication::translate("Record", "\351\237\263\350\264\250\357\274\232", nullptr));
-        radioButton_2->setText(QApplication::translate("Record", "\344\275\215\347\216\207\357\274\232", nullptr));
+        constantQualityRadioButton->setText(QApplication::translate("Record", "\351\237\263\350\264\250\357\274\232", nullptr));
+        constantBitrateRadioButton->setText(QApplication::translate("Record", "\344\275\215\347\216\207\357\274\232", nullptr));
         label_2->setText(QApplication::translate("Record", "\351\237\263\351\242\221\347\274\226\350\247\243\347\240\201\345\231\250\357\274\232", nullptr));
         label_4->setText(QApplication::translate("Record", "\351\207\207\346\240\267\347\216\207\357\274\232", nullptr));
         label_3->setText(QApplication::translate("Record", "\346\226\207\344\273\266\345\256\271\345\231\250\357\274\232", nullptr));
         label->setText(QApplication::translate("Record", "\350\276\223\345\205\245\350\256\276\345\244\207\357\274\232", nullptr));
         label_5->setText(QApplication::translate("Record", "\345\243\260\351\201\223\346\225\260\357\274\232", nullptr));
-        save_but->setText(QApplication::translate("Record", "\344\277\235\345\255\230", nullptr));
+        output_but->setText(QApplication::translate("Record", "\344\277\235\345\255\230", nullptr));
         startRecord_but->setText(QApplication::translate("Record", "\345\275\225\351\237\263", nullptr));
         pause_but->setText(QApplication::translate("Record", "\346\232\202\345\201\234", nullptr));
         menu->setTitle(QApplication::translate("Record", "\346\226\207\344\273\266", nullptr));
