@@ -65,7 +65,7 @@ void Record::updateProgress(qint64 duration)
 
 	ui.statusbar->showMessage(QString::fromLocal8Bit("%1Ãë").arg(duration / 1000));
 }
-/**/
+/*ÔÚ×´Ì¬À¸´¦ÏÔÊ¾²Ù×÷¶¯×÷*/
 void Record::updateStatus(QMediaRecorder::Status status)
 {
 	QString statusMessage;
@@ -90,6 +90,7 @@ void Record::updateStatus(QMediaRecorder::Status status)
 	if (audioRecorder->error() == QMediaRecorder::NoError)
 		ui.statusbar->showMessage(statusMessage);
 }
+/*ÉèÖÃ°´Å¥×´Ì¬*/
 void Record::onStateChanged(QMediaRecorder::State state)
 {
 	switch (state) {
@@ -109,6 +110,7 @@ void Record::onStateChanged(QMediaRecorder::State state)
 
 	ui.pause_but->setEnabled(audioRecorder->state() != QMediaRecorder::StoppedState);
 }
+
 void Record::displayErrorMessage()
 {
 	ui.statusbar->showMessage(audioRecorder->errorString());
@@ -122,6 +124,7 @@ static QVariant boxValue(const QComboBox *box)
 
 	return box->itemData(idx);
 }
+/*Â¼ÒôÅäÖÃÉèÖÃ*/
 void Record::onClickRecord()
 {
 	if (audioRecorder->state() == QMediaRecorder::StoppedState) {

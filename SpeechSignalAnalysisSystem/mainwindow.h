@@ -3,6 +3,7 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_mainwindow.h"
 #include "qcustomplot.h"
+#include <sndfile.h>
 
 class MainWindow : public QMainWindow
 {
@@ -16,9 +17,13 @@ private:
 	QString filename;
 	QCPGraph *pGraph;
 	QCPGraph *pGraph2;
-	double samplerate; //采样率
-	double length;     //采样点长度
-	double channels;   //音道数
+	SF_INFO sf_info;
+	SNDFILE *snd_file;
+	double *buf;       //采样点
+	int samplerate; //采样率
+	int frames;     //每个声道的采样点
+	int length;     //总采样点（frame*channels）
+	int channels;   //音道数
 	double duration;   //周期
 
 private slots:

@@ -4,8 +4,7 @@
 #include "period.h"
 #include "record.h"
 #include "spectrum.h"
-#include<kfr/all.hpp>
-using namespace kfr;
+
 using std::string;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -52,64 +51,80 @@ void MainWindow::onClickChooseWavFile()
 	if (filename != NULL)
 	{
 		/*将QString转为String*/
-		string filename2 = filename.toUtf8().data();
+		string fileUrl = filename.toUtf8().data();
+		const char* ch_fileUrl = fileUrl.c_str();
 		/*读取wav*/
-		audio_reader_wav<double> reader(open_file_for_reading(filename2));
+		sf_info.format = 0;
+		snd_file = sf_open(ch_fileUrl, SFM_READ,&sf_info);
 		//audio_reader_wav<double> reader(open_file_for_reading("C:\\Users\\12860\\Desktop\\wav\\Alarm01.wav"));
 		/*获取所有采样点*/
-		univector2d<double> audio1 = reader.read_channels();
+		//buf = (double *)malloc(sf_info.frames * sizeof(double));
+		buf = new double[sf_info.frames*2];
 		/*获取采样率*/
-		samplerate = reader.format().samplerate;
-		/*获取长度*/
-		length = reader.format().length;
+		samplerate = sf_info.samplerate;
+		/*获取单个声道的采样点*/
+		frames = sf_info.frames;
 		/*获取音道数*/
-		channels = reader.format().channels;
+		channels = sf_info.channels;
+		/*获取总采样点数*/
+		length = frames * channels;
 		/*计算出周期，X轴*/
-		duration = reader.format().length / reader.format().samplerate;
-		/*创建迭代器x，y*/
-		QVector<double> x(length), y(audio1.data()->size());
-		QVector<double> x2(length), y2(audio1.data()->size());
+		duration = (double)length / samplerate;
 		/*判断音道数*/
 		if (channels == 1)
 		{
+			/*创建迭代器x，y*/
+			QVector<double> x(length), y(length);
+			sf_readf_double(snd_file, buf, sf_info.frames);
 			/*赋值给x轴*/
 			for (int i = 0; i < length; i++)
 			{
 				x[i] = (double)i / samplerate;
 			}
 			/*赋值给y轴*/
-			for (int i = 0; i < audio1.data()->size(); i++)
+			for (int i = 0; i < length; i++)
 			{
-				y[i] = (double)audio1.data()->at(i);
+				y[i] = (double)buf[i];
 			}
 			ui.waveform_wid_1->xAxis->setRange(0.0, (double)duration);//设置周期（x轴）
 			ui.waveform_wid_1->graph(0)->setData(x, y); //设置xy轴
+			//ui.waveform_wid_1->rescaleAxes();//重新调节轴、调用后坐标会根据实际情况增加
 			ui.waveform_wid_1->replot();//重绘
+			ui.waveform_wid_2->graph(0)->data()->clear();//清除图表二的数据
+			ui.waveform_wid_2->replot();//重绘
 		}
 		else
 		{
+
+			/*创建迭代器x，y*/
+			QVector<double> x(length), y(length);
+			QVector<double> x2(length), y2(length);
+			sf_read_double(snd_file, buf, length);
 			for (int i = 0; i < length; i++)
 			{
 				if (i % 2 == 0)
+				{
 					x[i] = (double)i / samplerate;
+					y[i] = (double)buf[i];
+				}
 				else
+				{
 					x2[i] = (double)i / samplerate;
-			}
-			for (int i = 0; i < audio1.data()->size(); i++)
-			{
-				if (i % 2 == 0)
-					y[i] = (double)audio1.data()->at(i);
-				else
-					y2[i] = (double)audio1.data()->at(i);
+					y2[i] = (double)buf[i];
+				}
 			}
 			ui.waveform_wid_1->xAxis->setRange(0.0, (double)duration);//设置周期（x轴）
 			ui.waveform_wid_1->graph(0)->setData(x, y);//设置xy轴
+			//ui.waveform_wid_1->rescaleAxes();//重新调节轴、调用后坐标会根据实际情况增加
 			ui.waveform_wid_1->replot();//重绘
 
 			ui.waveform_wid_2->xAxis->setRange(0.0, (double)duration);//设置周期（x轴）
 			ui.waveform_wid_2->graph(0)->setData(x2, y2);//设置xy轴
+			//ui.waveform_wid_2->rescaleAxes();//重新调节轴、调用后坐标会根据实际情况增加
 			ui.waveform_wid_2->replot();//重绘
 		}
+		free(buf);
+		sf_close(snd_file);
 	}
 }
 void MainWindow::onClickOpenfilterWindow()
