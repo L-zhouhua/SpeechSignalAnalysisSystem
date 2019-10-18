@@ -1,4 +1,13 @@
 <RCC>
-    <qresource prefix="MainWindow">
+    <qresource prefix="/MainWindow">
+        <file>C:/Users/12860/Desktop/image/1.png</file>
+        <file>C:/Users/12860/Desktop/image/2.png</file>
+        <file>C:/Users/12860/Desktop/image/3.png</file>
+        <file>C:/Users/12860/Desktop/image/4.png</file>
+        <file>C:/Users/12860/Desktop/image/5.png</file>
+        <file>C:/Users/12860/Desktop/image/6.png</file>
+        <file>C:/Users/12860/Desktop/image/4yq5jAD2pn.png</file>
+        <file>C:/Users/12860/Desktop/image/o73MEPWr3B.png</file>
+        <file>C:/Users/12860/Desktop/image/7.png</file>
     </qresource>
 </RCC>

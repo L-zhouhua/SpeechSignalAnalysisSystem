@@ -28,7 +28,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>330</y>
+      <y>320</y>
       <width>1311</width>
       <height>311</height>
      </rect>
@@ -102,8 +102,8 @@
     </property>
     <addaction name="play_act"/>
     <addaction name="separator"/>
-    <addaction name="spectrumwind_open_act"/>
     <addaction name="periodwind_open_act"/>
+    <addaction name="spectrumwind_open_act"/>
     <addaction name="filterwind_open_act"/>
    </widget>
    <widget class="QMenu" name="menu_2">
@@ -119,9 +119,16 @@
     <addaction name="newsinglewav_act"/>
     <addaction name="newdoublewav_act"/>
    </widget>
+   <widget class="QMenu" name="newWindow_menu">
+    <property name="title">
+     <string>新界面</string>
+    </property>
+    <addaction name="windowopen"/>
+   </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
    <addaction name="menu_3"/>
+   <addaction name="newWindow_menu"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -137,12 +144,12 @@
     <string>播放</string>
    </property>
   </action>
-  <action name="spectrumwind_open_act">
+  <action name="periodwind_open_act">
    <property name="text">
     <string>周期分析</string>
    </property>
   </action>
-  <action name="periodwind_open_act">
+  <action name="spectrumwind_open_act">
    <property name="text">
     <string>频谱分析</string>
    </property>
@@ -165,6 +172,11 @@
   <action name="newdoublewav_act">
    <property name="text">
     <string>录制双声道</string>
+   </property>
+  </action>
+  <action name="windowopen">
+   <property name="text">
+    <string>open</string>
    </property>
   </action>
  </widget>

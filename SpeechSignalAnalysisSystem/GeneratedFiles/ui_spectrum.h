@@ -19,6 +19,7 @@
 #include <QtWidgets/QScrollBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
+#include "qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -31,7 +32,7 @@ public:
     QPushButton *reset_but;
     QScrollBar *horizontalScrollBar;
     QPushButton *zoomIn_but;
-    QWidget *widget;
+    QCustomPlot *specturm_wdo;
     QMenuBar *menubar;
     QMenu *menu;
     QStatusBar *statusbar;
@@ -58,9 +59,9 @@ public:
         zoomIn_but = new QPushButton(centralwidget);
         zoomIn_but->setObjectName(QString::fromUtf8("zoomIn_but"));
         zoomIn_but->setGeometry(QRect(20, 600, 93, 28));
-        widget = new QWidget(centralwidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(10, 10, 1001, 561));
+        specturm_wdo = new QCustomPlot(centralwidget);
+        specturm_wdo->setObjectName(QString::fromUtf8("specturm_wdo"));
+        specturm_wdo->setGeometry(QRect(10, 10, 1001, 561));
         Spectrum->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Spectrum);
         menubar->setObjectName(QString::fromUtf8("menubar"));

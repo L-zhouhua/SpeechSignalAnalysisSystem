@@ -1,9 +1,10 @@
 #include "mainwindow.h"
-#include "QFileDialog"
+#include "QFileDialog"	
 #include "filter.h"
 #include "period.h"
 #include "record.h"
 #include "spectrum.h"
+#include"finalmainwindow.h"
 
 using std::string;
 
@@ -19,6 +20,13 @@ MainWindow::MainWindow(QWidget *parent)
 	connect(ui.newdoublewav_act, SIGNAL(triggered()), this, SLOT(onClickOpenrecordWindow()));
 	connect(ui.newsinglewav_act, SIGNAL(triggered()), this, SLOT(onClickOpenrecordWindow()));
 	connect(ui.spectrumwind_open_act, SIGNAL(triggered()), this, SLOT(onClickOpenspectrumWindow()));
+	connect(ui.play_act, SIGNAL(triggered()), this, SLOT(onClickPlayWav()));
+
+	connect(ui.reset_but, SIGNAL(clicked()), this, SLOT(onClickReset()));
+	connect(ui.zoomIn_but, SIGNAL(clicked()), this, SLOT(onClickZoomIn()));
+	connect(ui.zoomOut_but, SIGNAL(clicked()), this, SLOT(onClickZoomOut()));
+
+	connect(ui.windowopen, SIGNAL(triggered()), this, SLOT(onClickOpenNewWindow()));
 
 	pGraph = ui.waveform_wid_1->addGraph();
 	/*设置线颜色*/
@@ -44,6 +52,48 @@ MainWindow::MainWindow(QWidget *parent)
 	//ui.waveform_wid_1->xAxis->setLabel("X");//x轴名称
 	//ui.waveform_wid_1->yAxis->setLabel("Y");//y轴名称 
 }
+void MainWindow::onClickZoomIn()
+{
+	ui.waveform_wid_1->xAxis->scaleRange(0.5);
+	ui.waveform_wid_1->yAxis->scaleRange(0.5);
+	ui.waveform_wid_2->xAxis->scaleRange(0.5);
+	ui.waveform_wid_2->yAxis->scaleRange(0.5);
+	//ui.waveform_wid_1->axisRect()->setRangeZoomFactor(1.2, 1.2);
+	ui.waveform_wid_1->replot();
+	ui.waveform_wid_2->replot();
+}
+void MainWindow::onClickZoomOut()
+{
+	ui.waveform_wid_1->xAxis->scaleRange(2);
+	ui.waveform_wid_1->yAxis->scaleRange(2);
+	ui.waveform_wid_2->xAxis->scaleRange(2);
+	ui.waveform_wid_2->yAxis->scaleRange(2);
+	ui.waveform_wid_1->replot();
+	ui.waveform_wid_2->replot();
+}
+void MainWindow::onClickReset()
+{
+	ui.waveform_wid_1->graph(0)->rescaleAxes();
+	ui.waveform_wid_2->graph(0)->rescaleAxes();
+	ui.waveform_wid_1->yAxis->setRange(-1, 1);
+	ui.waveform_wid_1->xAxis->setRange(0.0, (double)duration);
+	ui.waveform_wid_2->yAxis->setRange(-1, 1);
+	ui.waveform_wid_2->xAxis->setRange(0.0, (double)duration);
+	ui.waveform_wid_1->replot();
+	ui.waveform_wid_2->replot();
+}
+void MainWindow::onClickPlayWav()
+{
+
+	if (filename == NULL)
+	{
+		QMessageBox::about(NULL, QString::fromLocal8Bit("错误"), QString::fromLocal8Bit("请先打开wav文件！"));
+	}
+	else
+	{
+		QSound::play(filename);
+	}
+}
 void MainWindow::onClickChooseWavFile()
 {
 	/*打开文件*/
@@ -52,14 +102,12 @@ void MainWindow::onClickChooseWavFile()
 	{
 		/*将QString转为String*/
 		string fileUrl = filename.toUtf8().data();
+		/*讲String转为char*/
 		const char* ch_fileUrl = fileUrl.c_str();
-		/*读取wav*/
+		/*将format预先设置为0*/
 		sf_info.format = 0;
+		/*读取wav文件*/
 		snd_file = sf_open(ch_fileUrl, SFM_READ,&sf_info);
-		//audio_reader_wav<double> reader(open_file_for_reading("C:\\Users\\12860\\Desktop\\wav\\Alarm01.wav"));
-		/*获取所有采样点*/
-		//buf = (double *)malloc(sf_info.frames * sizeof(double));
-		buf = new double[sf_info.frames*2];
 		/*获取采样率*/
 		samplerate = sf_info.samplerate;
 		/*获取单个声道的采样点*/
@@ -68,6 +116,8 @@ void MainWindow::onClickChooseWavFile()
 		channels = sf_info.channels;
 		/*获取总采样点数*/
 		length = frames * channels;
+		/*创建长度为length的double*/
+		buf = new double[length];
 		/*计算出周期，X轴*/
 		duration = (double)length / samplerate;
 		/*判断音道数*/
@@ -123,9 +173,13 @@ void MainWindow::onClickChooseWavFile()
 			//ui.waveform_wid_2->rescaleAxes();//重新调节轴、调用后坐标会根据实际情况增加
 			ui.waveform_wid_2->replot();//重绘
 		}
-		free(buf);
 		sf_close(snd_file);
 	}
+}
+MainWindow::~MainWindow()
+{
+	if(buf!=NULL)
+		free(buf);
 }
 void MainWindow::onClickOpenfilterWindow()
 {
@@ -145,5 +199,15 @@ void MainWindow::onClickOpenrecordWindow()
 void MainWindow::onClickOpenspectrumWindow()
 {
 	Spectrum *spectrum = new Spectrum();
+	spectrum->getLengthOnMainWindow(length);
+	spectrum->getBufOnMainWindow(buf);
+	spectrum->getFramesOnWindow(frames);
+	spectrum->getSamplerateOnMainWindow(samplerate);
+	spectrum->drawSpecturm();
 	spectrum->show();
+}
+void MainWindow::onClickOpenNewWindow()
+{
+	FinalMainWindow *fmw = new FinalMainWindow();
+	fmw->show();
 }

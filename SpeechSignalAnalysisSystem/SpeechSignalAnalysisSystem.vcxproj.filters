@@ -51,6 +51,9 @@
     <ClCompile Include="C:\Users\12860\Desktop\qcustomplot\qcustomplot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="finalmainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="mainwindow.h">
@@ -71,6 +74,9 @@
     <QtMoc Include="C:\Users\12860\Desktop\qcustomplot\qcustomplot.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="finalmainwindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="mainwindow.ui">
@@ -86,6 +92,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="spectrum.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="finalmainwindow.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
