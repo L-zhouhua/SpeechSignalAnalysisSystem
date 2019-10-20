@@ -6,7 +6,7 @@
 #include <sndfile.h>
 #include <QtMultimedia/QSound>
 #include<QMessageBox>
-
+#include"wavinfo.h"
 class MainWindow : public QMainWindow
 {
 	Q_OBJECT
@@ -21,12 +21,7 @@ private:
 	QCPGraph *pGraph2;
 	SF_INFO sf_info;
 	SNDFILE *snd_file;
-	double *buf = NULL;       //采样点
-	int samplerate; //采样率（每秒采样个数，单位Hz）
-	int frames;     //每个声道的采样点
-	int length;     //总采样点（frame*channels）
-	int channels;   //音道数
-	double duration;   //周期
+	WavInfo *wavinfo;
 	
 private slots:
 	void onClickChooseWavFile();
@@ -39,4 +34,5 @@ private slots:
 	void onClickZoomOut();
 	void onClickReset();
 	void onClickPlayWav();
+	void onClickOpenSpectrogramWindow();
 };

@@ -105,6 +105,7 @@
     <addaction name="periodwind_open_act"/>
     <addaction name="spectrumwind_open_act"/>
     <addaction name="filterwind_open_act"/>
+    <addaction name="spectrogram_act"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -177,6 +178,11 @@
   <action name="windowopen">
    <property name="text">
     <string>open</string>
+   </property>
+  </action>
+  <action name="spectrogram_act">
+   <property name="text">
+    <string>语谱图</string>
    </property>
   </action>
  </widget>

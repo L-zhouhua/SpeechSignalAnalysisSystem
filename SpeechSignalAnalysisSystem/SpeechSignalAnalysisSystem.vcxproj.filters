@@ -54,6 +54,9 @@
     <ClCompile Include="finalmainwindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="spectrogram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="mainwindow.h">
@@ -77,6 +80,9 @@
     <QtMoc Include="finalmainwindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="spectrogram.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="mainwindow.ui">
@@ -97,6 +103,9 @@
     <QtUic Include="finalmainwindow.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="spectrogram.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="mainwindow.qrc">
@@ -105,5 +114,10 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SpeechSignalAnalysisSystem.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="wavinfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

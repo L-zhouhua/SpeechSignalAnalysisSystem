@@ -5,6 +5,7 @@
 #include "record.h"
 #include "spectrum.h"
 #include"finalmainwindow.h"
+#include"spectrogram.h"
 
 using std::string;
 
@@ -27,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
 	connect(ui.zoomOut_but, SIGNAL(clicked()), this, SLOT(onClickZoomOut()));
 
 	connect(ui.windowopen, SIGNAL(triggered()), this, SLOT(onClickOpenNewWindow()));
+	connect(ui.spectrogram_act, SIGNAL(triggered()), this, SLOT(onClickOpenSpectrogramWindow()));
 
 	pGraph = ui.waveform_wid_1->addGraph();
 	/*设置线颜色*/
@@ -46,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent)
 	/*设置选择矩形模式*/
 	ui.waveform_wid_2->setSelectionRectMode(QCP::SelectionRectMode::srmCustom);
 	/*设置用户交互方式*/
-	ui.waveform_wid_2->setInteractions(QCP::iRangeZoom);
+	ui.waveform_wid_2->setInteractions(QCP::iRangeZoom | QCP::iSelectPlottables);//放大、选择线条
 	ui.waveform_wid_2->yAxis->setRange(-1, 1);//设置y轴
 
 	//ui.waveform_wid_1->xAxis->setLabel("X");//x轴名称
@@ -76,9 +78,9 @@ void MainWindow::onClickReset()
 	ui.waveform_wid_1->graph(0)->rescaleAxes();
 	ui.waveform_wid_2->graph(0)->rescaleAxes();
 	ui.waveform_wid_1->yAxis->setRange(-1, 1);
-	ui.waveform_wid_1->xAxis->setRange(0.0, (double)duration);
+	ui.waveform_wid_1->xAxis->setRange(0.0, (double)wavinfo->duration);
 	ui.waveform_wid_2->yAxis->setRange(-1, 1);
-	ui.waveform_wid_2->xAxis->setRange(0.0, (double)duration);
+	ui.waveform_wid_2->xAxis->setRange(0.0, (double)wavinfo->duration);
 	ui.waveform_wid_1->replot();
 	ui.waveform_wid_2->replot();
 }
@@ -94,6 +96,7 @@ void MainWindow::onClickPlayWav()
 		QSound::play(filename);
 	}
 }
+
 void MainWindow::onClickChooseWavFile()
 {
 	/*打开文件*/
@@ -109,34 +112,35 @@ void MainWindow::onClickChooseWavFile()
 		/*读取wav文件*/
 		snd_file = sf_open(ch_fileUrl, SFM_READ,&sf_info);
 		/*获取采样率*/
-		samplerate = sf_info.samplerate;
+		wavinfo = new WavInfo();
+		wavinfo->samplerate = sf_info.samplerate;
 		/*获取单个声道的采样点*/
-		frames = sf_info.frames;
+		wavinfo->frames = sf_info.frames;
 		/*获取音道数*/
-		channels = sf_info.channels;
+		wavinfo->channels = sf_info.channels;
 		/*获取总采样点数*/
-		length = frames * channels;
+		wavinfo->length = wavinfo->frames * wavinfo->channels;
 		/*创建长度为length的double*/
-		buf = new double[length];
-		/*计算出周期，X轴*/
-		duration = (double)length / samplerate;
+		wavinfo->samplePoint = new double[wavinfo->length];
+		/*时长*/
+		wavinfo->duration = (double)wavinfo->frames / wavinfo->samplerate;
 		/*判断音道数*/
-		if (channels == 1)
+		if (wavinfo->channels == 1)
 		{
 			/*创建迭代器x，y*/
-			QVector<double> x(length), y(length);
-			sf_readf_double(snd_file, buf, sf_info.frames);
+			QVector<double> x(wavinfo->length), y(wavinfo->length);
+			sf_readf_double(snd_file, wavinfo->samplePoint, sf_info.frames);
 			/*赋值给x轴*/
-			for (int i = 0; i < length; i++)
+			for (int i = 0; i < wavinfo->length; i++)
 			{
-				x[i] = (double)i / samplerate;
+				x[i] = (double)i / wavinfo->samplerate/2.0;
 			}
 			/*赋值给y轴*/
-			for (int i = 0; i < length; i++)
+			for (int i = 0; i < wavinfo->length; i++)
 			{
-				y[i] = (double)buf[i];
+				y[i] = (double)wavinfo->samplePoint[i];
 			}
-			ui.waveform_wid_1->xAxis->setRange(0.0, (double)duration);//设置周期（x轴）
+			ui.waveform_wid_1->xAxis->setRange(0.0, (double)wavinfo->duration);//设置周期（x轴）
 			ui.waveform_wid_1->graph(0)->setData(x, y); //设置xy轴
 			//ui.waveform_wid_1->rescaleAxes();//重新调节轴、调用后坐标会根据实际情况增加
 			ui.waveform_wid_1->replot();//重绘
@@ -147,28 +151,28 @@ void MainWindow::onClickChooseWavFile()
 		{
 
 			/*创建迭代器x，y*/
-			QVector<double> x(length), y(length);
-			QVector<double> x2(length), y2(length);
-			sf_read_double(snd_file, buf, length);
-			for (int i = 0; i < length; i++)
+			QVector<double> x(wavinfo->length), y(wavinfo->length);
+			QVector<double> x2(wavinfo->length), y2(wavinfo->length);
+			sf_read_double(snd_file, wavinfo->samplePoint, wavinfo->length);
+			for (int i = 0; i < wavinfo->length; i++)
 			{
 				if (i % 2 == 0)
 				{
-					x[i] = (double)i / samplerate;
-					y[i] = (double)buf[i];
+					x[i] = (double)i / wavinfo->samplerate/2.0;
+					y[i] = (double)wavinfo->samplePoint[i];
 				}
 				else
 				{
-					x2[i] = (double)i / samplerate;
-					y2[i] = (double)buf[i];
+					x2[i] = (double)i / wavinfo->samplerate/2.0;
+					y2[i] = (double)wavinfo->samplePoint[i];
 				}
 			}
-			ui.waveform_wid_1->xAxis->setRange(0.0, (double)duration);//设置周期（x轴）
+			ui.waveform_wid_1->xAxis->setRange(0.0, (double)wavinfo->duration);//设置周期（x轴）
 			ui.waveform_wid_1->graph(0)->setData(x, y);//设置xy轴
 			//ui.waveform_wid_1->rescaleAxes();//重新调节轴、调用后坐标会根据实际情况增加
 			ui.waveform_wid_1->replot();//重绘
 
-			ui.waveform_wid_2->xAxis->setRange(0.0, (double)duration);//设置周期（x轴）
+			ui.waveform_wid_2->xAxis->setRange(0.0, (double)wavinfo->duration);//设置周期（x轴）
 			ui.waveform_wid_2->graph(0)->setData(x2, y2);//设置xy轴
 			//ui.waveform_wid_2->rescaleAxes();//重新调节轴、调用后坐标会根据实际情况增加
 			ui.waveform_wid_2->replot();//重绘
@@ -178,8 +182,8 @@ void MainWindow::onClickChooseWavFile()
 }
 MainWindow::~MainWindow()
 {
-	if(buf!=NULL)
-		free(buf);
+	if(wavinfo->samplePoint!=NULL)
+		free(wavinfo->samplePoint);
 }
 void MainWindow::onClickOpenfilterWindow()
 {
@@ -198,16 +202,16 @@ void MainWindow::onClickOpenrecordWindow()
 }
 void MainWindow::onClickOpenspectrumWindow()
 {
-	Spectrum *spectrum = new Spectrum();
-	spectrum->getLengthOnMainWindow(length);
-	spectrum->getBufOnMainWindow(buf);
-	spectrum->getFramesOnWindow(frames);
-	spectrum->getSamplerateOnMainWindow(samplerate);
-	spectrum->drawSpecturm();
+	Spectrum *spectrum = new Spectrum(Q_NULLPTR,wavinfo);
 	spectrum->show();
 }
 void MainWindow::onClickOpenNewWindow()
 {
 	FinalMainWindow *fmw = new FinalMainWindow();
 	fmw->show();
+}
+void MainWindow::onClickOpenSpectrogramWindow()
+{
+	Spectrogram *spectrogram = new Spectrogram(Q_NULLPTR, wavinfo);
+	spectrogram->show();
 }
