@@ -36,9 +36,6 @@
     <ClCompile Include="mainwindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="filter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="period.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -57,12 +54,30 @@
     <ClCompile Include="spectrogram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="freqyres.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12860\Desktop\dsplib\base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12860\Desktop\dsplib\filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12860\Desktop\dsplib\fir.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12860\Desktop\dsplib\iir.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12860\Desktop\dsplib\winfun.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="filter_M.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="mainwindow.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="filter.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="period.h">
@@ -81,6 +96,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="spectrogram.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="filter_m.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="freqyres.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -106,6 +127,9 @@
     <QtUic Include="spectrogram.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="freqyres.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="mainwindow.qrc">
@@ -117,6 +141,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="wavinfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12860\Desktop\dsplib\base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12860\Desktop\dsplib\filter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12860\Desktop\dsplib\fir.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12860\Desktop\dsplib\iir.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12860\Desktop\dsplib\winfun.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

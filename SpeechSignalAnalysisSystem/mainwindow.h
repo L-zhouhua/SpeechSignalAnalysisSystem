@@ -35,4 +35,5 @@ private slots:
 	void onClickReset();
 	void onClickPlayWav();
 	void onClickOpenSpectrogramWindow();
+	void onClickOpenfreqRespWindow();
 };

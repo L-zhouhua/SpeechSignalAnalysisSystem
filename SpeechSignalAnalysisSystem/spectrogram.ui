@@ -6,31 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>975</width>
-    <height>633</height>
+    <width>1409</width>
+    <height>626</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Spectrogram</string>
   </property>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>30</y>
-     <width>941</width>
-     <height>451</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QCustomPlot" name="widget" native="true"/>
-    </item>
-    <item>
-     <widget class="QCustomPlot" name="widget_2" native="true"/>
-    </item>
-   </layout>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QCustomPlot" name="spectrogram_widget_1" native="true"/>
+   </item>
+  </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

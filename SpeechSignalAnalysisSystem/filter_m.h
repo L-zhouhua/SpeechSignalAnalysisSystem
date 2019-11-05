@@ -3,13 +3,13 @@
 #include <QWidget>
 #include "ui_filter.h"
 
-class Filter : public QMainWindow
+class FilterM : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	Filter(QWidget *parent = Q_NULLPTR);
-	~Filter();
+	FilterM(QWidget *parent = Q_NULLPTR);
+	~FilterM();
 
 private:
 	Ui::Filter ui;

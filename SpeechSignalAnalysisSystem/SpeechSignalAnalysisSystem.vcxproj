@@ -113,9 +113,15 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="C:\Users\12860\Desktop\dsplib\base.cpp" />
+    <ClCompile Include="C:\Users\12860\Desktop\dsplib\filter.cpp" />
+    <ClCompile Include="C:\Users\12860\Desktop\dsplib\fir.cpp" />
+    <ClCompile Include="C:\Users\12860\Desktop\dsplib\iir.cpp" />
+    <ClCompile Include="C:\Users\12860\Desktop\dsplib\winfun.cpp" />
     <ClCompile Include="C:\Users\12860\Desktop\qcustomplot\qcustomplot.cpp" />
-    <ClCompile Include="filter.cpp" />
+    <ClCompile Include="filter_M.cpp" />
     <ClCompile Include="finalmainwindow.cpp" />
+    <ClCompile Include="freqyres.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainwindow.cpp" />
     <ClCompile Include="period.cpp" />
@@ -129,6 +135,7 @@
   <ItemGroup>
     <QtUic Include="filter.ui" />
     <QtUic Include="finalmainwindow.ui" />
+    <QtUic Include="freqyres.ui" />
     <QtUic Include="mainwindow.ui" />
     <QtUic Include="period.ui" />
     <QtUic Include="record.ui" />
@@ -142,8 +149,8 @@
     <ResourceCompile Include="SpeechSignalAnalysisSystem.rc" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="filter.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+    <QtMoc Include="filter_m.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\12860\Desktop\dsplib;C:\Users\12860\Desktop\fftw-3.3.5-dll64;.\GeneratedFiles;E:\libsndfile\include;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;C:\Users\12860\Desktop\qcustomplot;$(QTDIR)\include\QtMultimedia;.</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
     </QtMoc>
   </ItemGroup>
@@ -184,6 +191,15 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="freqyres.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\12860\Desktop\dsplib;C:\Users\12860\Desktop\fftw-3.3.5-dll64;.\GeneratedFiles;E:\libsndfile\include;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;C:\Users\12860\Desktop\qcustomplot;$(QTDIR)\include\QtMultimedia;.</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+    </QtMoc>
+    <ClInclude Include="C:\Users\12860\Desktop\dsplib\base.h" />
+    <ClInclude Include="C:\Users\12860\Desktop\dsplib\filter.h" />
+    <ClInclude Include="C:\Users\12860\Desktop\dsplib\fir.h" />
+    <ClInclude Include="C:\Users\12860\Desktop\dsplib\iir.h" />
+    <ClInclude Include="C:\Users\12860\Desktop\dsplib\winfun.h" />
     <ClInclude Include="wavinfo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

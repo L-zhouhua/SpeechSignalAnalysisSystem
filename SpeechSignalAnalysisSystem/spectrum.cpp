@@ -17,7 +17,7 @@ Spectrum::Spectrum(QWidget *parent,WavInfo *m_wavinfo)
 	ui.specturm_wdo->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
 
 	out = (fftw_complex *)fftw_malloc(sizeof(fftw_complex) * wavinfo->length);
-	p = fftw_plan_dft_r2c_1d(1000, wavinfo->samplePoint, out, FFTW_ESTIMATE);
+	p = fftw_plan_dft_r2c_1d(1000, wavinfo->samplePoints, out, FFTW_ESTIMATE);
 	fftw_execute(p);
 	QVector<double> x(wavinfo->length), y(wavinfo->length);
 	/*¸³Öµx,yÖá*/
@@ -37,8 +37,8 @@ Spectrum::Spectrum(QWidget *parent,WavInfo *m_wavinfo)
 }
 Spectrum::~Spectrum()
 {
-	if(wavinfo->samplePoint!=NULL)
-		free(wavinfo->samplePoint);
+	if(wavinfo->samplePoints!=NULL)
+		free(wavinfo->samplePoints);
 }
 //void Spectrum::getFramesOnWindow(int m_frames)
 //{

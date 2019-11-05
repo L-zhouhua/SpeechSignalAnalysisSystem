@@ -20,33 +20,22 @@ QT_BEGIN_NAMESPACE
 class Ui_Spectrogram
 {
 public:
-    QWidget *widget;
     QVBoxLayout *verticalLayout;
-    QCustomPlot *widget1;
-    QCustomPlot *widget_2;
+    QCustomPlot *spectrogram_widget_1;
 
     void setupUi(QWidget *Spectrogram)
     {
         if (Spectrogram->objectName().isEmpty())
             Spectrogram->setObjectName(QString::fromUtf8("Spectrogram"));
-        Spectrogram->resize(975, 633);
-        widget = new QWidget(Spectrogram);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(10, 30, 941, 451));
-        verticalLayout = new QVBoxLayout(widget);
+        Spectrogram->resize(1409, 626);
+        verticalLayout = new QVBoxLayout(Spectrogram);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        widget1 = new QCustomPlot(widget);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
+        spectrogram_widget_1 = new QCustomPlot(Spectrogram);
+        spectrogram_widget_1->setObjectName(QString::fromUtf8("spectrogram_widget_1"));
 
-        verticalLayout->addWidget(widget1);
-
-        widget_2 = new QCustomPlot(widget);
-        widget_2->setObjectName(QString::fromUtf8("widget_2"));
-
-        verticalLayout->addWidget(widget_2);
+        verticalLayout->addWidget(spectrogram_widget_1);
 
 
         retranslateUi(Spectrogram);
