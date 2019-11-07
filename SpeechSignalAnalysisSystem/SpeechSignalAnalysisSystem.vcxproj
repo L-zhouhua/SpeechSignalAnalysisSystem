@@ -128,6 +128,7 @@
     <ClCompile Include="record.cpp" />
     <ClCompile Include="spectrogram.cpp" />
     <ClCompile Include="spectrum.cpp" />
+    <ClCompile Include="winfunc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="mainwindow.h" />
@@ -141,6 +142,7 @@
     <QtUic Include="record.ui" />
     <QtUic Include="spectrogram.ui" />
     <QtUic Include="spectrum.ui" />
+    <QtUic Include="winfunc.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="mainwindow.qrc" />
@@ -191,6 +193,10 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="winfunc.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\12860\Desktop\dsplib;C:\Users\12860\Desktop\fftw-3.3.5-dll64;.\GeneratedFiles;E:\libsndfile\include;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;C:\Users\12860\Desktop\qcustomplot;$(QTDIR)\include\QtMultimedia;.</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+    </QtMoc>
     <QtMoc Include="freqyres.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\12860\Desktop\dsplib;C:\Users\12860\Desktop\fftw-3.3.5-dll64;.\GeneratedFiles;E:\libsndfile\include;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;C:\Users\12860\Desktop\qcustomplot;$(QTDIR)\include\QtMultimedia;.</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>

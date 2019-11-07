@@ -37,6 +37,7 @@ public:
     QAction *windowopen;
     QAction *spectrogram_act;
     QAction *freqResp_act;
+    QAction *winFunc_act;
     QWidget *centralWidget;
     QCustomPlot *waveform_wid_1;
     QCustomPlot *waveform_wid_2;
@@ -77,6 +78,8 @@ public:
         spectrogram_act->setObjectName(QString::fromUtf8("spectrogram_act"));
         freqResp_act = new QAction(MainWindowClass);
         freqResp_act->setObjectName(QString::fromUtf8("freqResp_act"));
+        winFunc_act = new QAction(MainWindowClass);
+        winFunc_act->setObjectName(QString::fromUtf8("winFunc_act"));
         centralWidget = new QWidget(MainWindowClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         waveform_wid_1 = new QCustomPlot(centralWidget);
@@ -129,6 +132,7 @@ public:
         menu->addAction(filterwind_open_act);
         menu->addAction(spectrogram_act);
         menu->addAction(freqResp_act);
+        menu->addAction(winFunc_act);
         menu_2->addAction(readwav_act);
         menu_3->addAction(newsinglewav_act);
         menu_3->addAction(newdoublewav_act);
@@ -152,6 +156,7 @@ public:
         windowopen->setText(QApplication::translate("MainWindowClass", "open", nullptr));
         spectrogram_act->setText(QApplication::translate("MainWindowClass", "\350\257\255\350\260\261\345\233\276", nullptr));
         freqResp_act->setText(QApplication::translate("MainWindowClass", "\351\242\221\347\216\207\345\223\215\345\272\224", nullptr));
+        winFunc_act->setText(QApplication::translate("MainWindowClass", "\347\252\227\345\217\243\345\207\275\346\225\260", nullptr));
         zoomIn_but->setText(QApplication::translate("MainWindowClass", "\346\224\276\345\244\247", nullptr));
         zoomOut_but->setText(QApplication::translate("MainWindowClass", "\347\274\251\345\260\217", nullptr));
         reset_but->setText(QApplication::translate("MainWindowClass", "\351\207\215\347\275\256", nullptr));

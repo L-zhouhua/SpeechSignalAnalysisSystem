@@ -46,16 +46,16 @@ void Spectrogram::testDraw()
 	ui.spectrogram_widget_1->yAxis->setLabel("Frequency(Hz)");
 	ui.spectrogram_widget_1->axisRect()->setupFullAxesBox(true);
 
-	QVector<double> x(sp[0].size()*sp.size()), y(sp.size()*sp[0].size());
-	for (int i = 0; i < sp.size(); i++)
-	{
-		for (int j = 0; j < sp[0].size(); j++)
-		{
-			x[j + (sp[0].size()*i)] = j;
-			y[j + (sp[0].size()*i)] = sp.at(i).at(j);
-			//qDebug() << sp.at(i).at(j) << " ";
-		}
-	}
+	//QVector<double> x(sp[0].size()*sp.size()), y(sp.size()*sp[0].size());
+	//for (int i = 0; i < sp.size(); i++)
+	//{
+	//	for (int j = 0; j < sp[0].size(); j++)
+	//	{
+	//		x[j + (sp[0].size()*i)] = j;
+	//		y[j + (sp[0].size()*i)] = sp.at(i).at(j);
+	//		//qDebug() << sp.at(i).at(j) << " ";
+	//	}
+	//}
 
 	//colorMap方案
 	pColorMap = new QCPColorMap(ui.spectrogram_widget_1->xAxis, ui.spectrogram_widget_1->yAxis);
@@ -88,7 +88,7 @@ void Spectrogram::testDraw()
 	{
 		for (int j =0; j < sp[0].size(); j++)
 		{
-			pColorMap->data()->setCell(i, j, sp[i][j]);//设置数据
+			pColorMap->data()->setCell(i, j, sp[i][j]*10);//设置数据
 		}
 	}
 

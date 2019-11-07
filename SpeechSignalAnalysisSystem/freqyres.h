@@ -11,11 +11,11 @@ public:
 	FreqyRes(QWidget *parent = Q_NULLPTR);
 	FreqyRes(QWidget *parent,WavInfo *m_wavinfo);
 	~FreqyRes();
-
 private:
 	Ui::FreqyRes ui;
 	QCPGraph *pGraph;
+	QCPGraph *pGraph2;
 	WavInfo *wavinfo;
-	double *a;
-	double *b;
+private slots:
+	void onClickAffirm();
 };

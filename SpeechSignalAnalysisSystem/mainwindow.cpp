@@ -7,6 +7,7 @@
 #include"finalmainwindow.h"
 #include"spectrogram.h"
 #include"freqyres.h"
+#include"winfunc.h"
 using std::string;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -30,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
 	connect(ui.windowopen, SIGNAL(triggered()), this, SLOT(onClickOpenNewWindow()));
 	connect(ui.spectrogram_act, SIGNAL(triggered()), this, SLOT(onClickOpenSpectrogramWindow()));
 	connect(ui.freqResp_act, SIGNAL(triggered()), this, SLOT(onClickOpenfreqRespWindow()));
+	connect(ui.winFunc_act, SIGNAL(triggered()), this, SLOT(onClickOpenWinFuncWindow()));
 
 	pGraph = ui.waveform_wid_1->addGraph();
 	/*ÉèÖÃÏßÑÕÉ«*/
@@ -182,8 +184,12 @@ void MainWindow::onClickChooseWavFile()
 }
 MainWindow::~MainWindow()
 {
-	if(wavinfo->samplePoints!=NULL)
+	if (wavinfo != NULL)
+	{
 		free(wavinfo->samplePoints);
+		wavinfo->samplePoints = NULL;
+	}
+		
 }
 void MainWindow::onClickOpenfilterWindow()
 {
@@ -219,4 +225,9 @@ void MainWindow::onClickOpenfreqRespWindow()
 {
 	FreqyRes *fr = new FreqyRes(Q_NULLPTR, wavinfo);
 	fr->show();
+}
+void MainWindow::onClickOpenWinFuncWindow()
+{
+	WinFunc *wf = new WinFunc();
+	wf->show();
 }

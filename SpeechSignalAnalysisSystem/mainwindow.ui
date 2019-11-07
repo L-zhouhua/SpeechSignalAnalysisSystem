@@ -107,6 +107,7 @@
     <addaction name="filterwind_open_act"/>
     <addaction name="spectrogram_act"/>
     <addaction name="freqResp_act"/>
+    <addaction name="winFunc_act"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -189,6 +190,11 @@
   <action name="freqResp_act">
    <property name="text">
     <string>频率响应</string>
+   </property>
+  </action>
+  <action name="winFunc_act">
+   <property name="text">
+    <string>窗口函数</string>
    </property>
   </action>
  </widget>

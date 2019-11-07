@@ -21,7 +21,7 @@ private:
 	QCPGraph *pGraph2;
 	SF_INFO sf_info;
 	SNDFILE *snd_file;
-	WavInfo *wavinfo;
+	WavInfo *wavinfo=NULL;
 	
 private slots:
 	void onClickChooseWavFile();
@@ -36,4 +36,5 @@ private slots:
 	void onClickPlayWav();
 	void onClickOpenSpectrogramWindow();
 	void onClickOpenfreqRespWindow();
+	void onClickOpenWinFuncWindow();
 };
