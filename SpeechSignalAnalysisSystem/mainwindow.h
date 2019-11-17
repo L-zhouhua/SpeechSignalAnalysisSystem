@@ -16,13 +16,20 @@ public:
 	~MainWindow();
 private:
 	Ui::MainWindowClass ui;
-	QString filename;
-	QCPGraph *pGraph;
+	QString filename; //文件路径
+	QCPGraph *pGraph; //图表
 	QCPGraph *pGraph2;
-	SF_INFO sf_info;
-	SNDFILE *snd_file;
-	WavInfo *wavinfo=NULL;
-	
+	SF_INFO sf_info;  //读取语音返回的数据
+	SNDFILE *snd_file;  //读取语音
+	WavInfo *wavinfo=NULL;  //语音对象类，用于储存语音数据
+	QCPColorMap *pColorMap = NULL; //用于绘制语谱图
+	QCPItemPixmap *pixmap;//用于绘制语谱图
+	QCPAxis *xAxis;//语谱图x轴
+	QCPAxis *yAxis;//语谱图y轴
+
+private:
+	void testDraw();
+	void testDraw_2();
 private slots:
 	void onClickChooseWavFile();
 	void onClickOpenfilterWindow();

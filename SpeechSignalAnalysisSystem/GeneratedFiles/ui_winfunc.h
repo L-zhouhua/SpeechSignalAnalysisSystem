@@ -11,9 +11,14 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "qcustomplot.h"
@@ -25,68 +30,94 @@ class Ui_winFunc
 public:
     QHBoxLayout *horizontalLayout;
     QGroupBox *groupBox;
-    QVBoxLayout *verticalLayout;
-    QPushButton *rect_but;
-    QPushButton *han_but;
-    QPushButton *ham_but;
+    QGridLayout *gridLayout;
     QPushButton *kai_but;
-    QPushButton *bmh_but;
-    QPushButton *bm_but;
+    QLabel *kai_lab;
+    QLineEdit *kai_edit;
+    QComboBox *winfunc_Box;
+    QSpacerItem *verticalSpacer;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout;
     QCustomPlot *winFunc_wid;
+    QCustomPlot *winFunc_wid_2;
 
     void setupUi(QWidget *winFunc)
     {
         if (winFunc->objectName().isEmpty())
             winFunc->setObjectName(QString::fromUtf8("winFunc"));
-        winFunc->resize(821, 466);
+        winFunc->resize(827, 453);
         horizontalLayout = new QHBoxLayout(winFunc);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         groupBox = new QGroupBox(winFunc);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setMaximumSize(QSize(160, 16777215));
-        verticalLayout = new QVBoxLayout(groupBox);
-        verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        rect_but = new QPushButton(groupBox);
-        rect_but->setObjectName(QString::fromUtf8("rect_but"));
-
-        verticalLayout->addWidget(rect_but);
-
-        han_but = new QPushButton(groupBox);
-        han_but->setObjectName(QString::fromUtf8("han_but"));
-
-        verticalLayout->addWidget(han_but);
-
-        ham_but = new QPushButton(groupBox);
-        ham_but->setObjectName(QString::fromUtf8("ham_but"));
-
-        verticalLayout->addWidget(ham_but);
-
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
+        groupBox->setSizePolicy(sizePolicy);
+        groupBox->setMaximumSize(QSize(16777215, 16777215));
+        gridLayout = new QGridLayout(groupBox);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(-1, 11, -1, 11);
         kai_but = new QPushButton(groupBox);
         kai_but->setObjectName(QString::fromUtf8("kai_but"));
+        kai_but->setEnabled(false);
 
-        verticalLayout->addWidget(kai_but);
+        gridLayout->addWidget(kai_but, 4, 0, 1, 1);
 
-        bmh_but = new QPushButton(groupBox);
-        bmh_but->setObjectName(QString::fromUtf8("bmh_but"));
+        kai_lab = new QLabel(groupBox);
+        kai_lab->setObjectName(QString::fromUtf8("kai_lab"));
+        kai_lab->setEnabled(false);
 
-        verticalLayout->addWidget(bmh_but);
+        gridLayout->addWidget(kai_lab, 2, 0, 1, 1);
 
-        bm_but = new QPushButton(groupBox);
-        bm_but->setObjectName(QString::fromUtf8("bm_but"));
+        kai_edit = new QLineEdit(groupBox);
+        kai_edit->setObjectName(QString::fromUtf8("kai_edit"));
+        kai_edit->setEnabled(false);
 
-        verticalLayout->addWidget(bm_but);
+        gridLayout->addWidget(kai_edit, 3, 0, 1, 1);
+
+        winfunc_Box = new QComboBox(groupBox);
+        winfunc_Box->addItem(QString());
+        winfunc_Box->addItem(QString());
+        winfunc_Box->addItem(QString());
+        winfunc_Box->addItem(QString());
+        winfunc_Box->addItem(QString());
+        winfunc_Box->addItem(QString());
+        winfunc_Box->addItem(QString());
+        winfunc_Box->setObjectName(QString::fromUtf8("winfunc_Box"));
+
+        gridLayout->addWidget(winfunc_Box, 0, 0, 1, 1);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 1, 0, 1, 1);
 
 
         horizontalLayout->addWidget(groupBox);
 
-        winFunc_wid = new QCustomPlot(winFunc);
+        widget = new QWidget(winFunc);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        verticalLayout = new QVBoxLayout(widget);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        winFunc_wid = new QCustomPlot(widget);
         winFunc_wid->setObjectName(QString::fromUtf8("winFunc_wid"));
 
-        horizontalLayout->addWidget(winFunc_wid);
+        verticalLayout->addWidget(winFunc_wid);
+
+        winFunc_wid_2 = new QCustomPlot(widget);
+        winFunc_wid_2->setObjectName(QString::fromUtf8("winFunc_wid_2"));
+
+        verticalLayout->addWidget(winFunc_wid_2);
+
+
+        horizontalLayout->addWidget(widget);
 
 
         retranslateUi(winFunc);
@@ -97,13 +128,17 @@ public:
     void retranslateUi(QWidget *winFunc)
     {
         winFunc->setWindowTitle(QApplication::translate("winFunc", "winFunc", nullptr));
-        groupBox->setTitle(QApplication::translate("winFunc", "\347\252\227\345\217\243\345\207\275\346\225\260", nullptr));
-        rect_but->setText(QApplication::translate("winFunc", "\347\237\251\345\275\242\347\252\227", nullptr));
-        han_but->setText(QApplication::translate("winFunc", "hanning\347\252\227", nullptr));
-        ham_but->setText(QApplication::translate("winFunc", "hamming\347\252\227", nullptr));
-        kai_but->setText(QApplication::translate("winFunc", "Kaiser\347\252\227", nullptr));
-        bmh_but->setText(QApplication::translate("winFunc", "BlackmanHarris\347\252\227", nullptr));
-        bm_but->setText(QApplication::translate("winFunc", "Blackman\347\252\227", nullptr));
+        groupBox->setTitle(QApplication::translate("winFunc", "\347\252\227\345\217\243\345\207\275\346\225\260\347\261\273\345\236\213", nullptr));
+        kai_but->setText(QApplication::translate("winFunc", "\347\241\256\345\256\232", nullptr));
+        kai_lab->setText(QApplication::translate("winFunc", "Kaiser\345\217\202\346\225\260\357\274\232", nullptr));
+        winfunc_Box->setItemText(0, QApplication::translate("winFunc", "\350\257\267\351\200\211\346\213\251\347\252\227\345\217\243\347\261\273\345\236\213", nullptr));
+        winfunc_Box->setItemText(1, QApplication::translate("winFunc", "\347\237\251\345\275\242\347\252\227", nullptr));
+        winfunc_Box->setItemText(2, QApplication::translate("winFunc", "hanning\347\252\227", nullptr));
+        winfunc_Box->setItemText(3, QApplication::translate("winFunc", "hamming\347\252\227", nullptr));
+        winfunc_Box->setItemText(4, QApplication::translate("winFunc", "Blackman\347\252\227", nullptr));
+        winfunc_Box->setItemText(5, QApplication::translate("winFunc", "BlackmanHarris\347\252\227", nullptr));
+        winfunc_Box->setItemText(6, QApplication::translate("winFunc", "Kaiser\347\252\227", nullptr));
+
     } // retranslateUi
 
 };

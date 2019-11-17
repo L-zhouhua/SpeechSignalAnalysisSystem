@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1339</width>
-    <height>468</height>
+    <height>549</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,6 +16,9 @@
   <layout class="QVBoxLayout" name="verticalLayout_7">
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
        <string>IIR频率响应</string>
@@ -47,7 +50,7 @@
                <x>0</x>
                <y>0</y>
                <width>176</width>
-               <height>237</height>
+               <height>318</height>
               </rect>
              </property>
              <attribute name="label">
@@ -123,7 +126,7 @@
                <x>0</x>
                <y>0</y>
                <width>176</width>
-               <height>237</height>
+               <height>318</height>
               </rect>
              </property>
              <attribute name="label">
@@ -222,7 +225,7 @@
                <x>0</x>
                <y>0</y>
                <width>176</width>
-               <height>237</height>
+               <height>318</height>
               </rect>
              </property>
              <attribute name="label">
@@ -350,7 +353,7 @@
                <x>0</x>
                <y>0</y>
                <width>176</width>
-               <height>237</height>
+               <height>318</height>
               </rect>
              </property>
              <attribute name="label">
@@ -480,6 +483,12 @@
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
              <widget class="QLabel" name="label_4">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
               <property name="text">
                <string>类型：</string>
               </property>
@@ -488,7 +497,7 @@
             <item>
              <widget class="QLabel" name="type_lab">
               <property name="text">
-               <string>TextLabel</string>
+               <string/>
               </property>
              </widget>
             </item>
@@ -498,6 +507,12 @@
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
              <widget class="QLabel" name="label_5">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
               <property name="text">
                <string>阶数：</string>
               </property>
@@ -506,7 +521,7 @@
             <item>
              <widget class="QLabel" name="order_lab">
               <property name="text">
-               <string>TextLabel</string>
+               <string/>
               </property>
              </widget>
             </item>
@@ -516,6 +531,12 @@
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
              <widget class="QLabel" name="label_6">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
               <property name="text">
                <string>参数：</string>
               </property>
@@ -524,7 +545,7 @@
             <item>
              <widget class="QLabel" name="parameter_lab">
               <property name="text">
-               <string>TextLabel</string>
+               <string/>
               </property>
              </widget>
             </item>
@@ -534,6 +555,12 @@
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
              <widget class="QLabel" name="label_17">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
               <property name="text">
                <string>参数2：</string>
               </property>
@@ -542,7 +569,7 @@
             <item>
              <widget class="QLabel" name="parameter_lab_2">
               <property name="text">
-               <string>TextLabel</string>
+               <string/>
               </property>
              </widget>
             </item>
@@ -556,7 +583,7 @@
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>224</height>
+              <height>16777215</height>
              </size>
             </property>
             <property name="readOnly">
@@ -571,8 +598,733 @@
      </widget>
      <widget class="QWidget" name="tab_6">
       <attribute name="title">
-       <string>Tab 2</string>
+       <string>FIR频率响应</string>
       </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>输入信息</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="QToolBox" name="type_toolBox_fir">
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <property name="tabSpacing">
+             <number>7</number>
+            </property>
+            <widget class="QWidget" name="page_9">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>179</width>
+               <height>297</height>
+              </rect>
+             </property>
+             <attribute name="label">
+              <string>低通滤波器</string>
+             </attribute>
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <item>
+               <widget class="QLabel" name="label_30">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>阶数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="order_edit_fir_LP">
+                <property name="focusPolicy">
+                 <enum>Qt::StrongFocus</enum>
+                </property>
+                <property name="echoMode">
+                 <enum>QLineEdit::Normal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_31">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>参数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="parameter_edit_fir_LP"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>窗口函数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="winfunc_box_LP">
+                <item>
+                 <property name="text">
+                  <string>矩形窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>hanning窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>hamming窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Blackman窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>BlackmanHarris窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Kaiser窗</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="kai_lab_LP">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="text">
+                 <string>Kaiser参数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="kai_edit_LP">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="affirm_but_fir_LP">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>确认</string>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page_10">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>179</width>
+               <height>259</height>
+              </rect>
+             </property>
+             <attribute name="label">
+              <string>高通滤波器</string>
+             </attribute>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="QLabel" name="label_33">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>阶数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="order_edit_fir_HP"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_32">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>参数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="parameter_edit_fir_HP"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_7">
+                <property name="text">
+                 <string>窗口函数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="winfunc_box_HP">
+                <item>
+                 <property name="text">
+                  <string>矩形窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>hanning窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>hamming窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Blackman窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>BlackmanHarris窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Kaiser窗</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="kai_lab_HP">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="text">
+                 <string>Kaiser参数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="kai_edit_HP">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="affirm_but_fir_HP">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>确认</string>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page_11">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>179</width>
+               <height>312</height>
+              </rect>
+             </property>
+             <attribute name="label">
+              <string>带通滤波器</string>
+             </attribute>
+             <layout class="QVBoxLayout" name="verticalLayout_9">
+              <item>
+               <widget class="QLabel" name="label_35">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>阶数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="order_edit_fir_BP"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_34">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>参数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="parameter_edit_fir_BP"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_36">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>参数2：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="parameter_edit_2_fir__BP"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_8">
+                <property name="text">
+                 <string>窗口函数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="winfunc_box_BP">
+                <item>
+                 <property name="text">
+                  <string>矩形窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>hanning窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>hamming窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Blackman窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>BlackmanHarris窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Kaiser窗</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="kai_lab_BP">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="text">
+                 <string>Kaiser参数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="kai_edit_BP">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="affirm_but_fir_BP">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>确认</string>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page_12">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>179</width>
+               <height>312</height>
+              </rect>
+             </property>
+             <attribute name="label">
+              <string>带阻滤波器</string>
+             </attribute>
+             <layout class="QVBoxLayout" name="verticalLayout_14">
+              <item>
+               <widget class="QLabel" name="label_37">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>阶数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="order_edit_fir_BS"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_38">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>参数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="parameter_edit_fir_BS"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_39">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>参数2：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="parameter_edit_2_fir_BS"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_18">
+                <property name="text">
+                 <string>窗口函数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="winfunc_box_BS">
+                <item>
+                 <property name="text">
+                  <string>矩形窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>hanning窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>hamming窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Blackman窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>BlackmanHarris窗</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Kaiser窗</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="kai_lab_BS">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="text">
+                 <string>Kaiser参数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="kai_edit_BS">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="affirm_but_fir_BS">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>确认</string>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="title">
+          <string>FIR频率响应</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <item>
+           <widget class="QCustomPlot" name="freqyres_widget_fir" native="true"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QGroupBox" name="groupBox_7">
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>窗口信息</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_15">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QLabel" name="label_40">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>类型：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="type_lab_fir">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QLabel" name="label_41">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>阶数：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="order_lab_fir">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QLabel" name="label_42">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>参数：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="parameter_lab_fir">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <widget class="QLabel" name="label_43">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>参数2：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="parameter_lab_fir_2">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QPlainTextEdit" name="plainTextEdit_fir">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>

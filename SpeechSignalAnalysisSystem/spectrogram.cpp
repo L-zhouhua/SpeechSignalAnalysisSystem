@@ -32,7 +32,10 @@ void Spectrogram::testDraw()
 	}
 	else
 	{
-		a = wavinfo->samplePoints;
+		for (int i = 0; i < wavinfo->length; i++)
+		{
+			a[i] = wavinfo->samplePoints[i];
+		}
 	}
 	vector<vector<double>> sp = spectrogram(a, wavinfo->frames, wavinfo->samplerate,30,20,512);
 	pGraph = ui.spectrogram_widget_1->addGraph();
@@ -45,6 +48,8 @@ void Spectrogram::testDraw()
 	ui.spectrogram_widget_1->xAxis->setLabel("Time(s)");
 	ui.spectrogram_widget_1->yAxis->setLabel("Frequency(Hz)");
 	ui.spectrogram_widget_1->axisRect()->setupFullAxesBox(true);
+	/*ui.spectrogram_widget_1->axisRect()->setRangeZoomAxes(ui.spectrogram_widget_1->xAxis,ui.spectrogram_widget_1->yAxis);*/
+	//ui.spectrogram_widget_1->axisRect()->setRangeZoomFactor(2, 1);
 
 	//QVector<double> x(sp[0].size()*sp.size()), y(sp.size()*sp[0].size());
 	//for (int i = 0; i < sp.size(); i++)

@@ -15,7 +15,13 @@ private:
 	Ui::FreqyRes ui;
 	QCPGraph *pGraph;
 	QCPGraph *pGraph2;
+	QCPGraph *pGraph3;
 	WavInfo *wavinfo;
 private slots:
 	void onClickAffirm();
+	void onClickfirAffirm();
+	void onClickChangeLPEdit();
+	void onClickChangeHPEdit();
+	void onClickChangeBPEdit();
+	void onClickChangeBSEdit();
 };
