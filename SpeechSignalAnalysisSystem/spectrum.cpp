@@ -20,7 +20,7 @@ Spectrum::Spectrum(QWidget *parent,WavInfo *m_wavinfo)
 	p = fftw_plan_dft_r2c_1d(1000, wavinfo->samplePoints, out, FFTW_ESTIMATE);
 	fftw_execute(p);
 	QVector<double> x(wavinfo->length), y(wavinfo->length);
-	/*∏≥÷µx,y÷·*/
+	/*∏≥÷µx,y ÷·*/
 	for (int i = 0; i < 1000; i++)
 	{
 		x[i] = (double)i / wavinfo->length* (wavinfo->samplerate / 2.0);

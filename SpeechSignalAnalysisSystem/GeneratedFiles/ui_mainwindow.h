@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -21,7 +20,6 @@
 #include <QtWidgets/QScrollBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "qcustomplot.h"
 
@@ -46,13 +44,9 @@ public:
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QScrollBar *horizontalScrollBar;
-    QPushButton *zoomIn_but;
     QPushButton *zoomOut_but;
+    QPushButton *zoomIn_but;
     QPushButton *reset_but;
-    QWidget *widget;
-    QVBoxLayout *verticalLayout;
-    QGroupBox *groupBox;
-    QVBoxLayout *verticalLayout_3;
     QCustomPlot *waveform_wid_1;
     QMenuBar *menuBar;
     QMenu *menu;
@@ -67,7 +61,9 @@ public:
     {
         if (MainWindowClass->objectName().isEmpty())
             MainWindowClass->setObjectName(QString::fromUtf8("MainWindowClass"));
-        MainWindowClass->resize(1349, 861);
+        MainWindowClass->resize(1279, 714);
+        MainWindowClass->setMouseTracking(false);
+        MainWindowClass->setToolButtonStyle(Qt::ToolButtonIconOnly);
         play_act = new QAction(MainWindowClass);
         play_act->setObjectName(QString::fromUtf8("play_act"));
         periodwind_open_act = new QAction(MainWindowClass);
@@ -104,51 +100,33 @@ public:
         horizontalScrollBar->setObjectName(QString::fromUtf8("horizontalScrollBar"));
         horizontalScrollBar->setOrientation(Qt::Horizontal);
 
-        gridLayout->addWidget(horizontalScrollBar, 1, 3, 1, 1);
-
-        zoomIn_but = new QPushButton(centralWidget);
-        zoomIn_but->setObjectName(QString::fromUtf8("zoomIn_but"));
-
-        gridLayout->addWidget(zoomIn_but, 1, 0, 1, 1);
+        gridLayout->addWidget(horizontalScrollBar, 2, 3, 1, 1);
 
         zoomOut_but = new QPushButton(centralWidget);
         zoomOut_but->setObjectName(QString::fromUtf8("zoomOut_but"));
 
-        gridLayout->addWidget(zoomOut_but, 1, 1, 1, 1);
+        gridLayout->addWidget(zoomOut_but, 2, 1, 1, 1);
+
+        zoomIn_but = new QPushButton(centralWidget);
+        zoomIn_but->setObjectName(QString::fromUtf8("zoomIn_but"));
+
+        gridLayout->addWidget(zoomIn_but, 2, 0, 1, 1);
 
         reset_but = new QPushButton(centralWidget);
         reset_but->setObjectName(QString::fromUtf8("reset_but"));
 
-        gridLayout->addWidget(reset_but, 1, 2, 1, 1);
+        gridLayout->addWidget(reset_but, 2, 2, 1, 1);
 
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        verticalLayout = new QVBoxLayout(widget);
-        verticalLayout->setSpacing(0);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        groupBox = new QGroupBox(widget);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        verticalLayout_3 = new QVBoxLayout(groupBox);
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        waveform_wid_1 = new QCustomPlot(groupBox);
+        waveform_wid_1 = new QCustomPlot(centralWidget);
         waveform_wid_1->setObjectName(QString::fromUtf8("waveform_wid_1"));
+        waveform_wid_1->setMouseTracking(false);
 
-        verticalLayout_3->addWidget(waveform_wid_1);
-
-
-        verticalLayout->addWidget(groupBox);
-
-        verticalLayout->setStretch(0, 5);
-
-        gridLayout->addWidget(widget, 0, 0, 1, 4);
+        gridLayout->addWidget(waveform_wid_1, 0, 0, 1, 4);
 
         MainWindowClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindowClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1349, 26));
+        menuBar->setGeometry(QRect(0, 0, 1279, 26));
         menu = new QMenu(menuBar);
         menu->setObjectName(QString::fromUtf8("menu"));
         menu_3 = new QMenu(menuBar);
@@ -203,10 +181,9 @@ public:
         winFunc_act->setText(QApplication::translate("MainWindowClass", "\347\252\227\345\217\243\345\207\275\346\225\260", nullptr));
         actionp->setText(QApplication::translate("MainWindowClass", "\351\242\221\350\260\261\345\210\206\346\236\220", nullptr));
         actionp_2->setText(QApplication::translate("MainWindowClass", "\350\257\255\350\260\261\345\210\206\346\236\220", nullptr));
-        zoomIn_but->setText(QApplication::translate("MainWindowClass", "\346\224\276\345\244\247", nullptr));
         zoomOut_but->setText(QApplication::translate("MainWindowClass", "\347\274\251\345\260\217", nullptr));
+        zoomIn_but->setText(QApplication::translate("MainWindowClass", "\346\224\276\345\244\247", nullptr));
         reset_but->setText(QApplication::translate("MainWindowClass", "\351\207\215\347\275\256", nullptr));
-        groupBox->setTitle(QApplication::translate("MainWindowClass", "\346\263\242\345\275\242\345\233\276/\350\257\255\350\260\261\345\233\276", nullptr));
         menu->setTitle(QApplication::translate("MainWindowClass", "\350\217\234\345\215\225", nullptr));
         menu_3->setTitle(QApplication::translate("MainWindowClass", "\346\226\260\345\273\272", nullptr));
         newWindow_menu->setTitle(QApplication::translate("MainWindowClass", "\346\226\260\347\225\214\351\235\242", nullptr));

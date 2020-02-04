@@ -26,6 +26,10 @@ private:
 	QCPItemPixmap *pixmap;//用于绘制语谱图
 	QCPAxis *xAxis;//语谱图x轴
 	QCPAxis *yAxis;//语谱图y轴
+	QCPItemTracer *tracer;
+	QCPItemStraightLine *line = NULL;
+	QCPItemStraightLine *line_2 = NULL;
+	int mousePressFlag = 0;//判断鼠标左键状态，0为松开，1为按下
 
 private:
 	void testDraw();
@@ -37,11 +41,14 @@ private slots:
 	void onClickOpenrecordWindow();
 	void onClickOpenspectrumWindow();
 	void onClickOpenNewWindow();
+	void my_mouseMoveEvent(QMouseEvent * event);
+	void my_mousePressEvent(QMouseEvent* event);
+	void my_mouseReleaseEvent(QMouseEvent* event);
 	void onClickZoomIn();
 	void onClickZoomOut();
 	void onClickReset();
 	void onClickPlayWav();
 	void onClickOpenSpectrogramWindow();
 	void onClickOpenfreqRespWindow();
-	void onClickOpenWinFuncWindow();
+	void onClickOpenWinFuncWindow();	
 };

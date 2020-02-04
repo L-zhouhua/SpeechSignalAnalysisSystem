@@ -89,7 +89,7 @@ void WinFunc::DrawDB()
 	/*ui.winFunc_wid->yAxis->setRange(0, 2);*/
 	ui.winFunc_wid->replot();
 
-	//窗口频率图
+	//窗口功率谱
 	QVector<double> x2(ifft), y2(ifft);
 	for (int i = 0; i < ifft; i++)
 	{

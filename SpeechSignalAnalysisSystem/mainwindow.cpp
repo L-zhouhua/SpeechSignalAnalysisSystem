@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
-	this->setFixedSize(this->width(), this->height());
+	//this->setFixedSize(this->width(), this->height());
 	/*信号与槽的连接*/
 	connect(ui.readwav_act, SIGNAL(triggered()), this, SLOT(onClickChooseWavFile()));
 	connect(ui.filterwind_open_act, SIGNAL(triggered()), this, SLOT(onClickOpenfilterWindow()));
@@ -33,17 +33,22 @@ MainWindow::MainWindow(QWidget *parent)
 	connect(ui.freqResp_act, SIGNAL(triggered()), this, SLOT(onClickOpenfreqRespWindow()));
 	connect(ui.winFunc_act, SIGNAL(triggered()), this, SLOT(onClickOpenWinFuncWindow()));
 
+	//绑定鼠标事件
+	connect(ui.waveform_wid_1, SIGNAL(mouseMove(QMouseEvent*)), this, SLOT(my_mouseMoveEvent(QMouseEvent*)));
+	connect(ui.waveform_wid_1, SIGNAL(mousePress(QMouseEvent*)), this, SLOT(my_mousePressEvent(QMouseEvent*)));
+	connect(ui.waveform_wid_1, SIGNAL(mouseRelease(QMouseEvent*)), this, SLOT(my_mouseReleaseEvent(QMouseEvent*)));
 
 	pGraph = ui.waveform_wid_1->addGraph();
 	/*设置线颜色*/
 	pGraph->setPen(QPen(QColor(32, 178, 170)));
 	/*设置显示上边和右边的轴*/
 	//ui.waveform_wid_1->axisRect()->setupFullAxesBox(true);
-	ui.waveform_wid_1->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
+	ui.waveform_wid_1->setInteractions(QCP::iRangeZoom);
 	//ui.waveform_wid_1->yAxis->setRange(-1, 1);//设置y轴
 	ui.waveform_wid_1->xAxis->setLabel(QString::fromLocal8Bit("秒"));
 	ui.waveform_wid_1->yAxis->setLabel(QString::fromLocal8Bit("振幅"));
-
+	
+	
 
 	//高级轴
 	ui.waveform_wid_1->addLayer("spectrogram"); //增加布局
@@ -76,6 +81,111 @@ MainWindow::MainWindow(QWidget *parent)
 	//ui.waveform_wid_2->yAxis->setRange(-1, 1);//设置y轴
 	////ui.waveform_wid_1->xAxis->setLabel("X");//x轴名称
 	////ui.waveform_wid_1->yAxis->setLabel("Y");//y轴名称 
+
+	mapFromGlobal(QPoint(ui.waveform_wid_1->x(), ui.waveform_wid_1->y()));
+
+	//解决mouseMoceEvent不响应
+	setMouseTracking(true);
+	ui.centralWidget->setMouseTracking(true);
+	ui.waveform_wid_1->setMouseTracking(true);
+	tracer = new QCPItemTracer(ui.waveform_wid_1);
+	tracer->setPen(QPen(Qt::DashLine)); //游标线型：虚线
+	tracer->setStyle(QCPItemTracer::tsCrosshair);//游标样式：十字星、圆圈、方框等
+
+
+	//左右游标
+	/*QCPItemStraightLine *line = new QCPItemStraightLine(ui.waveform_wid_1);
+	QPen pen = QPen(QColor(243, 102, 31));
+	pen.setStyle(Qt::DashLine);
+	line->setPen(pen);
+	line->point1->setCoords(1, 1);
+	line->point2->setCoords(1, 5);*/
+
+	ui.waveform_wid_1->axisRect(0)->setRangeZoomFactor(0.5, 0);//放大横坐标
+	ui.waveform_wid_1->axisRect(1)->setRangeZoomFactor(0.5, 0);//放大横坐标
+
+	//按钮样式
+	ui.zoomIn_but->setStyleSheet("QPushButton{background-color:rgba(255,178,0,100%);\
+		color: white;   border-radius: 10px;  border: 2px groove gray; border-style: outset;}" // 按键本色
+		"QPushButton:hover{background-color:white; color: black;}"  // 鼠标停放时的色彩
+		"QPushButton:pressed{background-color:rgb(85, 170, 255); border-style: inset; }");   // 鼠标按下的色彩
+	
+}
+void MainWindow::my_mouseMoveEvent(QMouseEvent *event)
+{
+	int x_pos = event->pos().x();
+	int y_pos = event->pos().y();
+
+	// 把鼠标坐标点 转换为 QCustomPlot 内部坐标值 （pixelToCoord 函数）
+	// coordToPixel 函数与之相反 是把内部坐标值 转换为外部坐标点
+	double x_val = ui.waveform_wid_1->xAxis->pixelToCoord(x_pos);
+	double y_val = ui.waveform_wid_1->yAxis->pixelToCoord(y_pos);
+
+	//MainWindow::mouseMoveEvent(event);
+	//double x = ui.waveform_wid_1->xAxis->pixelToCoord(event->pos().x());//鼠标点的像素坐标转plot坐标
+	tracer->setGraph(pGraph);//设置游标吸附在traceGraph这条曲线上
+	tracer->setGraphKey(x_val);//设置游标的X值（这就是游标随动的关键代码）
+	double traceX = tracer->position->key();
+	double traceY = tracer->position->value();
+	//设置状态条信息（数据点的坐标）
+	ui.statusBar->showMessage("x: " + QString::number(traceX) + "   y: " + QString::number(traceY));
+	
+	//游标二
+	if (line_2 != NULL&&mousePressFlag==1)
+	{
+		line_2->point1->setCoords(x_val, 1);
+		line_2->point2->setCoords(x_val, 5);
+	}
+
+
+
+	ui.waveform_wid_1->replot();//重绘
+}
+void MainWindow::my_mousePressEvent(QMouseEvent * event)
+{
+	mousePressFlag = 1;
+
+	int x_pos = event->pos().x();
+	int y_pos = event->pos().y();
+
+	// 把鼠标坐标点 转换为 QCustomPlot 内部坐标值 （pixelToCoord 函数）
+	// coordToPixel 函数与之相反 是把内部坐标值 转换为外部坐标点
+	double x_val = ui.waveform_wid_1->xAxis->pixelToCoord(x_pos);
+	double y_val = ui.waveform_wid_1->yAxis->pixelToCoord(y_pos);
+		
+	if (line != NULL)
+		ui.waveform_wid_1->removeItem(line);
+	if (line_2 != NULL)
+		ui.waveform_wid_1->removeItem(line_2);
+	line = new QCPItemStraightLine(ui.waveform_wid_1);
+	QPen pen(QColor(243, 102, 31),2, Qt::DotLine);
+	line->setPen(pen);
+	line->point1->setCoords(x_val, 1);
+	line->point2->setCoords(x_val, 5);
+
+	line_2 = new QCPItemStraightLine(ui.waveform_wid_1);
+	line_2->setPen(pen);
+	line_2->point1->setCoords(x_val, 1);
+	line_2->point2->setCoords(x_val, 5);
+
+	ui.waveform_wid_1->replot();//重绘
+}
+void MainWindow::my_mouseReleaseEvent(QMouseEvent * event)
+{
+	mousePressFlag = 0;
+
+	int x_pos = event->pos().x();
+	int y_pos = event->pos().y();
+
+	// 把鼠标坐标点 转换为 QCustomPlot 内部坐标值 （pixelToCoord 函数）
+	// coordToPixel 函数与之相反 是把内部坐标值 转换为外部坐标点
+	double x_val = ui.waveform_wid_1->xAxis->pixelToCoord(x_pos);
+	double y_val = ui.waveform_wid_1->yAxis->pixelToCoord(y_pos);
+
+	line_2->point1->setCoords(x_val, 1);
+	line_2->point2->setCoords(x_val, 5);
+
+	ui.waveform_wid_1->replot();//重绘
 }
 void MainWindow::onClickZoomIn()
 {
@@ -118,6 +228,7 @@ void MainWindow::onClickChooseWavFile()
 	filename = QFileDialog::getOpenFileName(this, tr("open file"), " ", tr("wavFile(*.wav)"));
 	if (filename != NULL)
 	{
+
 		/*将QString转为String*/
 		string fileUrl = filename.toUtf8().data();
 		/*讲String转为char*/
@@ -192,7 +303,7 @@ void MainWindow::onClickChooseWavFile()
 			if (pColorMap != NULL)//判断pColorMap是否有数据
 				pColorMap->data()->clear();//清除上次数据
 			testDraw_2();
-			
+	
 			//ui.waveform_wid_2->xAxis->setRange(0.0, (double)wavinfo->duration);//设置周期（x轴）
 			//ui.waveform_wid_2->graph(0)->setData(x2, y2);//设置xy轴
 			////ui.waveform_wid_2->rescaleAxes();//重新调节轴、调用后坐标会根据实际情况增加
