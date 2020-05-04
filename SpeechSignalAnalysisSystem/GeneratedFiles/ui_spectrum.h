@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'spectrum.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.2
+** Created by: Qt User Interface Compiler version 5.14.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -12,11 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QScrollBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 #include "qcustomplot.h"
@@ -28,13 +26,11 @@ class Ui_Spectrum
 public:
     QAction *action;
     QWidget *centralwidget;
+    QGridLayout *gridLayout;
+    QCustomPlot *specturm_wdo;
+    QPushButton *zoomIn_but;
     QPushButton *zoomOut_but;
     QPushButton *reset_but;
-    QScrollBar *horizontalScrollBar;
-    QPushButton *zoomIn_but;
-    QCustomPlot *specturm_wdo;
-    QMenuBar *menubar;
-    QMenu *menu;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *Spectrum)
@@ -46,35 +42,32 @@ public:
         action->setObjectName(QString::fromUtf8("action"));
         centralwidget = new QWidget(Spectrum);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        zoomOut_but = new QPushButton(centralwidget);
-        zoomOut_but->setObjectName(QString::fromUtf8("zoomOut_but"));
-        zoomOut_but->setGeometry(QRect(180, 600, 93, 28));
-        reset_but = new QPushButton(centralwidget);
-        reset_but->setObjectName(QString::fromUtf8("reset_but"));
-        reset_but->setGeometry(QRect(340, 600, 93, 28));
-        horizontalScrollBar = new QScrollBar(centralwidget);
-        horizontalScrollBar->setObjectName(QString::fromUtf8("horizontalScrollBar"));
-        horizontalScrollBar->setGeometry(QRect(510, 600, 481, 31));
-        horizontalScrollBar->setOrientation(Qt::Horizontal);
-        zoomIn_but = new QPushButton(centralwidget);
-        zoomIn_but->setObjectName(QString::fromUtf8("zoomIn_but"));
-        zoomIn_but->setGeometry(QRect(20, 600, 93, 28));
+        gridLayout = new QGridLayout(centralwidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         specturm_wdo = new QCustomPlot(centralwidget);
         specturm_wdo->setObjectName(QString::fromUtf8("specturm_wdo"));
-        specturm_wdo->setGeometry(QRect(10, 10, 1001, 561));
+
+        gridLayout->addWidget(specturm_wdo, 0, 0, 1, 3);
+
+        zoomIn_but = new QPushButton(centralwidget);
+        zoomIn_but->setObjectName(QString::fromUtf8("zoomIn_but"));
+
+        gridLayout->addWidget(zoomIn_but, 1, 0, 1, 1);
+
+        zoomOut_but = new QPushButton(centralwidget);
+        zoomOut_but->setObjectName(QString::fromUtf8("zoomOut_but"));
+
+        gridLayout->addWidget(zoomOut_but, 1, 1, 1, 1);
+
+        reset_but = new QPushButton(centralwidget);
+        reset_but->setObjectName(QString::fromUtf8("reset_but"));
+
+        gridLayout->addWidget(reset_but, 1, 2, 1, 1);
+
         Spectrum->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(Spectrum);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1032, 26));
-        menu = new QMenu(menubar);
-        menu->setObjectName(QString::fromUtf8("menu"));
-        Spectrum->setMenuBar(menubar);
         statusbar = new QStatusBar(Spectrum);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         Spectrum->setStatusBar(statusbar);
-
-        menubar->addAction(menu->menuAction());
-        menu->addAction(action);
 
         retranslateUi(Spectrum);
 
@@ -83,12 +76,11 @@ public:
 
     void retranslateUi(QMainWindow *Spectrum)
     {
-        Spectrum->setWindowTitle(QApplication::translate("Spectrum", "MainWindow", nullptr));
-        action->setText(QApplication::translate("Spectrum", "\347\252\227\345\217\243\344\277\241\346\201\257", nullptr));
-        zoomOut_but->setText(QApplication::translate("Spectrum", "\347\274\251\345\260\217", nullptr));
-        reset_but->setText(QApplication::translate("Spectrum", "\351\207\215\347\275\256", nullptr));
-        zoomIn_but->setText(QApplication::translate("Spectrum", "\346\224\276\345\244\247", nullptr));
-        menu->setTitle(QApplication::translate("Spectrum", "\350\217\234\345\215\225", nullptr));
+        Spectrum->setWindowTitle(QCoreApplication::translate("Spectrum", "MainWindow", nullptr));
+        action->setText(QCoreApplication::translate("Spectrum", "\347\252\227\345\217\243\344\277\241\346\201\257", nullptr));
+        zoomIn_but->setText(QCoreApplication::translate("Spectrum", "\346\224\276\345\244\247", nullptr));
+        zoomOut_but->setText(QCoreApplication::translate("Spectrum", "\347\274\251\345\260\217", nullptr));
+        reset_but->setText(QCoreApplication::translate("Spectrum", "\351\207\215\347\275\256", nullptr));
     } // retranslateUi
 
 };

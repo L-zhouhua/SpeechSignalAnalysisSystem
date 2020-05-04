@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<QHelpCollectionProject version="1.0">
+<assistant>
+  <title>语音信号分析处理系统帮助文档</title>
+  <!--<applicationIcon>image/lib.png</applicationIcon>-->
+  <cacheDirectory>cache/help</cacheDirectory>
+  <homePage>qthelp://bookmisClient.myhelp/doc/index.html</homePage>
+  <startPage>qthelp://bookmisClient.myhelp/doc/index.html</startPage>
+  <aboutMenuText>
+    <text>关于</text>
+  </aboutMenuText>
+  <aboutDialog>
+    <file>about.txt</file>
+    <!--<icon>image/lib.png</icon>-->
+  </aboutDialog>
+  <enableDocumentationManager>false</enableDocumentationManager>
+  <enableAddressBar>false</enableAddressBar>
+  <enableFilterFunctionality>false</enableFilterFunctionality>
+</assistant>
+<docFiles>
+  <generate>
+    <file>
+      <input>help.qhp</input>
+      <output>help.qch</output>
+    </file>
+  </generate>
+  <register>
+    <file>help.qch</file>
+  </register>
+</docFiles>
+</QHelpCollectionProject>

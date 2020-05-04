@@ -28,6 +28,18 @@
       <Extensions>moc;h;cpp</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Source Files\qss">
+      <UniqueIdentifier>{aa096fdb-bceb-478e-8f67-967ee566c4ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="helpDocument">
+      <UniqueIdentifier>{f8edbb00-fccd-4118-812d-d26f7a256426}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="helpDocument\images">
+      <UniqueIdentifier>{7de3be76-9fdd-480e-8fdc-6ca97b471d30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="helpDocument\html">
+      <UniqueIdentifier>{da58ad97-07ba-49c3-949b-98074ff5ad15}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,19 +48,10 @@
     <ClCompile Include="mainwindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="period.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="record.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="spectrum.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\12860\Desktop\qcustomplot\qcustomplot.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="finalmainwindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="spectrogram.cpp">
@@ -57,25 +60,34 @@
     <ClCompile Include="freqyres.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\12860\Desktop\dsplib\base.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\12860\Desktop\dsplib\filter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\12860\Desktop\dsplib\fir.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\12860\Desktop\dsplib\iir.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\12860\Desktop\dsplib\winfun.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="filter_M.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="winfunc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\DSPLIB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\fir.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\iir.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\winfun.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\qcustomplot\qcustomplot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="assistant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,19 +95,10 @@
     <QtMoc Include="mainwindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="period.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="record.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="spectrum.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="C:\Users\12860\Desktop\qcustomplot\qcustomplot.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="finalmainwindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="spectrogram.h">
@@ -108,6 +111,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="winfunc.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="C:\Users\Makeei\Desktop\graduationproject\qcustomplot\qcustomplot.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -152,20 +158,86 @@
     <ClInclude Include="wavinfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\12860\Desktop\dsplib\base.h">
+    <ClInclude Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\filter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\12860\Desktop\dsplib\filter.h">
+    <ClInclude Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\fir.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\12860\Desktop\dsplib\fir.h">
+    <ClInclude Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\iir.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\12860\Desktop\dsplib\iir.h">
+    <ClInclude Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\winfun.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\12860\Desktop\dsplib\winfun.h">
+    <ClInclude Include="assistant.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="qssStyle.qss">
+      <Filter>Source Files\qss</Filter>
+    </None>
+    <None Include="QToolBoxStyle.qss">
+      <Filter>Source Files\qss</Filter>
+    </None>
+    <None Include="winfuncStyle.qss">
+      <Filter>Source Files\qss</Filter>
+    </None>
+    <None Include="main.html">
+      <Filter>helpDocument\html</Filter>
+    </None>
+    <None Include="spectrum.html">
+      <Filter>helpDocument\html</Filter>
+    </None>
+    <None Include="winfunc.html">
+      <Filter>helpDocument\html</Filter>
+    </None>
+    <None Include="record.html">
+      <Filter>helpDocument\html</Filter>
+    </None>
+    <None Include="freqyres.html">
+      <Filter>helpDocument\html</Filter>
+    </None>
+    <None Include="about.html">
+      <Filter>helpDocument\html</Filter>
+    </None>
+    <None Include="help.qhcp">
+      <Filter>helpDocument</Filter>
+    </None>
+    <None Include="help.qhp">
+      <Filter>helpDocument</Filter>
+    </None>
+    <None Include="index.html">
+      <Filter>helpDocument\html</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="about.txt">
+      <Filter>helpDocument</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\Makeei\Desktop\images\fre.png">
+      <Filter>helpDocument\images</Filter>
+    </Image>
+    <Image Include="C:\Users\Makeei\Desktop\images\newWav.png">
+      <Filter>helpDocument\images</Filter>
+    </Image>
+    <Image Include="C:\Users\Makeei\Desktop\images\opWav.png">
+      <Filter>helpDocument\images</Filter>
+    </Image>
+    <Image Include="C:\Users\Makeei\Desktop\images\play.png">
+      <Filter>helpDocument\images</Filter>
+    </Image>
+    <Image Include="C:\Users\Makeei\Desktop\images\spec.png">
+      <Filter>helpDocument\images</Filter>
+    </Image>
+    <Image Include="C:\Users\Makeei\Desktop\images\winf.png">
+      <Filter>helpDocument\images</Filter>
+    </Image>
+    <Image Include="C:\Users\Makeei\Desktop\images\zoom.png">
+      <Filter>helpDocument\images</Filter>
+    </Image>
   </ItemGroup>
 </Project>

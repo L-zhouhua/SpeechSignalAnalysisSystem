@@ -4,7 +4,16 @@ Record::Record(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+	//读取qss文件，并设置
+	QFile file("qssStyle.qss");
+	file.open(QFile::ReadOnly);
+	QTextStream filetext(&file);
+	QString stylesheet = filetext.readAll();
+	this->setStyleSheet(stylesheet);
+	file.close();
+
 	audioRecorder = new QAudioRecorder(this);
+	this->resize(QSize(1200, 1000)); //设置初始窗口大小
 
 	connect(ui.startRecord_but, SIGNAL(clicked()), this, SLOT(onClickRecord()));
 	connect(ui.pause_but, SIGNAL(clicked()), this, SLOT(onClickPause()));
@@ -26,7 +35,7 @@ Record::Record(QWidget *parent)
 		ui.containerBox->addItem(containerName, QVariant(containerName));
 	}
 	/*设置采样率*/
-	ui.sampleRateBox->addItem(QString::fromLocal8Bit("默认"), QVariant(0));
+	ui.sampleRateBox->addItem(QString::fromLocal8Bit("默认"), QVariant(11025));
 	for (int sampleRete : audioRecorder->supportedAudioSampleRates())
 	{
 		ui.sampleRateBox->addItem(QString::number(sampleRete), QVariant(sampleRete));
@@ -37,7 +46,7 @@ Record::Record(QWidget *parent)
 		ui.audioCodecBox->addItem(codecName, QVariant(codecName));
 	}
 	/*设置声音通道数*/
-	ui.channelsBox->addItem(QString::fromLocal8Bit("默认"), QVariant(-1));
+	ui.channelsBox->addItem(QString::fromLocal8Bit("默认"), QVariant(2));
 	ui.channelsBox->addItem(QStringLiteral("1"), QVariant(1));
 	ui.channelsBox->addItem(QStringLiteral("2"), QVariant(2));
 	ui.channelsBox->addItem(QStringLiteral("4"), QVariant(4));

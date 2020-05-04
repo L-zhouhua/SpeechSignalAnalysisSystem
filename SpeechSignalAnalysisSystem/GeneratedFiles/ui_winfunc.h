@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'winfunc.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.2
+** Created by: Qt User Interface Compiler version 5.14.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -127,17 +127,17 @@ public:
 
     void retranslateUi(QWidget *winFunc)
     {
-        winFunc->setWindowTitle(QApplication::translate("winFunc", "winFunc", nullptr));
-        groupBox->setTitle(QApplication::translate("winFunc", "\347\252\227\345\217\243\345\207\275\346\225\260\347\261\273\345\236\213", nullptr));
-        kai_but->setText(QApplication::translate("winFunc", "\347\241\256\345\256\232", nullptr));
-        kai_lab->setText(QApplication::translate("winFunc", "Kaiser\345\217\202\346\225\260\357\274\232", nullptr));
-        winfunc_Box->setItemText(0, QApplication::translate("winFunc", "\350\257\267\351\200\211\346\213\251\347\252\227\345\217\243\347\261\273\345\236\213", nullptr));
-        winfunc_Box->setItemText(1, QApplication::translate("winFunc", "\347\237\251\345\275\242\347\252\227", nullptr));
-        winfunc_Box->setItemText(2, QApplication::translate("winFunc", "hanning\347\252\227", nullptr));
-        winfunc_Box->setItemText(3, QApplication::translate("winFunc", "hamming\347\252\227", nullptr));
-        winfunc_Box->setItemText(4, QApplication::translate("winFunc", "Blackman\347\252\227", nullptr));
-        winfunc_Box->setItemText(5, QApplication::translate("winFunc", "BlackmanHarris\347\252\227", nullptr));
-        winfunc_Box->setItemText(6, QApplication::translate("winFunc", "Kaiser\347\252\227", nullptr));
+        winFunc->setWindowTitle(QCoreApplication::translate("winFunc", "winFunc", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("winFunc", "\347\252\227\345\217\243\345\207\275\346\225\260\347\261\273\345\236\213", nullptr));
+        kai_but->setText(QCoreApplication::translate("winFunc", "\347\241\256\345\256\232", nullptr));
+        kai_lab->setText(QCoreApplication::translate("winFunc", "Kaiser\345\217\202\346\225\260\357\274\232", nullptr));
+        winfunc_Box->setItemText(0, QCoreApplication::translate("winFunc", "\350\257\267\351\200\211\346\213\251\347\252\227\345\217\243\347\261\273\345\236\213", nullptr));
+        winfunc_Box->setItemText(1, QCoreApplication::translate("winFunc", "\347\237\251\345\275\242\347\252\227", nullptr));
+        winfunc_Box->setItemText(2, QCoreApplication::translate("winFunc", "hanning\347\252\227", nullptr));
+        winfunc_Box->setItemText(3, QCoreApplication::translate("winFunc", "hamming\347\252\227", nullptr));
+        winfunc_Box->setItemText(4, QCoreApplication::translate("winFunc", "Blackman\347\252\227", nullptr));
+        winfunc_Box->setItemText(5, QCoreApplication::translate("winFunc", "BlackmanHarris\347\252\227", nullptr));
+        winfunc_Box->setItemText(6, QCoreApplication::translate("winFunc", "Kaiser\347\252\227", nullptr));
 
     } // retranslateUi
 

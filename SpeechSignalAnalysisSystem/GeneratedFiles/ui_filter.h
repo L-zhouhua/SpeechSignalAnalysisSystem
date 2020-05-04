@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'filter.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.2
+** Created by: Qt User Interface Compiler version 5.14.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -258,49 +258,49 @@ public:
 
     void retranslateUi(QMainWindow *Filter)
     {
-        Filter->setWindowTitle(QApplication::translate("Filter", "MainWindow", nullptr));
-        action->setText(QApplication::translate("Filter", "\346\230\276\347\244\272\351\242\221\350\260\261", nullptr));
-        action_3->setText(QApplication::translate("Filter", "\346\237\245\350\257\242:", nullptr));
-        action_4->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\346\214\207\351\222\210\345\244\204\351\242\221\350\260\261", nullptr));
-        action_5->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\346\214\207\351\222\210\345\244\204\351\242\221\350\260\261\350\203\275\351\207\217", nullptr));
-        action_6->setText(QApplication::translate("Filter", "\346\230\276\347\244\272\345\237\272\351\242\221", nullptr));
-        action_8->setText(QApplication::translate("Filter", "\346\237\245\350\257\242\357\274\232", nullptr));
-        action_9->setText(QApplication::translate("Filter", "\345\237\272\351\242\221\345\210\227\350\241\250", nullptr));
-        action_10->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\345\237\272\351\242\221", nullptr));
-        action_12->setText(QApplication::translate("Filter", "\351\200\211\346\213\251:", nullptr));
-        action_13->setText(QApplication::translate("Filter", "\345\256\232\344\275\215\346\214\207\351\222\210\345\210\260\346\234\200\345\260\217\345\237\272\351\242\221\345\244\204", nullptr));
-        action_14->setText(QApplication::translate("Filter", "\345\256\232\344\275\215\346\214\207\351\222\210\345\210\260\346\234\200\345\244\247\345\237\272\351\242\221\345\244\204", nullptr));
-        action_15->setText(QApplication::translate("Filter", "\346\230\276\347\244\272\345\205\261\346\214\257\345\263\260", nullptr));
-        action_17->setText(QApplication::translate("Filter", "\346\230\276\347\244\272\351\237\263\345\274\272", nullptr));
-        action_19->setText(QApplication::translate("Filter", "\346\237\245\350\257\242\357\274\232", nullptr));
-        action_20->setText(QApplication::translate("Filter", "\351\237\263\345\274\272\345\210\227\350\241\250", nullptr));
-        action_21->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\351\237\263\345\274\272", nullptr));
-        action_22->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\346\234\200\345\260\217\351\237\263\345\274\272\345\200\274", nullptr));
-        action_23->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\346\234\200\345\244\247\351\237\263\345\274\272\345\200\274", nullptr));
-        action_24->setText(QApplication::translate("Filter", "\346\237\245\350\257\242\357\274\232", nullptr));
-        action_25->setText(QApplication::translate("Filter", "\345\205\261\346\214\257\345\263\260\345\210\227\350\241\250", nullptr));
-        action_26->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\344\270\200\345\205\261\346\214\257\345\263\260", nullptr));
-        action_27->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\344\270\200\351\242\221\345\256\275", nullptr));
-        action_28->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\344\272\214\345\205\261\346\214\257\345\263\260", nullptr));
-        action_29->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\344\272\214\351\242\221\345\256\275", nullptr));
-        action_30->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\344\270\211\345\205\261\346\214\257\345\263\260", nullptr));
-        action_31->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\344\270\211\351\242\221\345\256\275", nullptr));
-        action_32->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\345\233\233\345\205\261\346\214\257\345\263\260", nullptr));
-        action_33->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\345\233\233\351\242\221\345\256\275", nullptr));
-        action_34->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\345\205\261\346\214\257\345\263\260", nullptr));
-        action_35->setText(QApplication::translate("Filter", "\350\216\267\345\217\226\351\242\221\345\256\275", nullptr));
-        action_36->setText(QApplication::translate("Filter", "\346\230\276\347\244\272\350\204\211\345\206\262", nullptr));
-        action_38->setText(QApplication::translate("Filter", "\345\243\260\351\237\263\346\212\245\345\221\212", nullptr));
-        action_39->setText(QApplication::translate("Filter", "\350\204\211\345\206\262\345\210\227\350\241\250", nullptr));
-        reset_but->setText(QApplication::translate("Filter", "\351\207\215\347\275\256", nullptr));
-        zoomOut_but->setText(QApplication::translate("Filter", "\347\274\251\345\260\217", nullptr));
-        zoomIn_but->setText(QApplication::translate("Filter", "\346\224\276\345\244\247", nullptr));
-        menuchakan->setTitle(QApplication::translate("Filter", "\346\237\245\347\234\213", nullptr));
-        menu->setTitle(QApplication::translate("Filter", "\351\242\221\350\260\261", nullptr));
-        menu_2->setTitle(QApplication::translate("Filter", "\345\237\272\351\242\221", nullptr));
-        menu_3->setTitle(QApplication::translate("Filter", "\345\205\261\346\214\257\345\263\260", nullptr));
-        menu_4->setTitle(QApplication::translate("Filter", "\350\204\211\345\206\262", nullptr));
-        menu_5->setTitle(QApplication::translate("Filter", "\351\237\263\345\274\272", nullptr));
+        Filter->setWindowTitle(QCoreApplication::translate("Filter", "MainWindow", nullptr));
+        action->setText(QCoreApplication::translate("Filter", "\346\230\276\347\244\272\351\242\221\350\260\261", nullptr));
+        action_3->setText(QCoreApplication::translate("Filter", "\346\237\245\350\257\242:", nullptr));
+        action_4->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\346\214\207\351\222\210\345\244\204\351\242\221\350\260\261", nullptr));
+        action_5->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\346\214\207\351\222\210\345\244\204\351\242\221\350\260\261\350\203\275\351\207\217", nullptr));
+        action_6->setText(QCoreApplication::translate("Filter", "\346\230\276\347\244\272\345\237\272\351\242\221", nullptr));
+        action_8->setText(QCoreApplication::translate("Filter", "\346\237\245\350\257\242\357\274\232", nullptr));
+        action_9->setText(QCoreApplication::translate("Filter", "\345\237\272\351\242\221\345\210\227\350\241\250", nullptr));
+        action_10->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\345\237\272\351\242\221", nullptr));
+        action_12->setText(QCoreApplication::translate("Filter", "\351\200\211\346\213\251:", nullptr));
+        action_13->setText(QCoreApplication::translate("Filter", "\345\256\232\344\275\215\346\214\207\351\222\210\345\210\260\346\234\200\345\260\217\345\237\272\351\242\221\345\244\204", nullptr));
+        action_14->setText(QCoreApplication::translate("Filter", "\345\256\232\344\275\215\346\214\207\351\222\210\345\210\260\346\234\200\345\244\247\345\237\272\351\242\221\345\244\204", nullptr));
+        action_15->setText(QCoreApplication::translate("Filter", "\346\230\276\347\244\272\345\205\261\346\214\257\345\263\260", nullptr));
+        action_17->setText(QCoreApplication::translate("Filter", "\346\230\276\347\244\272\351\237\263\345\274\272", nullptr));
+        action_19->setText(QCoreApplication::translate("Filter", "\346\237\245\350\257\242\357\274\232", nullptr));
+        action_20->setText(QCoreApplication::translate("Filter", "\351\237\263\345\274\272\345\210\227\350\241\250", nullptr));
+        action_21->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\351\237\263\345\274\272", nullptr));
+        action_22->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\346\234\200\345\260\217\351\237\263\345\274\272\345\200\274", nullptr));
+        action_23->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\346\234\200\345\244\247\351\237\263\345\274\272\345\200\274", nullptr));
+        action_24->setText(QCoreApplication::translate("Filter", "\346\237\245\350\257\242\357\274\232", nullptr));
+        action_25->setText(QCoreApplication::translate("Filter", "\345\205\261\346\214\257\345\263\260\345\210\227\350\241\250", nullptr));
+        action_26->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\344\270\200\345\205\261\346\214\257\345\263\260", nullptr));
+        action_27->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\344\270\200\351\242\221\345\256\275", nullptr));
+        action_28->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\344\272\214\345\205\261\346\214\257\345\263\260", nullptr));
+        action_29->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\344\272\214\351\242\221\345\256\275", nullptr));
+        action_30->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\344\270\211\345\205\261\346\214\257\345\263\260", nullptr));
+        action_31->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\344\270\211\351\242\221\345\256\275", nullptr));
+        action_32->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\345\233\233\345\205\261\346\214\257\345\263\260", nullptr));
+        action_33->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\347\254\254\345\233\233\351\242\221\345\256\275", nullptr));
+        action_34->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\345\205\261\346\214\257\345\263\260", nullptr));
+        action_35->setText(QCoreApplication::translate("Filter", "\350\216\267\345\217\226\351\242\221\345\256\275", nullptr));
+        action_36->setText(QCoreApplication::translate("Filter", "\346\230\276\347\244\272\350\204\211\345\206\262", nullptr));
+        action_38->setText(QCoreApplication::translate("Filter", "\345\243\260\351\237\263\346\212\245\345\221\212", nullptr));
+        action_39->setText(QCoreApplication::translate("Filter", "\350\204\211\345\206\262\345\210\227\350\241\250", nullptr));
+        reset_but->setText(QCoreApplication::translate("Filter", "\351\207\215\347\275\256", nullptr));
+        zoomOut_but->setText(QCoreApplication::translate("Filter", "\347\274\251\345\260\217", nullptr));
+        zoomIn_but->setText(QCoreApplication::translate("Filter", "\346\224\276\345\244\247", nullptr));
+        menuchakan->setTitle(QCoreApplication::translate("Filter", "\346\237\245\347\234\213", nullptr));
+        menu->setTitle(QCoreApplication::translate("Filter", "\351\242\221\350\260\261", nullptr));
+        menu_2->setTitle(QCoreApplication::translate("Filter", "\345\237\272\351\242\221", nullptr));
+        menu_3->setTitle(QCoreApplication::translate("Filter", "\345\205\261\346\214\257\345\263\260", nullptr));
+        menu_4->setTitle(QCoreApplication::translate("Filter", "\350\204\211\345\206\262", nullptr));
+        menu_5->setTitle(QCoreApplication::translate("Filter", "\351\237\263\345\274\272", nullptr));
     } // retranslateUi
 
 };

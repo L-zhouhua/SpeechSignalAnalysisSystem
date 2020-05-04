@@ -1,0 +1,38 @@
+﻿QToolBox {
+	background:white;
+	border:2px solid black;
+}
+
+QToolBox::tab {
+	background:#67707E;
+	border-radius:5px;
+	color:white;
+}
+
+/* 被选中的标签 */
+QToolBox::tab:selected {
+	/* 字体加粗,斜体 */
+	font: bold italic;
+	color:white;
+}
+
+QTabWidget::pane{
+	border:none;
+}
+QTabWidget::tab-bar{
+        alignment:left;
+}
+QTabBar::tab{
+	background:transparent;
+	color:black;
+	min-width:30ex;
+	min-height:10ex;
+}
+QTabBar::tab:hover{
+	background:rgb(255, 255, 255, 100);
+}
+QTabBar::tab:selected{
+	border-color: white;
+	background:white;
+	color:green;
+}

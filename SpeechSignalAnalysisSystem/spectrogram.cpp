@@ -9,9 +9,19 @@ Spectrogram::Spectrogram(QWidget *parent, WavInfo *m_wavinfo)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	this->resize(QSize(2400, 1500)); //设置初始窗口大小
+	//读取qss文件，并设置
+	QFile file("qssStyle.qss");
+	file.open(QFile::ReadOnly);
+	QTextStream filetext(&file);
+	QString stylesheet = filetext.readAll();
+	this->setStyleSheet(stylesheet);
+	file.close();
+
 	wavinfo = new WavInfo();
 	wavinfo = m_wavinfo;
 	testDraw();
+
 }
 void Spectrogram::testDraw()
 {

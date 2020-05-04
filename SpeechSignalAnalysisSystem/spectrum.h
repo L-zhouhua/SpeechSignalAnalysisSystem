@@ -21,4 +21,9 @@ private:
 	fftw_complex *out;
 	fftw_plan p;
 private slots:
+	void onClickZoomIn();
+
+	void onClickZoomOut();
+
+	void onClickReset();
 };

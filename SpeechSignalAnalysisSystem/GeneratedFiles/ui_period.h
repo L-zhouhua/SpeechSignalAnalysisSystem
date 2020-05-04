@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'period.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.2
+** Created by: Qt User Interface Compiler version 5.14.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -82,12 +82,12 @@ public:
 
     void retranslateUi(QMainWindow *Period)
     {
-        Period->setWindowTitle(QApplication::translate("Period", "MainWindow", nullptr));
-        action->setText(QApplication::translate("Period", "\347\252\227\345\217\243\344\277\241\346\201\257", nullptr));
-        reset_but->setText(QApplication::translate("Period", "\351\207\215\347\275\256", nullptr));
-        zoomOut_but->setText(QApplication::translate("Period", "\347\274\251\345\260\217", nullptr));
-        zoomIn_but->setText(QApplication::translate("Period", "\346\224\276\345\244\247", nullptr));
-        menucaidan->setTitle(QApplication::translate("Period", "\350\217\234\345\215\225", nullptr));
+        Period->setWindowTitle(QCoreApplication::translate("Period", "MainWindow", nullptr));
+        action->setText(QCoreApplication::translate("Period", "\347\252\227\345\217\243\344\277\241\346\201\257", nullptr));
+        reset_but->setText(QCoreApplication::translate("Period", "\351\207\215\347\275\256", nullptr));
+        zoomOut_but->setText(QCoreApplication::translate("Period", "\347\274\251\345\260\217", nullptr));
+        zoomIn_but->setText(QCoreApplication::translate("Period", "\346\224\276\345\244\247", nullptr));
+        menucaidan->setTitle(QCoreApplication::translate("Period", "\350\217\234\345\215\225", nullptr));
     } // retranslateUi
 
 };

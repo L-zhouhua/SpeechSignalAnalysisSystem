@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'freqyres.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.2
+** Created by: Qt User Interface Compiler version 5.14.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -45,19 +45,21 @@ public:
     QLineEdit *parameter_edit_LP;
     QPushButton *affirm_but_LP;
     QWidget *page_4;
-    QLineEdit *parameter_edit_HP;
+    QGridLayout *gridLayout_3;
+    QLabel *label_10;
     QLineEdit *order_edit_HP;
     QLabel *label_9;
+    QLineEdit *parameter_edit_HP;
     QPushButton *affirm_but_HP;
-    QLabel *label_10;
     QWidget *page_3;
-    QLineEdit *parameter_edit_BP;
+    QGridLayout *gridLayout_6;
+    QLabel *label_12;
     QLineEdit *order_edit_BP;
     QLabel *label_11;
-    QPushButton *affirm_but_BP;
-    QLabel *label_12;
+    QLineEdit *parameter_edit_BP;
     QLabel *label_13;
     QLineEdit *parameter_edit_2_BP;
+    QPushButton *affirm_but_BP;
     QWidget *page_2;
     QVBoxLayout *verticalLayout_4;
     QLabel *label_15;
@@ -181,7 +183,7 @@ public:
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         groupBox_3 = new QGroupBox(tab_5);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setMaximumSize(QSize(200, 16777215));
+        groupBox_3->setMaximumSize(QSize(400, 16777215));
         gridLayout = new QGridLayout(groupBox_3);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -190,7 +192,7 @@ public:
         type_toolBox->setObjectName(QString::fromUtf8("type_toolBox"));
         page = new QWidget();
         page->setObjectName(QString::fromUtf8("page"));
-        page->setGeometry(QRect(0, 0, 176, 318));
+        page->setGeometry(QRect(0, 0, 380, 348));
         verticalLayout_3 = new QVBoxLayout(page);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -230,62 +232,94 @@ public:
         type_toolBox->addItem(page, QString::fromUtf8("\344\275\216\351\200\232\346\273\244\346\263\242\345\231\250"));
         page_4 = new QWidget();
         page_4->setObjectName(QString::fromUtf8("page_4"));
-        page_4->setGeometry(QRect(0, 0, 176, 318));
-        parameter_edit_HP = new QLineEdit(page_4);
-        parameter_edit_HP->setObjectName(QString::fromUtf8("parameter_edit_HP"));
-        parameter_edit_HP->setGeometry(QRect(10, 178, 154, 24));
+        page_4->setGeometry(QRect(0, 0, 98, 129));
+        gridLayout_3 = new QGridLayout(page_4);
+        gridLayout_3->setSpacing(6);
+        gridLayout_3->setContentsMargins(11, 11, 11, 11);
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        label_10 = new QLabel(page_4);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+        label_10->setMaximumSize(QSize(16777215, 50));
+
+        gridLayout_3->addWidget(label_10, 0, 0, 1, 1);
+
         order_edit_HP = new QLineEdit(page_4);
         order_edit_HP->setObjectName(QString::fromUtf8("order_edit_HP"));
-        order_edit_HP->setGeometry(QRect(10, 68, 154, 24));
+
+        gridLayout_3->addWidget(order_edit_HP, 1, 0, 1, 1);
+
         label_9 = new QLabel(page_4);
         label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(10, 110, 154, 50));
         label_9->setMaximumSize(QSize(16777215, 50));
+
+        gridLayout_3->addWidget(label_9, 2, 0, 1, 1);
+
+        parameter_edit_HP = new QLineEdit(page_4);
+        parameter_edit_HP->setObjectName(QString::fromUtf8("parameter_edit_HP"));
+
+        gridLayout_3->addWidget(parameter_edit_HP, 3, 0, 1, 1);
+
         affirm_but_HP = new QPushButton(page_4);
         affirm_but_HP->setObjectName(QString::fromUtf8("affirm_but_HP"));
         affirm_but_HP->setEnabled(true);
-        affirm_but_HP->setGeometry(QRect(10, 220, 154, 28));
         affirm_but_HP->setMaximumSize(QSize(16777215, 16777215));
         affirm_but_HP->setIconSize(QSize(20, 20));
-        label_10 = new QLabel(page_4);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
-        label_10->setGeometry(QRect(10, 0, 154, 50));
-        label_10->setMaximumSize(QSize(16777215, 50));
+
+        gridLayout_3->addWidget(affirm_but_HP, 4, 0, 1, 1);
+
         type_toolBox->addItem(page_4, QString::fromUtf8("\351\253\230\351\200\232\346\273\244\346\263\242\345\231\250"));
         page_3 = new QWidget();
         page_3->setObjectName(QString::fromUtf8("page_3"));
-        page_3->setGeometry(QRect(0, 0, 176, 318));
-        parameter_edit_BP = new QLineEdit(page_3);
-        parameter_edit_BP->setObjectName(QString::fromUtf8("parameter_edit_BP"));
-        parameter_edit_BP->setGeometry(QRect(0, 130, 154, 24));
+        page_3->setGeometry(QRect(0, 0, 380, 348));
+        gridLayout_6 = new QGridLayout(page_3);
+        gridLayout_6->setSpacing(6);
+        gridLayout_6->setContentsMargins(11, 11, 11, 11);
+        gridLayout_6->setObjectName(QString::fromUtf8("gridLayout_6"));
+        label_12 = new QLabel(page_3);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+        label_12->setMaximumSize(QSize(16777215, 50));
+
+        gridLayout_6->addWidget(label_12, 0, 0, 1, 1);
+
         order_edit_BP = new QLineEdit(page_3);
         order_edit_BP->setObjectName(QString::fromUtf8("order_edit_BP"));
-        order_edit_BP->setGeometry(QRect(0, 50, 154, 24));
+
+        gridLayout_6->addWidget(order_edit_BP, 1, 0, 1, 1);
+
         label_11 = new QLabel(page_3);
         label_11->setObjectName(QString::fromUtf8("label_11"));
-        label_11->setGeometry(QRect(0, 80, 154, 50));
         label_11->setMaximumSize(QSize(16777215, 50));
+
+        gridLayout_6->addWidget(label_11, 2, 0, 1, 1);
+
+        parameter_edit_BP = new QLineEdit(page_3);
+        parameter_edit_BP->setObjectName(QString::fromUtf8("parameter_edit_BP"));
+
+        gridLayout_6->addWidget(parameter_edit_BP, 3, 0, 1, 1);
+
+        label_13 = new QLabel(page_3);
+        label_13->setObjectName(QString::fromUtf8("label_13"));
+        label_13->setMaximumSize(QSize(16777215, 50));
+
+        gridLayout_6->addWidget(label_13, 4, 0, 1, 1);
+
+        parameter_edit_2_BP = new QLineEdit(page_3);
+        parameter_edit_2_BP->setObjectName(QString::fromUtf8("parameter_edit_2_BP"));
+
+        gridLayout_6->addWidget(parameter_edit_2_BP, 5, 0, 1, 1);
+
         affirm_but_BP = new QPushButton(page_3);
         affirm_but_BP->setObjectName(QString::fromUtf8("affirm_but_BP"));
         affirm_but_BP->setEnabled(true);
-        affirm_but_BP->setGeometry(QRect(0, 260, 154, 28));
         affirm_but_BP->setMaximumSize(QSize(16777215, 16777215));
         affirm_but_BP->setIconSize(QSize(20, 20));
-        label_12 = new QLabel(page_3);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
-        label_12->setGeometry(QRect(0, 0, 154, 50));
-        label_12->setMaximumSize(QSize(16777215, 50));
-        label_13 = new QLabel(page_3);
-        label_13->setObjectName(QString::fromUtf8("label_13"));
-        label_13->setGeometry(QRect(0, 150, 154, 50));
-        label_13->setMaximumSize(QSize(16777215, 50));
-        parameter_edit_2_BP = new QLineEdit(page_3);
-        parameter_edit_2_BP->setObjectName(QString::fromUtf8("parameter_edit_2_BP"));
-        parameter_edit_2_BP->setGeometry(QRect(0, 210, 154, 24));
+
+        gridLayout_6->addWidget(affirm_but_BP, 6, 0, 1, 1);
+
         type_toolBox->addItem(page_3, QString::fromUtf8("\345\270\246\351\200\232\346\273\244\346\263\242\345\231\250"));
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
-        page_2->setGeometry(QRect(0, 0, 176, 318));
+        page_2->setGeometry(QRect(0, 0, 98, 173));
         verticalLayout_4 = new QVBoxLayout(page_2);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -377,7 +411,7 @@ public:
 
         groupBox_4 = new QGroupBox(tab_5);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
-        groupBox_4->setMaximumSize(QSize(200, 16777215));
+        groupBox_4->setMaximumSize(QSize(400, 16777215));
         verticalLayout_2 = new QVBoxLayout(groupBox_4);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -470,7 +504,7 @@ public:
         gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
         groupBox_6 = new QGroupBox(tab_6);
         groupBox_6->setObjectName(QString::fromUtf8("groupBox_6"));
-        groupBox_6->setMaximumSize(QSize(200, 16777215));
+        groupBox_6->setMaximumSize(QSize(400, 16777215));
         gridLayout_4 = new QGridLayout(groupBox_6);
         gridLayout_4->setSpacing(6);
         gridLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -479,7 +513,7 @@ public:
         type_toolBox_fir->setObjectName(QString::fromUtf8("type_toolBox_fir"));
         page_9 = new QWidget();
         page_9->setObjectName(QString::fromUtf8("page_9"));
-        page_9->setGeometry(QRect(0, 0, 179, 297));
+        page_9->setGeometry(QRect(0, 0, 380, 348));
         verticalLayout_13 = new QVBoxLayout(page_9);
         verticalLayout_13->setSpacing(6);
         verticalLayout_13->setContentsMargins(11, 11, 11, 11);
@@ -528,6 +562,7 @@ public:
         kai_lab_LP = new QLabel(page_9);
         kai_lab_LP->setObjectName(QString::fromUtf8("kai_lab_LP"));
         kai_lab_LP->setEnabled(false);
+        kai_lab_LP->setMaximumSize(QSize(16777215, 50));
 
         verticalLayout_13->addWidget(kai_lab_LP);
 
@@ -548,7 +583,7 @@ public:
         type_toolBox_fir->addItem(page_9, QString::fromUtf8("\344\275\216\351\200\232\346\273\244\346\263\242\345\231\250"));
         page_10 = new QWidget();
         page_10->setObjectName(QString::fromUtf8("page_10"));
-        page_10->setGeometry(QRect(0, 0, 179, 259));
+        page_10->setGeometry(QRect(0, 0, 380, 348));
         verticalLayout_8 = new QVBoxLayout(page_10);
         verticalLayout_8->setSpacing(6);
         verticalLayout_8->setContentsMargins(11, 11, 11, 11);
@@ -577,6 +612,7 @@ public:
 
         label_7 = new QLabel(page_10);
         label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setMaximumSize(QSize(16777215, 50));
 
         verticalLayout_8->addWidget(label_7);
 
@@ -594,6 +630,7 @@ public:
         kai_lab_HP = new QLabel(page_10);
         kai_lab_HP->setObjectName(QString::fromUtf8("kai_lab_HP"));
         kai_lab_HP->setEnabled(false);
+        kai_lab_HP->setMaximumSize(QSize(16777215, 50));
 
         verticalLayout_8->addWidget(kai_lab_HP);
 
@@ -614,7 +651,7 @@ public:
         type_toolBox_fir->addItem(page_10, QString::fromUtf8("\351\253\230\351\200\232\346\273\244\346\263\242\345\231\250"));
         page_11 = new QWidget();
         page_11->setObjectName(QString::fromUtf8("page_11"));
-        page_11->setGeometry(QRect(0, 0, 179, 312));
+        page_11->setGeometry(QRect(0, 0, 380, 348));
         verticalLayout_9 = new QVBoxLayout(page_11);
         verticalLayout_9->setSpacing(6);
         verticalLayout_9->setContentsMargins(11, 11, 11, 11);
@@ -654,6 +691,7 @@ public:
 
         label_8 = new QLabel(page_11);
         label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setMaximumSize(QSize(16777215, 50));
 
         verticalLayout_9->addWidget(label_8);
 
@@ -671,6 +709,7 @@ public:
         kai_lab_BP = new QLabel(page_11);
         kai_lab_BP->setObjectName(QString::fromUtf8("kai_lab_BP"));
         kai_lab_BP->setEnabled(false);
+        kai_lab_BP->setMaximumSize(QSize(16777215, 50));
 
         verticalLayout_9->addWidget(kai_lab_BP);
 
@@ -691,7 +730,7 @@ public:
         type_toolBox_fir->addItem(page_11, QString::fromUtf8("\345\270\246\351\200\232\346\273\244\346\263\242\345\231\250"));
         page_12 = new QWidget();
         page_12->setObjectName(QString::fromUtf8("page_12"));
-        page_12->setGeometry(QRect(0, 0, 179, 312));
+        page_12->setGeometry(QRect(0, 0, 380, 348));
         verticalLayout_14 = new QVBoxLayout(page_12);
         verticalLayout_14->setSpacing(6);
         verticalLayout_14->setContentsMargins(11, 11, 11, 11);
@@ -731,6 +770,7 @@ public:
 
         label_18 = new QLabel(page_12);
         label_18->setObjectName(QString::fromUtf8("label_18"));
+        label_18->setMaximumSize(QSize(16777215, 50));
 
         verticalLayout_14->addWidget(label_18);
 
@@ -748,6 +788,7 @@ public:
         kai_lab_BS = new QLabel(page_12);
         kai_lab_BS->setObjectName(QString::fromUtf8("kai_lab_BS"));
         kai_lab_BS->setEnabled(false);
+        kai_lab_BS->setMaximumSize(QSize(16777215, 50));
 
         verticalLayout_14->addWidget(kai_lab_BS);
 
@@ -788,7 +829,7 @@ public:
 
         groupBox_7 = new QGroupBox(tab_6);
         groupBox_7->setObjectName(QString::fromUtf8("groupBox_7"));
-        groupBox_7->setMaximumSize(QSize(200, 16777215));
+        groupBox_7->setMaximumSize(QSize(400, 16777215));
         verticalLayout_15 = new QVBoxLayout(groupBox_7);
         verticalLayout_15->setSpacing(6);
         verticalLayout_15->setContentsMargins(11, 11, 11, 11);
@@ -896,7 +937,7 @@ public:
         tabWidget->setCurrentIndex(0);
         type_toolBox->setCurrentIndex(0);
         type_toolBox->layout()->setSpacing(7);
-        type_toolBox_fir->setCurrentIndex(0);
+        type_toolBox_fir->setCurrentIndex(3);
         type_toolBox_fir->layout()->setSpacing(7);
 
 
@@ -905,104 +946,104 @@ public:
 
     void retranslateUi(QWidget *FreqyRes)
     {
-        FreqyRes->setWindowTitle(QApplication::translate("FreqyRes", "FreqyRes", nullptr));
-        groupBox_3->setTitle(QApplication::translate("FreqyRes", "\350\276\223\345\205\245\344\277\241\346\201\257", nullptr));
-        label_2->setText(QApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
-        label_3->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
-        affirm_but_LP->setText(QApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
-        type_toolBox->setItemText(type_toolBox->indexOf(page), QApplication::translate("FreqyRes", "\344\275\216\351\200\232\346\273\244\346\263\242\345\231\250", nullptr));
-        label_9->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
-        affirm_but_HP->setText(QApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
-        label_10->setText(QApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
-        type_toolBox->setItemText(type_toolBox->indexOf(page_4), QApplication::translate("FreqyRes", "\351\253\230\351\200\232\346\273\244\346\263\242\345\231\250", nullptr));
-        label_11->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
-        affirm_but_BP->setText(QApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
-        label_12->setText(QApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
-        label_13->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\2602\357\274\232", nullptr));
-        type_toolBox->setItemText(type_toolBox->indexOf(page_3), QApplication::translate("FreqyRes", "\345\270\246\351\200\232\346\273\244\346\263\242\345\231\250", nullptr));
-        label_15->setText(QApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
-        label_14->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
-        label_16->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\2602\357\274\232", nullptr));
-        affirm_but_BS->setText(QApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
-        type_toolBox->setItemText(type_toolBox->indexOf(page_2), QApplication::translate("FreqyRes", "\345\270\246\351\230\273\346\273\244\346\263\242\345\231\250", nullptr));
-        groupBox->setTitle(QApplication::translate("FreqyRes", "IIR\351\242\221\347\216\207\345\223\215\345\272\224\342\205\240", nullptr));
-        groupBox_2->setTitle(QApplication::translate("FreqyRes", "IIR\351\242\221\347\216\207\345\223\215\345\272\224\342\205\241", nullptr));
-        groupBox_4->setTitle(QApplication::translate("FreqyRes", "\347\252\227\345\217\243\344\277\241\346\201\257", nullptr));
-        label_4->setText(QApplication::translate("FreqyRes", "\347\261\273\345\236\213\357\274\232", nullptr));
+        FreqyRes->setWindowTitle(QCoreApplication::translate("FreqyRes", "FreqyRes", nullptr));
+        groupBox_3->setTitle(QCoreApplication::translate("FreqyRes", "\350\276\223\345\205\245\344\277\241\346\201\257", nullptr));
+        label_2->setText(QCoreApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
+        label_3->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
+        affirm_but_LP->setText(QCoreApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
+        type_toolBox->setItemText(type_toolBox->indexOf(page), QCoreApplication::translate("FreqyRes", "\344\275\216\351\200\232\346\273\244\346\263\242\345\231\250", nullptr));
+        label_10->setText(QCoreApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
+        label_9->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
+        affirm_but_HP->setText(QCoreApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
+        type_toolBox->setItemText(type_toolBox->indexOf(page_4), QCoreApplication::translate("FreqyRes", "\351\253\230\351\200\232\346\273\244\346\263\242\345\231\250", nullptr));
+        label_12->setText(QCoreApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
+        label_11->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
+        label_13->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\2602\357\274\232", nullptr));
+        affirm_but_BP->setText(QCoreApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
+        type_toolBox->setItemText(type_toolBox->indexOf(page_3), QCoreApplication::translate("FreqyRes", "\345\270\246\351\200\232\346\273\244\346\263\242\345\231\250", nullptr));
+        label_15->setText(QCoreApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
+        label_14->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
+        label_16->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\2602\357\274\232", nullptr));
+        affirm_but_BS->setText(QCoreApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
+        type_toolBox->setItemText(type_toolBox->indexOf(page_2), QCoreApplication::translate("FreqyRes", "\345\270\246\351\230\273\346\273\244\346\263\242\345\231\250", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("FreqyRes", "IIR\351\242\221\347\216\207\345\223\215\345\272\224\342\205\240", nullptr));
+        groupBox_2->setTitle(QCoreApplication::translate("FreqyRes", "IIR\351\242\221\347\216\207\345\223\215\345\272\224\342\205\241", nullptr));
+        groupBox_4->setTitle(QCoreApplication::translate("FreqyRes", "\347\252\227\345\217\243\344\277\241\346\201\257", nullptr));
+        label_4->setText(QCoreApplication::translate("FreqyRes", "\347\261\273\345\236\213\357\274\232", nullptr));
         type_lab->setText(QString());
-        label_5->setText(QApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
+        label_5->setText(QCoreApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
         order_lab->setText(QString());
-        label_6->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
+        label_6->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
         parameter_lab->setText(QString());
-        label_17->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\2602\357\274\232", nullptr));
+        label_17->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\2602\357\274\232", nullptr));
         parameter_lab_2->setText(QString());
-        tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("FreqyRes", "IIR\351\242\221\347\216\207\345\223\215\345\272\224", nullptr));
-        groupBox_6->setTitle(QApplication::translate("FreqyRes", "\350\276\223\345\205\245\344\277\241\346\201\257", nullptr));
-        label_30->setText(QApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
-        label_31->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
-        label->setText(QApplication::translate("FreqyRes", "\347\252\227\345\217\243\345\207\275\346\225\260\357\274\232", nullptr));
-        winfunc_box_LP->setItemText(0, QApplication::translate("FreqyRes", "\347\237\251\345\275\242\347\252\227", nullptr));
-        winfunc_box_LP->setItemText(1, QApplication::translate("FreqyRes", "hanning\347\252\227", nullptr));
-        winfunc_box_LP->setItemText(2, QApplication::translate("FreqyRes", "hamming\347\252\227", nullptr));
-        winfunc_box_LP->setItemText(3, QApplication::translate("FreqyRes", "Blackman\347\252\227", nullptr));
-        winfunc_box_LP->setItemText(4, QApplication::translate("FreqyRes", "BlackmanHarris\347\252\227", nullptr));
-        winfunc_box_LP->setItemText(5, QApplication::translate("FreqyRes", "Kaiser\347\252\227", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_5), QCoreApplication::translate("FreqyRes", "IIR\351\242\221\347\216\207\345\223\215\345\272\224", nullptr));
+        groupBox_6->setTitle(QCoreApplication::translate("FreqyRes", "\350\276\223\345\205\245\344\277\241\346\201\257", nullptr));
+        label_30->setText(QCoreApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
+        label_31->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
+        label->setText(QCoreApplication::translate("FreqyRes", "\347\252\227\345\217\243\345\207\275\346\225\260\357\274\232", nullptr));
+        winfunc_box_LP->setItemText(0, QCoreApplication::translate("FreqyRes", "\347\237\251\345\275\242\347\252\227", nullptr));
+        winfunc_box_LP->setItemText(1, QCoreApplication::translate("FreqyRes", "hanning\347\252\227", nullptr));
+        winfunc_box_LP->setItemText(2, QCoreApplication::translate("FreqyRes", "hamming\347\252\227", nullptr));
+        winfunc_box_LP->setItemText(3, QCoreApplication::translate("FreqyRes", "Blackman\347\252\227", nullptr));
+        winfunc_box_LP->setItemText(4, QCoreApplication::translate("FreqyRes", "BlackmanHarris\347\252\227", nullptr));
+        winfunc_box_LP->setItemText(5, QCoreApplication::translate("FreqyRes", "Kaiser\347\252\227", nullptr));
 
-        kai_lab_LP->setText(QApplication::translate("FreqyRes", "Kaiser\345\217\202\346\225\260\357\274\232", nullptr));
-        affirm_but_fir_LP->setText(QApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
-        type_toolBox_fir->setItemText(type_toolBox_fir->indexOf(page_9), QApplication::translate("FreqyRes", "\344\275\216\351\200\232\346\273\244\346\263\242\345\231\250", nullptr));
-        label_33->setText(QApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
-        label_32->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
-        label_7->setText(QApplication::translate("FreqyRes", "\347\252\227\345\217\243\345\207\275\346\225\260\357\274\232", nullptr));
-        winfunc_box_HP->setItemText(0, QApplication::translate("FreqyRes", "\347\237\251\345\275\242\347\252\227", nullptr));
-        winfunc_box_HP->setItemText(1, QApplication::translate("FreqyRes", "hanning\347\252\227", nullptr));
-        winfunc_box_HP->setItemText(2, QApplication::translate("FreqyRes", "hamming\347\252\227", nullptr));
-        winfunc_box_HP->setItemText(3, QApplication::translate("FreqyRes", "Blackman\347\252\227", nullptr));
-        winfunc_box_HP->setItemText(4, QApplication::translate("FreqyRes", "BlackmanHarris\347\252\227", nullptr));
-        winfunc_box_HP->setItemText(5, QApplication::translate("FreqyRes", "Kaiser\347\252\227", nullptr));
+        kai_lab_LP->setText(QCoreApplication::translate("FreqyRes", "Kaiser\345\217\202\346\225\260\357\274\232", nullptr));
+        affirm_but_fir_LP->setText(QCoreApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
+        type_toolBox_fir->setItemText(type_toolBox_fir->indexOf(page_9), QCoreApplication::translate("FreqyRes", "\344\275\216\351\200\232\346\273\244\346\263\242\345\231\250", nullptr));
+        label_33->setText(QCoreApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
+        label_32->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
+        label_7->setText(QCoreApplication::translate("FreqyRes", "\347\252\227\345\217\243\345\207\275\346\225\260\357\274\232", nullptr));
+        winfunc_box_HP->setItemText(0, QCoreApplication::translate("FreqyRes", "\347\237\251\345\275\242\347\252\227", nullptr));
+        winfunc_box_HP->setItemText(1, QCoreApplication::translate("FreqyRes", "hanning\347\252\227", nullptr));
+        winfunc_box_HP->setItemText(2, QCoreApplication::translate("FreqyRes", "hamming\347\252\227", nullptr));
+        winfunc_box_HP->setItemText(3, QCoreApplication::translate("FreqyRes", "Blackman\347\252\227", nullptr));
+        winfunc_box_HP->setItemText(4, QCoreApplication::translate("FreqyRes", "BlackmanHarris\347\252\227", nullptr));
+        winfunc_box_HP->setItemText(5, QCoreApplication::translate("FreqyRes", "Kaiser\347\252\227", nullptr));
 
-        kai_lab_HP->setText(QApplication::translate("FreqyRes", "Kaiser\345\217\202\346\225\260\357\274\232", nullptr));
-        affirm_but_fir_HP->setText(QApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
-        type_toolBox_fir->setItemText(type_toolBox_fir->indexOf(page_10), QApplication::translate("FreqyRes", "\351\253\230\351\200\232\346\273\244\346\263\242\345\231\250", nullptr));
-        label_35->setText(QApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
-        label_34->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
-        label_36->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\2602\357\274\232", nullptr));
-        label_8->setText(QApplication::translate("FreqyRes", "\347\252\227\345\217\243\345\207\275\346\225\260\357\274\232", nullptr));
-        winfunc_box_BP->setItemText(0, QApplication::translate("FreqyRes", "\347\237\251\345\275\242\347\252\227", nullptr));
-        winfunc_box_BP->setItemText(1, QApplication::translate("FreqyRes", "hanning\347\252\227", nullptr));
-        winfunc_box_BP->setItemText(2, QApplication::translate("FreqyRes", "hamming\347\252\227", nullptr));
-        winfunc_box_BP->setItemText(3, QApplication::translate("FreqyRes", "Blackman\347\252\227", nullptr));
-        winfunc_box_BP->setItemText(4, QApplication::translate("FreqyRes", "BlackmanHarris\347\252\227", nullptr));
-        winfunc_box_BP->setItemText(5, QApplication::translate("FreqyRes", "Kaiser\347\252\227", nullptr));
+        kai_lab_HP->setText(QCoreApplication::translate("FreqyRes", "Kaiser\345\217\202\346\225\260\357\274\232", nullptr));
+        affirm_but_fir_HP->setText(QCoreApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
+        type_toolBox_fir->setItemText(type_toolBox_fir->indexOf(page_10), QCoreApplication::translate("FreqyRes", "\351\253\230\351\200\232\346\273\244\346\263\242\345\231\250", nullptr));
+        label_35->setText(QCoreApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
+        label_34->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
+        label_36->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\2602\357\274\232", nullptr));
+        label_8->setText(QCoreApplication::translate("FreqyRes", "\347\252\227\345\217\243\345\207\275\346\225\260\357\274\232", nullptr));
+        winfunc_box_BP->setItemText(0, QCoreApplication::translate("FreqyRes", "\347\237\251\345\275\242\347\252\227", nullptr));
+        winfunc_box_BP->setItemText(1, QCoreApplication::translate("FreqyRes", "hanning\347\252\227", nullptr));
+        winfunc_box_BP->setItemText(2, QCoreApplication::translate("FreqyRes", "hamming\347\252\227", nullptr));
+        winfunc_box_BP->setItemText(3, QCoreApplication::translate("FreqyRes", "Blackman\347\252\227", nullptr));
+        winfunc_box_BP->setItemText(4, QCoreApplication::translate("FreqyRes", "BlackmanHarris\347\252\227", nullptr));
+        winfunc_box_BP->setItemText(5, QCoreApplication::translate("FreqyRes", "Kaiser\347\252\227", nullptr));
 
-        kai_lab_BP->setText(QApplication::translate("FreqyRes", "Kaiser\345\217\202\346\225\260\357\274\232", nullptr));
-        affirm_but_fir_BP->setText(QApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
-        type_toolBox_fir->setItemText(type_toolBox_fir->indexOf(page_11), QApplication::translate("FreqyRes", "\345\270\246\351\200\232\346\273\244\346\263\242\345\231\250", nullptr));
-        label_37->setText(QApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
-        label_38->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
-        label_39->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\2602\357\274\232", nullptr));
-        label_18->setText(QApplication::translate("FreqyRes", "\347\252\227\345\217\243\345\207\275\346\225\260\357\274\232", nullptr));
-        winfunc_box_BS->setItemText(0, QApplication::translate("FreqyRes", "\347\237\251\345\275\242\347\252\227", nullptr));
-        winfunc_box_BS->setItemText(1, QApplication::translate("FreqyRes", "hanning\347\252\227", nullptr));
-        winfunc_box_BS->setItemText(2, QApplication::translate("FreqyRes", "hamming\347\252\227", nullptr));
-        winfunc_box_BS->setItemText(3, QApplication::translate("FreqyRes", "Blackman\347\252\227", nullptr));
-        winfunc_box_BS->setItemText(4, QApplication::translate("FreqyRes", "BlackmanHarris\347\252\227", nullptr));
-        winfunc_box_BS->setItemText(5, QApplication::translate("FreqyRes", "Kaiser\347\252\227", nullptr));
+        kai_lab_BP->setText(QCoreApplication::translate("FreqyRes", "Kaiser\345\217\202\346\225\260\357\274\232", nullptr));
+        affirm_but_fir_BP->setText(QCoreApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
+        type_toolBox_fir->setItemText(type_toolBox_fir->indexOf(page_11), QCoreApplication::translate("FreqyRes", "\345\270\246\351\200\232\346\273\244\346\263\242\345\231\250", nullptr));
+        label_37->setText(QCoreApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
+        label_38->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
+        label_39->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\2602\357\274\232", nullptr));
+        label_18->setText(QCoreApplication::translate("FreqyRes", "\347\252\227\345\217\243\345\207\275\346\225\260\357\274\232", nullptr));
+        winfunc_box_BS->setItemText(0, QCoreApplication::translate("FreqyRes", "\347\237\251\345\275\242\347\252\227", nullptr));
+        winfunc_box_BS->setItemText(1, QCoreApplication::translate("FreqyRes", "hanning\347\252\227", nullptr));
+        winfunc_box_BS->setItemText(2, QCoreApplication::translate("FreqyRes", "hamming\347\252\227", nullptr));
+        winfunc_box_BS->setItemText(3, QCoreApplication::translate("FreqyRes", "Blackman\347\252\227", nullptr));
+        winfunc_box_BS->setItemText(4, QCoreApplication::translate("FreqyRes", "BlackmanHarris\347\252\227", nullptr));
+        winfunc_box_BS->setItemText(5, QCoreApplication::translate("FreqyRes", "Kaiser\347\252\227", nullptr));
 
-        kai_lab_BS->setText(QApplication::translate("FreqyRes", "Kaiser\345\217\202\346\225\260\357\274\232", nullptr));
-        affirm_but_fir_BS->setText(QApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
-        type_toolBox_fir->setItemText(type_toolBox_fir->indexOf(page_12), QApplication::translate("FreqyRes", "\345\270\246\351\230\273\346\273\244\346\263\242\345\231\250", nullptr));
-        groupBox_5->setTitle(QApplication::translate("FreqyRes", "FIR\351\242\221\347\216\207\345\223\215\345\272\224", nullptr));
-        groupBox_7->setTitle(QApplication::translate("FreqyRes", "\347\252\227\345\217\243\344\277\241\346\201\257", nullptr));
-        label_40->setText(QApplication::translate("FreqyRes", "\347\261\273\345\236\213\357\274\232", nullptr));
+        kai_lab_BS->setText(QCoreApplication::translate("FreqyRes", "Kaiser\345\217\202\346\225\260\357\274\232", nullptr));
+        affirm_but_fir_BS->setText(QCoreApplication::translate("FreqyRes", "\347\241\256\350\256\244", nullptr));
+        type_toolBox_fir->setItemText(type_toolBox_fir->indexOf(page_12), QCoreApplication::translate("FreqyRes", "\345\270\246\351\230\273\346\273\244\346\263\242\345\231\250", nullptr));
+        groupBox_5->setTitle(QCoreApplication::translate("FreqyRes", "FIR\351\242\221\347\216\207\345\223\215\345\272\224", nullptr));
+        groupBox_7->setTitle(QCoreApplication::translate("FreqyRes", "\347\252\227\345\217\243\344\277\241\346\201\257", nullptr));
+        label_40->setText(QCoreApplication::translate("FreqyRes", "\347\261\273\345\236\213\357\274\232", nullptr));
         type_lab_fir->setText(QString());
-        label_41->setText(QApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
+        label_41->setText(QCoreApplication::translate("FreqyRes", "\351\230\266\346\225\260\357\274\232", nullptr));
         order_lab_fir->setText(QString());
-        label_42->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
+        label_42->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\260\357\274\232", nullptr));
         parameter_lab_fir->setText(QString());
-        label_43->setText(QApplication::translate("FreqyRes", "\345\217\202\346\225\2602\357\274\232", nullptr));
+        label_43->setText(QCoreApplication::translate("FreqyRes", "\345\217\202\346\225\2602\357\274\232", nullptr));
         parameter_lab_fir_2->setText(QString());
-        tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("FreqyRes", "FIR\351\242\221\347\216\207\345\223\215\345\272\224", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_6), QCoreApplication::translate("FreqyRes", "FIR\351\242\221\347\216\207\345\223\215\345\272\224", nullptr));
     } // retranslateUi
 
 };

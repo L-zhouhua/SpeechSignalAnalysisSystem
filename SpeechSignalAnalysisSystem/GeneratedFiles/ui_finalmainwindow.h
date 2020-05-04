@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'finalmainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.2
+** Created by: Qt User Interface Compiler version 5.14.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -450,7 +450,7 @@ public:
 
     void retranslateUi(QMainWindow *finalMainWindow)
     {
-        finalMainWindow->setWindowTitle(QApplication::translate("finalMainWindow", "MainWindow", nullptr));
+        finalMainWindow->setWindowTitle(QCoreApplication::translate("finalMainWindow", "MainWindow", nullptr));
         pushButton_11->setText(QString());
         pushButton_13->setText(QString());
         pushButton_18->setText(QString());
@@ -469,18 +469,18 @@ public:
         pushButton_10->setText(QString());
         pushButton_9->setText(QString());
         pushButton->setText(QString());
-        label->setText(QApplication::translate("finalMainWindow", "TimeRunning", nullptr));
-        pushButton_15->setText(QApplication::translate("finalMainWindow", "\347\241\256\345\256\232", nullptr));
-        label_2->setText(QApplication::translate("finalMainWindow", "\345\217\202\346\225\2601\357\274\232", nullptr));
-        label_3->setText(QApplication::translate("finalMainWindow", "\345\217\202\346\225\2602\357\274\232", nullptr));
-        label_4->setText(QApplication::translate("finalMainWindow", "\345\217\202\346\225\2603\357\274\232", nullptr));
-        toolBox_2->setItemText(toolBox_2->indexOf(page_4), QApplication::translate("finalMainWindow", "\346\261\211\345\256\201\347\252\227", nullptr));
-        toolBox_2->setItemText(toolBox_2->indexOf(page_5), QApplication::translate("finalMainWindow", "\346\261\211\346\230\216\347\252\227", nullptr));
-        toolBox_2->setItemText(toolBox_2->indexOf(page_6), QApplication::translate("finalMainWindow", "\351\253\230\346\226\257\347\252\227", nullptr));
-        toolBox->setItemText(toolBox->indexOf(page), QApplication::translate("finalMainWindow", "\347\252\227\345\207\275\346\225\260", nullptr));
-        toolBox->setItemText(toolBox->indexOf(page_2), QApplication::translate("finalMainWindow", "\346\273\244\346\263\242\345\231\250", nullptr));
-        toolBox->setItemText(toolBox->indexOf(page_3), QApplication::translate("finalMainWindow", "\345\205\266\344\273\226", nullptr));
-        menu->setTitle(QApplication::translate("finalMainWindow", "\350\217\234\345\215\225", nullptr));
+        label->setText(QCoreApplication::translate("finalMainWindow", "TimeRunning", nullptr));
+        pushButton_15->setText(QCoreApplication::translate("finalMainWindow", "\347\241\256\345\256\232", nullptr));
+        label_2->setText(QCoreApplication::translate("finalMainWindow", "\345\217\202\346\225\2601\357\274\232", nullptr));
+        label_3->setText(QCoreApplication::translate("finalMainWindow", "\345\217\202\346\225\2602\357\274\232", nullptr));
+        label_4->setText(QCoreApplication::translate("finalMainWindow", "\345\217\202\346\225\2603\357\274\232", nullptr));
+        toolBox_2->setItemText(toolBox_2->indexOf(page_4), QCoreApplication::translate("finalMainWindow", "\346\261\211\345\256\201\347\252\227", nullptr));
+        toolBox_2->setItemText(toolBox_2->indexOf(page_5), QCoreApplication::translate("finalMainWindow", "\346\261\211\346\230\216\347\252\227", nullptr));
+        toolBox_2->setItemText(toolBox_2->indexOf(page_6), QCoreApplication::translate("finalMainWindow", "\351\253\230\346\226\257\347\252\227", nullptr));
+        toolBox->setItemText(toolBox->indexOf(page), QCoreApplication::translate("finalMainWindow", "\347\252\227\345\207\275\346\225\260", nullptr));
+        toolBox->setItemText(toolBox->indexOf(page_2), QCoreApplication::translate("finalMainWindow", "\346\273\244\346\263\242\345\231\250", nullptr));
+        toolBox->setItemText(toolBox->indexOf(page_3), QCoreApplication::translate("finalMainWindow", "\345\205\266\344\273\226", nullptr));
+        menu->setTitle(QCoreApplication::translate("finalMainWindow", "\350\217\234\345\215\225", nullptr));
     } // retranslateUi
 
 };

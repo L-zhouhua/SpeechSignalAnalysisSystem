@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'record.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.2
+** Created by: Qt User Interface Compiler version 5.14.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -23,6 +23,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSlider>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -35,24 +36,28 @@ public:
     QAction *action_AIFC;
     QAction *action;
     QWidget *centralwidget;
-    QGroupBox *groupBox;
-    QSlider *qualitySlider;
-    QRadioButton *constantQualityRadioButton;
-    QRadioButton *constantBitrateRadioButton;
-    QComboBox *bitrateBox;
-    QWidget *layoutWidget;
+    QGridLayout *gridLayout_2;
     QGridLayout *gridLayout;
     QComboBox *containerBox;
+    QLabel *label_4;
+    QLabel *label_5;
+    QComboBox *audioCodecBox;
+    QLabel *label_3;
     QComboBox *audioDeviceBox;
     QComboBox *channelsBox;
-    QLabel *label_2;
-    QComboBox *audioCodecBox;
-    QLabel *label_4;
-    QLabel *label_3;
-    QLabel *label;
-    QLabel *label_5;
     QComboBox *sampleRateBox;
-    QWidget *layoutWidget1;
+    QLabel *label;
+    QSpacerItem *verticalSpacer;
+    QSpacerItem *verticalSpacer_2;
+    QLabel *label_2;
+    QSpacerItem *verticalSpacer_3;
+    QSpacerItem *verticalSpacer_4;
+    QGroupBox *groupBox;
+    QGridLayout *gridLayout_3;
+    QRadioButton *constantQualityRadioButton;
+    QSlider *qualitySlider;
+    QRadioButton *constantBitrateRadioButton;
+    QComboBox *bitrateBox;
     QHBoxLayout *horizontalLayout;
     QPushButton *output_but;
     QPushButton *startRecord_but;
@@ -74,125 +79,154 @@ public:
         action->setObjectName(QString::fromUtf8("action"));
         centralwidget = new QWidget(Record);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        groupBox = new QGroupBox(centralwidget);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(60, 260, 491, 171));
-        QFont font;
-        font.setPointSize(11);
-        groupBox->setFont(font);
-        qualitySlider = new QSlider(groupBox);
-        qualitySlider->setObjectName(QString::fromUtf8("qualitySlider"));
-        qualitySlider->setGeometry(QRect(70, 60, 391, 22));
-        qualitySlider->setOrientation(Qt::Horizontal);
-        constantQualityRadioButton = new QRadioButton(groupBox);
-        constantQualityRadioButton->setObjectName(QString::fromUtf8("constantQualityRadioButton"));
-        constantQualityRadioButton->setGeometry(QRect(30, 30, 115, 19));
-        constantQualityRadioButton->setChecked(true);
-        constantBitrateRadioButton = new QRadioButton(groupBox);
-        constantBitrateRadioButton->setObjectName(QString::fromUtf8("constantBitrateRadioButton"));
-        constantBitrateRadioButton->setGeometry(QRect(30, 100, 115, 19));
-        bitrateBox = new QComboBox(groupBox);
-        bitrateBox->setObjectName(QString::fromUtf8("bitrateBox"));
-        bitrateBox->setEnabled(false);
-        bitrateBox->setGeometry(QRect(70, 130, 391, 22));
-        layoutWidget = new QWidget(centralwidget);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(60, 10, 491, 241));
-        gridLayout = new QGridLayout(layoutWidget);
+        gridLayout_2 = new QGridLayout(centralwidget);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        gridLayout = new QGridLayout();
         gridLayout->setSpacing(7);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        containerBox = new QComboBox(layoutWidget);
+        containerBox = new QComboBox(centralwidget);
         containerBox->setObjectName(QString::fromUtf8("containerBox"));
+        QFont font;
+        font.setPointSize(11);
         containerBox->setFont(font);
 
-        gridLayout->addWidget(containerBox, 2, 1, 1, 1);
+        gridLayout->addWidget(containerBox, 4, 1, 1, 1);
 
-        audioDeviceBox = new QComboBox(layoutWidget);
+        label_4 = new QLabel(centralwidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setFont(font);
+
+        gridLayout->addWidget(label_4, 6, 0, 1, 1);
+
+        label_5 = new QLabel(centralwidget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setFont(font);
+
+        gridLayout->addWidget(label_5, 8, 0, 1, 1);
+
+        audioCodecBox = new QComboBox(centralwidget);
+        audioCodecBox->setObjectName(QString::fromUtf8("audioCodecBox"));
+        audioCodecBox->setFont(font);
+
+        gridLayout->addWidget(audioCodecBox, 2, 1, 1, 1);
+
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setFont(font);
+
+        gridLayout->addWidget(label_3, 4, 0, 1, 1);
+
+        audioDeviceBox = new QComboBox(centralwidget);
         audioDeviceBox->setObjectName(QString::fromUtf8("audioDeviceBox"));
         audioDeviceBox->setFont(font);
 
         gridLayout->addWidget(audioDeviceBox, 0, 1, 1, 1);
 
-        channelsBox = new QComboBox(layoutWidget);
+        channelsBox = new QComboBox(centralwidget);
         channelsBox->setObjectName(QString::fromUtf8("channelsBox"));
         channelsBox->setFont(font);
 
-        gridLayout->addWidget(channelsBox, 4, 1, 1, 1);
+        gridLayout->addWidget(channelsBox, 8, 1, 1, 1);
 
-        label_2 = new QLabel(layoutWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setFont(font);
+        sampleRateBox = new QComboBox(centralwidget);
+        sampleRateBox->setObjectName(QString::fromUtf8("sampleRateBox"));
+        sampleRateBox->setFont(font);
 
-        gridLayout->addWidget(label_2, 1, 0, 1, 1);
+        gridLayout->addWidget(sampleRateBox, 6, 1, 1, 1);
 
-        audioCodecBox = new QComboBox(layoutWidget);
-        audioCodecBox->setObjectName(QString::fromUtf8("audioCodecBox"));
-        audioCodecBox->setFont(font);
-
-        gridLayout->addWidget(audioCodecBox, 1, 1, 1, 1);
-
-        label_4 = new QLabel(layoutWidget);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setFont(font);
-
-        gridLayout->addWidget(label_4, 3, 0, 1, 1);
-
-        label_3 = new QLabel(layoutWidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setFont(font);
-
-        gridLayout->addWidget(label_3, 2, 0, 1, 1);
-
-        label = new QLabel(layoutWidget);
+        label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setFont(font);
 
         gridLayout->addWidget(label, 0, 0, 1, 1);
 
-        label_5 = new QLabel(layoutWidget);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setFont(font);
+        verticalSpacer = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Preferred);
 
-        gridLayout->addWidget(label_5, 4, 0, 1, 1);
+        gridLayout->addItem(verticalSpacer, 1, 1, 1, 1);
 
-        sampleRateBox = new QComboBox(layoutWidget);
-        sampleRateBox->setObjectName(QString::fromUtf8("sampleRateBox"));
-        sampleRateBox->setFont(font);
+        verticalSpacer_2 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Preferred);
 
-        gridLayout->addWidget(sampleRateBox, 3, 1, 1, 1);
+        gridLayout->addItem(verticalSpacer_2, 3, 1, 1, 1);
+
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setFont(font);
+
+        gridLayout->addWidget(label_2, 2, 0, 1, 1);
+
+        verticalSpacer_3 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Preferred);
+
+        gridLayout->addItem(verticalSpacer_3, 5, 1, 1, 1);
+
+        verticalSpacer_4 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Preferred);
+
+        gridLayout->addItem(verticalSpacer_4, 7, 1, 1, 1);
 
         gridLayout->setColumnStretch(0, 1);
         gridLayout->setColumnStretch(1, 5);
-        layoutWidget1 = new QWidget(centralwidget);
-        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(50, 440, 511, 30));
-        horizontalLayout = new QHBoxLayout(layoutWidget1);
+
+        gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
+
+        groupBox = new QGroupBox(centralwidget);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        groupBox->setFont(font);
+        gridLayout_3 = new QGridLayout(groupBox);
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        constantQualityRadioButton = new QRadioButton(groupBox);
+        constantQualityRadioButton->setObjectName(QString::fromUtf8("constantQualityRadioButton"));
+        constantQualityRadioButton->setChecked(true);
+
+        gridLayout_3->addWidget(constantQualityRadioButton, 0, 0, 1, 1);
+
+        qualitySlider = new QSlider(groupBox);
+        qualitySlider->setObjectName(QString::fromUtf8("qualitySlider"));
+        qualitySlider->setOrientation(Qt::Horizontal);
+
+        gridLayout_3->addWidget(qualitySlider, 1, 0, 1, 1);
+
+        constantBitrateRadioButton = new QRadioButton(groupBox);
+        constantBitrateRadioButton->setObjectName(QString::fromUtf8("constantBitrateRadioButton"));
+
+        gridLayout_3->addWidget(constantBitrateRadioButton, 2, 0, 1, 1);
+
+        bitrateBox = new QComboBox(groupBox);
+        bitrateBox->setObjectName(QString::fromUtf8("bitrateBox"));
+        bitrateBox->setEnabled(false);
+
+        gridLayout_3->addWidget(bitrateBox, 3, 0, 1, 1);
+
+
+        gridLayout_2->addWidget(groupBox, 1, 0, 1, 1);
+
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        output_but = new QPushButton(layoutWidget1);
+        output_but = new QPushButton(centralwidget);
         output_but->setObjectName(QString::fromUtf8("output_but"));
         output_but->setFont(font);
 
         horizontalLayout->addWidget(output_but);
 
-        startRecord_but = new QPushButton(layoutWidget1);
+        startRecord_but = new QPushButton(centralwidget);
         startRecord_but->setObjectName(QString::fromUtf8("startRecord_but"));
         startRecord_but->setFont(font);
 
         horizontalLayout->addWidget(startRecord_but);
 
-        pause_but = new QPushButton(layoutWidget1);
+        pause_but = new QPushButton(centralwidget);
         pause_but->setObjectName(QString::fromUtf8("pause_but"));
         pause_but->setEnabled(false);
         pause_but->setFont(font);
 
         horizontalLayout->addWidget(pause_but);
 
+
+        gridLayout_2->addLayout(horizontalLayout, 2, 0, 1, 1);
+
         Record->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Record);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 620, 26));
+        menubar->setGeometry(QRect(0, 0, 620, 23));
         menu = new QMenu(menubar);
         menu->setObjectName(QString::fromUtf8("menu"));
         Record->setMenuBar(menubar);
@@ -214,22 +248,22 @@ public:
 
     void retranslateUi(QMainWindow *Record)
     {
-        Record->setWindowTitle(QApplication::translate("Record", "MainWindow", nullptr));
-        action_WAV->setText(QApplication::translate("Record", "\344\277\235\345\255\230\344\270\272WAV\346\226\207\344\273\266", nullptr));
-        action_AIFC->setText(QApplication::translate("Record", "\344\277\235\345\255\230\344\270\272AIFC\346\226\207\344\273\266", nullptr));
-        action->setText(QApplication::translate("Record", "\345\205\263\351\227\255", nullptr));
-        groupBox->setTitle(QApplication::translate("Record", "\347\274\226\347\240\201\346\250\241\345\274\217", nullptr));
-        constantQualityRadioButton->setText(QApplication::translate("Record", "\351\237\263\350\264\250\357\274\232", nullptr));
-        constantBitrateRadioButton->setText(QApplication::translate("Record", "\344\275\215\347\216\207\357\274\232", nullptr));
-        label_2->setText(QApplication::translate("Record", "\351\237\263\351\242\221\347\274\226\350\247\243\347\240\201\345\231\250\357\274\232", nullptr));
-        label_4->setText(QApplication::translate("Record", "\351\207\207\346\240\267\347\216\207\357\274\232", nullptr));
-        label_3->setText(QApplication::translate("Record", "\346\226\207\344\273\266\345\256\271\345\231\250\357\274\232", nullptr));
-        label->setText(QApplication::translate("Record", "\350\276\223\345\205\245\350\256\276\345\244\207\357\274\232", nullptr));
-        label_5->setText(QApplication::translate("Record", "\345\243\260\351\201\223\346\225\260\357\274\232", nullptr));
-        output_but->setText(QApplication::translate("Record", "\344\277\235\345\255\230", nullptr));
-        startRecord_but->setText(QApplication::translate("Record", "\345\275\225\351\237\263", nullptr));
-        pause_but->setText(QApplication::translate("Record", "\346\232\202\345\201\234", nullptr));
-        menu->setTitle(QApplication::translate("Record", "\346\226\207\344\273\266", nullptr));
+        Record->setWindowTitle(QCoreApplication::translate("Record", "MainWindow", nullptr));
+        action_WAV->setText(QCoreApplication::translate("Record", "\344\277\235\345\255\230\344\270\272WAV\346\226\207\344\273\266", nullptr));
+        action_AIFC->setText(QCoreApplication::translate("Record", "\344\277\235\345\255\230\344\270\272AIFC\346\226\207\344\273\266", nullptr));
+        action->setText(QCoreApplication::translate("Record", "\345\205\263\351\227\255", nullptr));
+        label_4->setText(QCoreApplication::translate("Record", "\351\207\207\346\240\267\347\216\207\357\274\232", nullptr));
+        label_5->setText(QCoreApplication::translate("Record", "\345\243\260\351\201\223\346\225\260\357\274\232", nullptr));
+        label_3->setText(QCoreApplication::translate("Record", "\346\226\207\344\273\266\345\256\271\345\231\250\357\274\232", nullptr));
+        label->setText(QCoreApplication::translate("Record", "\350\276\223\345\205\245\350\256\276\345\244\207\357\274\232", nullptr));
+        label_2->setText(QCoreApplication::translate("Record", "\351\237\263\351\242\221\347\274\226\350\247\243\347\240\201\345\231\250\357\274\232", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("Record", "\347\274\226\347\240\201\346\250\241\345\274\217", nullptr));
+        constantQualityRadioButton->setText(QCoreApplication::translate("Record", "\351\237\263\350\264\250\357\274\232", nullptr));
+        constantBitrateRadioButton->setText(QCoreApplication::translate("Record", "\344\275\215\347\216\207\357\274\232", nullptr));
+        output_but->setText(QCoreApplication::translate("Record", "\344\277\235\345\255\230", nullptr));
+        startRecord_but->setText(QCoreApplication::translate("Record", "\345\275\225\351\237\263", nullptr));
+        pause_but->setText(QCoreApplication::translate("Record", "\346\232\202\345\201\234", nullptr));
+        menu->setTitle(QCoreApplication::translate("Record", "\346\226\207\344\273\266", nullptr));
     } // retranslateUi
 
 };

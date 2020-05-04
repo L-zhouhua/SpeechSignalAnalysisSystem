@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B12702AD-ABFB-343A-A199-8E24837244A3}</ProjectGuid>
     <Keyword>Qt4VSv1.0</Keyword>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -53,7 +53,7 @@
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_CHARTS_LIB;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\12860\Desktop\dsplib;C:\Users\12860\Desktop\fftw-3.3.5-dll64;.\GeneratedFiles;E:\libsndfile\include;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;C:\Users\12860\Desktop\qcustomplot;$(QTDIR)\include\QtMultimedia;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Makeei\Desktop\graduationproject\qcustomplot;C:\Users\Makeei\Desktop\graduationproject\libsndfile\include;C:\Users\Makeei\Desktop\graduationproject\fftw-3.3.5-dll64;C:\Users\Makeei\Desktop\graduationproject\dsplib;.\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtMultimedia;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -62,14 +62,14 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>C:\Users\12860\Desktop\fftw-3.3.5-dll64;E:\libsndfile\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Makeei\Desktop\graduationproject\libsndfile\lib;C:\Users\Makeei\Desktop\graduationproject\fftw-3.3.5-dll64;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>qtmaind.lib;Qt5Chartsd.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;Qt5PrintSupportd.lib;Qt5Multimediad.lib;libsndfile-1.lib;libfftw3-3.lib;libfftw3f-3.lib;libfftw3l-3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <QtMoc>
       <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
-      <IncludePath>C:\Users\12860\Desktop\dsplib;C:\Users\12860\Desktop\fftw-3.3.5-dll64;.\GeneratedFiles;E:\libsndfile\include;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;C:\Users\12860\Desktop\qcustomplot;$(QTDIR)\include\QtMultimedia;.\;%(AdditionalIncludeDirectories)</IncludePath>
+      <IncludePath>C:\Users\Makeei\Desktop\graduationproject\qcustomplot;C:\Users\Makeei\Desktop\graduationproject\libsndfile\include;C:\Users\Makeei\Desktop\graduationproject\fftw-3.3.5-dll64;C:\Users\Makeei\Desktop\graduationproject\dsplib;.\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtMultimedia;.\;%(AdditionalIncludeDirectories)</IncludePath>
       <Define>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_CHARTS_LIB;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
     </QtMoc>
     <QtUic>
@@ -113,18 +113,18 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\12860\Desktop\dsplib\base.cpp" />
-    <ClCompile Include="C:\Users\12860\Desktop\dsplib\filter.cpp" />
-    <ClCompile Include="C:\Users\12860\Desktop\dsplib\fir.cpp" />
-    <ClCompile Include="C:\Users\12860\Desktop\dsplib\iir.cpp" />
-    <ClCompile Include="C:\Users\12860\Desktop\dsplib\winfun.cpp" />
-    <ClCompile Include="C:\Users\12860\Desktop\qcustomplot\qcustomplot.cpp" />
+    <ClCompile Include="assistant.cpp" />
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\base.cpp" />
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\DSPLIB.cpp" />
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\filter.cpp" />
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\fir.cpp" />
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\iir.cpp" />
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\winfun.cpp" />
+    <ClCompile Include="C:\Users\Makeei\Desktop\graduationproject\qcustomplot\qcustomplot.cpp" />
     <ClCompile Include="filter_M.cpp" />
-    <ClCompile Include="finalmainwindow.cpp" />
     <ClCompile Include="freqyres.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainwindow.cpp" />
-    <ClCompile Include="period.cpp" />
     <ClCompile Include="record.cpp" />
     <ClCompile Include="spectrogram.cpp" />
     <ClCompile Include="spectrum.cpp" />
@@ -157,12 +157,6 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="period.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
     <QtMoc Include="record.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
@@ -171,18 +165,6 @@
   <ItemGroup>
     <QtMoc Include="spectrum.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="C:\Users\12860\Desktop\qcustomplot\qcustomplot.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="finalmainwindow.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\12860\Desktop\fftw-3.3.5-dll64;.\GeneratedFiles;E:\libsndfile\include;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;C:\Users\12860\Desktop\qcustomplot;$(QTDIR)\include\QtMultimedia</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
     </QtMoc>
   </ItemGroup>
@@ -201,12 +183,42 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\12860\Desktop\dsplib;C:\Users\12860\Desktop\fftw-3.3.5-dll64;.\GeneratedFiles;E:\libsndfile\include;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;C:\Users\12860\Desktop\qcustomplot;$(QTDIR)\include\QtMultimedia;.</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
     </QtMoc>
-    <ClInclude Include="C:\Users\12860\Desktop\dsplib\base.h" />
-    <ClInclude Include="C:\Users\12860\Desktop\dsplib\filter.h" />
-    <ClInclude Include="C:\Users\12860\Desktop\dsplib\fir.h" />
-    <ClInclude Include="C:\Users\12860\Desktop\dsplib\iir.h" />
-    <ClInclude Include="C:\Users\12860\Desktop\dsplib\winfun.h" />
+    <ClInclude Include="assistant.h" />
+    <ClInclude Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\filter.h" />
+    <ClInclude Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\fir.h" />
+    <ClInclude Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\iir.h" />
+    <ClInclude Include="C:\Users\Makeei\Desktop\graduationproject\dsplib\winfun.h" />
+    <QtMoc Include="C:\Users\Makeei\Desktop\graduationproject\qcustomplot\qcustomplot.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Makeei\Desktop\graduationproject\qcustomplot;C:\Users\Makeei\Desktop\graduationproject\libsndfile\include;C:\Users\Makeei\Desktop\graduationproject\fftw-3.3.5-dll64;C:\Users\Makeei\Desktop\graduationproject\dsplib;.\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtMultimedia;.</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+    </QtMoc>
     <ClInclude Include="wavinfo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="about.html" />
+    <None Include="help.qhcp" />
+    <None Include="help.qhp" />
+    <None Include="index.html" />
+    <None Include="main.html" />
+    <None Include="freqyres.html" />
+    <None Include="qssStyle.qss" />
+    <None Include="QToolBoxStyle.qss" />
+    <None Include="record.html" />
+    <None Include="spectrum.html" />
+    <None Include="winfunc.html" />
+    <None Include="winfuncStyle.qss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="about.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\Makeei\Desktop\images\fre.png" />
+    <Image Include="C:\Users\Makeei\Desktop\images\newWav.png" />
+    <Image Include="C:\Users\Makeei\Desktop\images\opWav.png" />
+    <Image Include="C:\Users\Makeei\Desktop\images\play.png" />
+    <Image Include="C:\Users\Makeei\Desktop\images\spec.png" />
+    <Image Include="C:\Users\Makeei\Desktop\images\winf.png" />
+    <Image Include="C:\Users\Makeei\Desktop\images\zoom.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

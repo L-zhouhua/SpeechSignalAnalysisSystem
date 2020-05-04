@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="GB2312"?>
+<QtHelpProject version="1.0">
+  <namespace>bookmisClient.myhelp</namespace>
+  <virtualFolder>doc</virtualFolder>
+  <filterSection>
+    <toc>
+        <section title="首页" ref="index.html">
+            <section title="主界面" ref="main.html"></section>
+            <section title="频率响应" ref="freqyres.html"></section>
+            <section title="频谱" ref="spectrum.html"></section>
+            <section title="窗口函数" ref="winfunc.html"></section>
+            <section title="录音" ref="record.html"></section>
+            <section title="关于" ref="about.html"></section>
+        </section>
+    </toc>
+    <files>
+      <file>*.html</file>
+     
+    </files>
+  </filterSection>
+</QtHelpProject>

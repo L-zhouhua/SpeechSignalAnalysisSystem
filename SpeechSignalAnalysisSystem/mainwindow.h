@@ -7,6 +7,8 @@
 #include <QtMultimedia/QSound>
 #include<QMessageBox>
 #include"wavinfo.h"
+#include<iostream>
+#include <assistant.h>
 class MainWindow : public QMainWindow
 {
 	Q_OBJECT
@@ -27,20 +29,21 @@ private:
 	QCPAxis *xAxis;//语谱图x轴
 	QCPAxis *yAxis;//语谱图y轴
 	QCPItemTracer *tracer;
-	QCPItemStraightLine *line = NULL;
-	QCPItemStraightLine *line_2 = NULL;
+	Assistant *assistant; //帮助文档
+	//QCPItemStraightLine *line = NULL;
+	//QCPItemStraightLine *line_2 = NULL;
 	int mousePressFlag = 0;//判断鼠标左键状态，0为松开，1为按下
-
+	int isOpenWav = 0; //判断是否打开了wav文件
 private:
 	void testDraw();
 	void testDraw_2();
+	boolean checkIsOpenWav(int isOpenWav);
 private slots:
 	void onClickChooseWavFile();
 	void onClickOpenfilterWindow();
-	void onClickOpenperiodWindow();
 	void onClickOpenrecordWindow();
 	void onClickOpenspectrumWindow();
-	void onClickOpenNewWindow();
+	void startAssistant();
 	void my_mouseMoveEvent(QMouseEvent * event);
 	void my_mousePressEvent(QMouseEvent* event);
 	void my_mouseReleaseEvent(QMouseEvent* event);
@@ -48,7 +51,7 @@ private slots:
 	void onClickZoomOut();
 	void onClickReset();
 	void onClickPlayWav();
-	void onClickOpenSpectrogramWindow();
+	/*void onClickOpenSpectrogramWindow();*/
 	void onClickOpenfreqRespWindow();
 	void onClickOpenWinFuncWindow();	
 };

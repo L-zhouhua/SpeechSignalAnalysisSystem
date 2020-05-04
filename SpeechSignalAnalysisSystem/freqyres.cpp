@@ -9,6 +9,7 @@ FreqyRes::FreqyRes(QWidget *parent, WavInfo *m_wavinfo)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	this->resize(QSize(2400, 1500)); //设置初始窗口大小
 	//iir
 	connect(ui.affirm_but_LP, SIGNAL(clicked()), this, SLOT(onClickAffirm()));
 	connect(ui.affirm_but_HP, SIGNAL(clicked()), this, SLOT(onClickAffirm()));
@@ -29,7 +30,7 @@ FreqyRes::FreqyRes(QWidget *parent, WavInfo *m_wavinfo)
 	pGraph = ui.freqyres_widget->addGraph();
 	ui.freqyres_widget->yAxis->setLabel("dB");
 	ui.freqyres_widget->xAxis->setLabel(QString::fromLocal8Bit("π"));
-	//ui.freqyres_widget->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
+	ui.freqyres_widget->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
 	pGraph->setPen(QPen(QColor(32, 178, 170)));
 	// iir2
 	pGraph2 = ui.freqyres_widget_2->addGraph();
@@ -41,7 +42,16 @@ FreqyRes::FreqyRes(QWidget *parent, WavInfo *m_wavinfo)
 	pGraph3 = ui.freqyres_widget_fir->addGraph();
 	ui.freqyres_widget_fir->yAxis->setLabel("dB");
 	ui.freqyres_widget_fir->xAxis->setLabel(QString::fromLocal8Bit("π"));
+	ui.freqyres_widget_fir->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
 	pGraph2->setPen(QPen(QColor(32, 178, 170)));
+
+	//读取qss文件，并设置
+	QFile file("QToolBoxStyle.qss");
+	file.open(QFile::ReadOnly);
+	QTextStream filetext(&file);
+	QString stylesheet = filetext.readAll();
+	this->setStyleSheet(stylesheet);
+	file.close();
 
 	wavinfo = new WavInfo();
 	wavinfo = m_wavinfo;

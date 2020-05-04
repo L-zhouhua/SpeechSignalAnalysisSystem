@@ -1,10 +1,8 @@
 #include "mainwindow.h"
 #include "QFileDialog"	
 #include "filter_m.h"
-#include "period.h"
 #include "record.h"
 #include "spectrum.h"
-#include"finalmainwindow.h"
 #include"spectrogram.h"
 #include"freqyres.h"
 #include"winfunc.h"
@@ -14,40 +12,45 @@ MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+	connect(ui.newsinglewav_act, SIGNAL(triggered()), this, SLOT(onClickOpenrecordWindow()));
+	connect(ui.filterwind_open_act, SIGNAL(triggered()), this, SLOT(onClickOpenfilterWindow()));
 	//this->setFixedSize(this->width(), this->height());
 	/*信号与槽的连接*/
+
 	connect(ui.readwav_act, SIGNAL(triggered()), this, SLOT(onClickChooseWavFile()));
-	connect(ui.filterwind_open_act, SIGNAL(triggered()), this, SLOT(onClickOpenfilterWindow()));
-	connect(ui.periodwind_open_act, SIGNAL(triggered()), this, SLOT(onClickOpenperiodWindow()));
 	connect(ui.newdoublewav_act, SIGNAL(triggered()), this, SLOT(onClickOpenrecordWindow()));
-	connect(ui.newsinglewav_act, SIGNAL(triggered()), this, SLOT(onClickOpenrecordWindow()));
 	connect(ui.spectrumwind_open_act, SIGNAL(triggered()), this, SLOT(onClickOpenspectrumWindow()));
 	connect(ui.play_act, SIGNAL(triggered()), this, SLOT(onClickPlayWav()));
+	connect(ui.freqResp_act, SIGNAL(triggered()), this, SLOT(onClickOpenfreqRespWindow()));
+	connect(ui.winFunc_act, SIGNAL(triggered()), this, SLOT(onClickOpenWinFuncWindow()));
+	connect(ui.helpAction, SIGNAL(triggered()), this, SLOT(startAssistant()));
 
 	connect(ui.reset_but, SIGNAL(clicked()), this, SLOT(onClickReset()));
 	connect(ui.zoomIn_but, SIGNAL(clicked()), this, SLOT(onClickZoomIn()));
 	connect(ui.zoomOut_but, SIGNAL(clicked()), this, SLOT(onClickZoomOut()));
 
-	connect(ui.windowopen, SIGNAL(triggered()), this, SLOT(onClickOpenNewWindow()));
-	connect(ui.spectrogram_act, SIGNAL(triggered()), this, SLOT(onClickOpenSpectrogramWindow()));
-	connect(ui.freqResp_act, SIGNAL(triggered()), this, SLOT(onClickOpenfreqRespWindow()));
-	connect(ui.winFunc_act, SIGNAL(triggered()), this, SLOT(onClickOpenWinFuncWindow()));
+	//connect(ui.spectrogram_act, SIGNAL(triggered()), this, SLOT(onClickOpenSpectrogramWindow()));
+	
 
 	//绑定鼠标事件
 	connect(ui.waveform_wid_1, SIGNAL(mouseMove(QMouseEvent*)), this, SLOT(my_mouseMoveEvent(QMouseEvent*)));
 	connect(ui.waveform_wid_1, SIGNAL(mousePress(QMouseEvent*)), this, SLOT(my_mousePressEvent(QMouseEvent*)));
 	connect(ui.waveform_wid_1, SIGNAL(mouseRelease(QMouseEvent*)), this, SLOT(my_mouseReleaseEvent(QMouseEvent*)));
 
+	//绑定帮助文档
+	
+	assistant = new Assistant();
+
 	pGraph = ui.waveform_wid_1->addGraph();
 	/*设置线颜色*/
 	pGraph->setPen(QPen(QColor(32, 178, 170)));
 	/*设置显示上边和右边的轴*/
 	//ui.waveform_wid_1->axisRect()->setupFullAxesBox(true);
-	ui.waveform_wid_1->setInteractions(QCP::iRangeZoom);
+	ui.waveform_wid_1->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
 	//ui.waveform_wid_1->yAxis->setRange(-1, 1);//设置y轴
 	ui.waveform_wid_1->xAxis->setLabel(QString::fromLocal8Bit("秒"));
 	ui.waveform_wid_1->yAxis->setLabel(QString::fromLocal8Bit("振幅"));
-	
+	this->resize(QSize(2800,1500));
 	
 
 	//高级轴
@@ -104,12 +107,22 @@ MainWindow::MainWindow(QWidget *parent)
 	ui.waveform_wid_1->axisRect(0)->setRangeZoomFactor(0.5, 0);//放大横坐标
 	ui.waveform_wid_1->axisRect(1)->setRangeZoomFactor(0.5, 0);//放大横坐标
 
-	//按钮样式
-	ui.zoomIn_but->setStyleSheet("QPushButton{background-color:rgba(255,178,0,100%);\
-		color: white;   border-radius: 10px;  border: 2px groove gray; border-style: outset;}" // 按键本色
-		"QPushButton:hover{background-color:white; color: black;}"  // 鼠标停放时的色彩
-		"QPushButton:pressed{background-color:rgb(85, 170, 255); border-style: inset; }");   // 鼠标按下的色彩
-	
+	//设置背景颜色
+	QPalette palette(this->palette());
+	palette.setColor(QPalette::Background, "#67707E");
+	this->setPalette(palette);
+
+	//读取qss文件，并设置
+	QFile file("qssStyle.qss");
+	file.open(QFile::ReadOnly);
+	QTextStream filetext(&file);
+	QString stylesheet = filetext.readAll();
+	this->setStyleSheet(stylesheet);
+	file.close();
+}
+void MainWindow::startAssistant()
+{
+	assistant->showDocumentation("index.html");
 }
 void MainWindow::my_mouseMoveEvent(QMouseEvent *event)
 {
@@ -121,8 +134,8 @@ void MainWindow::my_mouseMoveEvent(QMouseEvent *event)
 	double x_val = ui.waveform_wid_1->xAxis->pixelToCoord(x_pos);
 	double y_val = ui.waveform_wid_1->yAxis->pixelToCoord(y_pos);
 
-	//MainWindow::mouseMoveEvent(event);
-	//double x = ui.waveform_wid_1->xAxis->pixelToCoord(event->pos().x());//鼠标点的像素坐标转plot坐标
+	MainWindow::mouseMoveEvent(event);
+	double x = ui.waveform_wid_1->xAxis->pixelToCoord(event->pos().x());//鼠标点的像素坐标转plot坐标
 	tracer->setGraph(pGraph);//设置游标吸附在traceGraph这条曲线上
 	tracer->setGraphKey(x_val);//设置游标的X值（这就是游标随动的关键代码）
 	double traceX = tracer->position->key();
@@ -131,11 +144,11 @@ void MainWindow::my_mouseMoveEvent(QMouseEvent *event)
 	ui.statusBar->showMessage("x: " + QString::number(traceX) + "   y: " + QString::number(traceY));
 	
 	//游标二
-	if (line_2 != NULL&&mousePressFlag==1)
+	/*if (line_2 != NULL&&mousePressFlag==1)
 	{
 		line_2->point1->setCoords(x_val, 1);
 		line_2->point2->setCoords(x_val, 5);
-	}
+	}*/
 
 
 
@@ -153,11 +166,11 @@ void MainWindow::my_mousePressEvent(QMouseEvent * event)
 	double x_val = ui.waveform_wid_1->xAxis->pixelToCoord(x_pos);
 	double y_val = ui.waveform_wid_1->yAxis->pixelToCoord(y_pos);
 		
-	if (line != NULL)
+	/*if (line != NULL)
 		ui.waveform_wid_1->removeItem(line);
 	if (line_2 != NULL)
-		ui.waveform_wid_1->removeItem(line_2);
-	line = new QCPItemStraightLine(ui.waveform_wid_1);
+		ui.waveform_wid_1->removeItem(line_2);*/
+	/*line = new QCPItemStraightLine(ui.waveform_wid_1);
 	QPen pen(QColor(243, 102, 31),2, Qt::DotLine);
 	line->setPen(pen);
 	line->point1->setCoords(x_val, 1);
@@ -166,7 +179,7 @@ void MainWindow::my_mousePressEvent(QMouseEvent * event)
 	line_2 = new QCPItemStraightLine(ui.waveform_wid_1);
 	line_2->setPen(pen);
 	line_2->point1->setCoords(x_val, 1);
-	line_2->point2->setCoords(x_val, 5);
+	line_2->point2->setCoords(x_val, 5);*/
 
 	ui.waveform_wid_1->replot();//重绘
 }
@@ -182,44 +195,64 @@ void MainWindow::my_mouseReleaseEvent(QMouseEvent * event)
 	double x_val = ui.waveform_wid_1->xAxis->pixelToCoord(x_pos);
 	double y_val = ui.waveform_wid_1->yAxis->pixelToCoord(y_pos);
 
-	line_2->point1->setCoords(x_val, 1);
-	line_2->point2->setCoords(x_val, 5);
+	/*line_2->point1->setCoords(x_val, 1);
+	line_2->point2->setCoords(x_val, 5);*/
 
 	ui.waveform_wid_1->replot();//重绘
 }
 void MainWindow::onClickZoomIn()
 {
-	ui.waveform_wid_1->xAxis->scaleRange(0.5);
-	//ui.waveform_wid_1->yAxis->scaleRange(0.5);
-	xAxis->scaleRange(0.5);
-	ui.waveform_wid_1->replot();	
-}
-void MainWindow::onClickZoomOut()
-{
-	ui.waveform_wid_1->xAxis->scaleRange(2);
-	//ui.waveform_wid_1->yAxis->scaleRange(2);
-	xAxis->scaleRange(2);
-	ui.waveform_wid_1->replot();
-}
-void MainWindow::onClickReset()
-{
-	ui.waveform_wid_1->graph(0)->rescaleAxes();
-	ui.waveform_wid_1->yAxis->setRange(-1, 1);
-	ui.waveform_wid_1->xAxis->setRange(0.0, (double)wavinfo->duration);
-	xAxis->setRange(0, (double)wavinfo->length / wavinfo->samplerate / 2.0);//设置x轴
-	yAxis->setRange(0, wavinfo->samplerate / 2.0);//设置y轴
-	ui.waveform_wid_1->replot();
-}
-void MainWindow::onClickPlayWav()
-{
-
-	if (filename == NULL)
+	if (checkIsOpenWav(isOpenWav))
 	{
-		QMessageBox::about(NULL, QString::fromLocal8Bit("错误"), QString::fromLocal8Bit("请先打开wav文件！"));
+		ui.waveform_wid_1->xAxis->scaleRange(0.5);
+		//ui.waveform_wid_1->yAxis->scaleRange(0.5);
+		xAxis->scaleRange(0.5);
+		ui.waveform_wid_1->replot();
 	}
 	else
 	{
+		QMessageBox::information(this, QString::fromLocal8Bit("提醒"), QString::fromLocal8Bit("请先打开wav文件"));
+	}
+}
+void MainWindow::onClickZoomOut()
+{
+	if (checkIsOpenWav(isOpenWav))
+	{
+		ui.waveform_wid_1->xAxis->scaleRange(2);
+		//ui.waveform_wid_1->yAxis->scaleRange(2);
+		xAxis->scaleRange(2);
+		ui.waveform_wid_1->replot();
+	}
+	else
+	{
+		QMessageBox::information(this, QString::fromLocal8Bit("提醒"), QString::fromLocal8Bit("请先打开wav文件"));
+	}
+}
+void MainWindow::onClickReset()
+{
+	if (checkIsOpenWav(isOpenWav))
+	{
+		ui.waveform_wid_1->graph(0)->rescaleAxes();
+		ui.waveform_wid_1->yAxis->setRange(-1, 1);
+		ui.waveform_wid_1->xAxis->setRange(0.0, (double)wavinfo->duration);
+		xAxis->setRange(0, (double)wavinfo->length / wavinfo->samplerate / 2.0);//设置x轴
+		yAxis->setRange(0, wavinfo->samplerate / 2.0);//设置y轴
+		ui.waveform_wid_1->replot();
+	}
+	else
+	{
+		QMessageBox::information(this, QString::fromLocal8Bit("提醒"), QString::fromLocal8Bit("请先打开wav文件"));
+	}
+}
+void MainWindow::onClickPlayWav()
+{
+	if (checkIsOpenWav(isOpenWav))
+	{
 		QSound::play(filename);
+	}
+	else
+	{
+		QMessageBox::information(this, QString::fromLocal8Bit("提醒"), QString::fromLocal8Bit("请先打开wav文件"));
 	}
 }
 void MainWindow::onClickChooseWavFile()
@@ -310,6 +343,7 @@ void MainWindow::onClickChooseWavFile()
 			//ui.waveform_wid_2->replot();//重绘
 		}
 		sf_close(snd_file);
+		isOpenWav = 1;
 	}
 }
 //void MainWindow::testDraw()
@@ -466,6 +500,17 @@ void MainWindow::testDraw_2()
 	//ui.waveform_wid_2->rescaleAxes();//重新调节轴、调用后坐标会根据实际情况增加
 	ui.waveform_wid_1->replot();//重绘
 }
+boolean MainWindow::checkIsOpenWav(int isOpenWav)
+{
+	if (isOpenWav == 0)
+	{
+		return false;
+	}
+	if (isOpenWav == 1)
+	{
+		return true;
+	}
+}
 MainWindow::~MainWindow()
 {
 	if (wavinfo != NULL)
@@ -473,17 +518,12 @@ MainWindow::~MainWindow()
 		free(wavinfo->samplePoints);
 		wavinfo->samplePoints = NULL;
 	}
-		
+	delete assistant;
 }
 void MainWindow::onClickOpenfilterWindow()
 {
 	FilterM *filter = new FilterM();
 	filter->show();
-}
-void MainWindow::onClickOpenperiodWindow()
-{
-	Period *period = new Period();
-	period->show();
 }
 void MainWindow::onClickOpenrecordWindow()
 {
@@ -492,19 +532,22 @@ void MainWindow::onClickOpenrecordWindow()
 }
 void MainWindow::onClickOpenspectrumWindow()
 {
-	Spectrum *spectrum = new Spectrum(Q_NULLPTR,wavinfo);
-	spectrum->show();
+	if (checkIsOpenWav(isOpenWav))
+	{
+		Spectrum* spectrum = new Spectrum(Q_NULLPTR, wavinfo);
+		spectrum->show();
+	}
+	else
+	{
+		QMessageBox::information(this, QString::fromLocal8Bit("提醒"), QString::fromLocal8Bit("请先打开wav文件"));
+	}
 }
-void MainWindow::onClickOpenNewWindow()
-{
-	FinalMainWindow *fmw = new FinalMainWindow();
-	fmw->show();
-}
-void MainWindow::onClickOpenSpectrogramWindow()
-{
-	Spectrogram *spectrogram = new Spectrogram(Q_NULLPTR, wavinfo);
-	spectrogram->show();
-}
+//void MainWindow::onClickOpenSpectrogramWindow()
+//{
+//	Spectrogram *spectrogram = new Spectrogram(Q_NULLPTR, wavinfo);
+//	spectrogram->show();
+//}
+
 void MainWindow::onClickOpenfreqRespWindow()
 {
 	FreqyRes *fr = new FreqyRes(Q_NULLPTR, wavinfo);

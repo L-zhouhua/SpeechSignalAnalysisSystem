@@ -6,15 +6,27 @@ WinFunc::WinFunc(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	this->resize(QSize(2800, 1400)); //设置初始窗口大小
 	connect(ui.winfunc_Box, SIGNAL(currentIndexChanged(int)), this, SLOT(onClickDrawWinFunc()));
 	connect(ui.kai_but, SIGNAL(clicked()), this, SLOT(onClickDrawKai()));
 	w = new double[3];
 	pGraph = ui.winFunc_wid->addGraph();
 	pGraph->setPen(QPen(QColor(16, 78, 139)));
+	ui.winFunc_wid->xAxis->setLabel(QString::fromLocal8Bit("x"));
+	ui.winFunc_wid->yAxis->setLabel(QString::fromLocal8Bit("y"));
 
 	pGraph2 = ui.winFunc_wid_2->addGraph();
 	pGraph2->setPen(QPen(QColor(16, 78, 139)));
+	ui.winFunc_wid_2->xAxis->setLabel(QString::fromLocal8Bit("频率(Hz)"));
+	ui.winFunc_wid_2->yAxis->setLabel(QString::fromLocal8Bit("功率(dB)"));
 
+	//读取qss文件，并设置
+	QFile file("winfuncStyle.qss");
+	file.open(QFile::ReadOnly);
+	QTextStream filetext(&file);
+	QString stylesheet = filetext.readAll();
+	this->setStyleSheet(stylesheet);
+	file.close();
 }
 void WinFunc::onClickDrawKai()
 {
